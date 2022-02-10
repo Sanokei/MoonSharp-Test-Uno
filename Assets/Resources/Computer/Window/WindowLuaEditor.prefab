@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2845060210695033231}
   - component: {fileID: 2845060210695032945}
   m_Layer: 5
-  m_Name: WindowJsonEditorContent
+  m_Name: WindowLuaEditor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   lineNumberBackground: {fileID: 4853314660688024023}
   scrollbar: {fileID: 4853538782374538135}
   editorTheme: {fileID: 11400000, guid: cc00b7a428afd6a4bb470014b4f75320, type: 2}
-  languageTheme: {fileID: 11400000, guid: c6f1f6a6ee109b349b4d4ef9e68fc431, type: 2}
+  languageTheme: {fileID: 11400000, guid: a201704c3fb02f2468dfcc546f553552, type: 2}
   lineNumbers: 1
   lineNumbersSize: 20
   applyLineOffsetFix: 0

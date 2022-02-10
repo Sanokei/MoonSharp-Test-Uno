@@ -27,7 +27,8 @@ public class Inventory : ScriptableObject
     
     public static void InitializeFromDefault() {
         if (instance) DestroyImmediate(instance);
-        instance = Instantiate((Inventory) Resources.Load("InventoryTemplate"));
+        Debug.Log("Loading DEFAULT Inventory from " + Application.persistentDataPath);
+        instance = Instantiate((Inventory) Resources.Load("Inventory"));
         instance.hideFlags = HideFlags.HideAndDontSave;
     }
 
@@ -77,8 +78,8 @@ public class Inventory : ScriptableObject
         return true;
     }
 
-    // Insert an icon, return the index where it was inserted.  -1 if error.
-    public int InsertIcon(IconInstance icon) {
+    // Push an icon, return the index where it was inserted.  -1 if error.
+    public int PushIcon(IconInstance icon) {
         for (int i = 0; i < inventory.Length; i++) {
             if (SlotEmpty(i)) {
                 inventory[i] = icon;
@@ -87,6 +88,15 @@ public class Inventory : ScriptableObject
         }
 
         // Couldn't find a free slot.
+        return -1;
+    }
+
+    public int InsertIcon(int index, IconInstance icon){
+        if(SlotEmpty(index)){
+            inventory[index] = icon;
+            return index;
+        }
+        // Was not a free slot.
         return -1;
     }
 

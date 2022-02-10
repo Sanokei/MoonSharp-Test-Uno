@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class DragUI : MonoBehaviour, IDragHandler
-{
+public class DragUI : MonoBehaviour, IDragHandler{
     // optomize later when instantiating
     // make them public then
     // instatiatedObject._GameObject.SetImage(etc);

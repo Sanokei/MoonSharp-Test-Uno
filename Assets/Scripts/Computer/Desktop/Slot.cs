@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slot : MonoBehaviour {
+public class Slot : MonoBehaviour 
+{
     public int index = 0;
-    public IconInstance iconInstance = null;    // Inventory backend representation.
-    public GameObject prefabInstance = null;    // Inventory frontend representation.
-
+    private IconInstance iconInstance = null;    // Inventory backend representation.
+    private GameObject prefabInstance = null;    // Inventory frontend representation.
     // TODO: it would be better if we used SetActive() etc rather than Instantiate/Destroy.
     // Use this method to set a slot's icon.
     // The slot will automatically instantiate the gameobject associated with the icon.
-    public void SetIcon(IconInstance instance) {
+    
+    public void SetSlot(IconInstance instance) 
+    {
         this.iconInstance = instance;
         this.prefabInstance = Instantiate(
             instance.icon.physicalRepresentation,
@@ -20,7 +22,8 @@ public class Slot : MonoBehaviour {
     }
 
     // Remove the icon from the slot, and destroy the associated gameobject.
-    public void RemoveIcon() {
+    public void RemoveSlot() 
+    {
         this.iconInstance = null;
         Destroy(this.prefabInstance);
         this.prefabInstance = null;
