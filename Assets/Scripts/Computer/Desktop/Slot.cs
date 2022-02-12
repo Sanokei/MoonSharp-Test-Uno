@@ -1,24 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Slot : MonoBehaviour 
+public class Slot : MonoBehaviour
 {
     public int index = 0;
-    private IconInstance iconInstance = null;    // Inventory backend representation.
+    private Icon iconInstance;    // Inventory backend representation.
     private GameObject prefabInstance = null;    // Inventory frontend representation.
-    // TODO: it would be better if we used SetActive() etc rather than Instantiate/Destroy.
-    // Use this method to set a slot's icon.
-    // The slot will automatically instantiate the gameobject associated with the icon.
     
-    public void SetSlot(IconInstance instance) 
+    /// <summary> 
+    /// Sets the slot to the specified icon.
+    /// </summary>
+    /// <param name="icon">The icon to set the slot to.</param>
+    public void SetSlot(Icon instance) 
     {
-        this.iconInstance = instance;
+        this.iconInstance = Icon.CreateInstance<Icon>();
+        
+        // TODO: it would be better if i used SetActive() etc rather than Instantiate/Destroy.
         this.prefabInstance = Instantiate(
-            instance.icon.physicalRepresentation,
-            transform // Change the transform of the slot to be the same as the icon.
+            instance.physicalRepresentation,
+            transform // Change the transform of the slot to change the transform of the icon.
             )
-            as GameObject;
+            as GameObject
+        ;
+
+        // All of this wouldnt need to be done if i just used SetActive instead of instantiating new prefabs everytime...
+        // {
+            // probably should've picked a better name for this lol xd
+            this.prefabInstance.GetComponent<IconManager>().text.text = instance.name;
+            this.prefabInstance.GetComponentInChildren<IconManager>().image.sprite = instance.image;
+
+            // ew.
+            this.prefabInstance.GetComponent<DragUI>()._Camera = Camera.main; // TODO: this is a hack.
+            this.prefabInstance.GetComponent<DragUI>()._Canvas = GameObject.Find("Screen Canvas").GetComponent<Canvas>();
+            this.prefabInstance.GetComponent<DragUI>()._CanvasRectTransform = this.prefabInstance.GetComponent<DragUI>()._Canvas.GetComponent<RectTransform>();
+        // }
+        Debug.Log("Slot " + index + " set to " + instance.name);
     }
 
     // Remove the icon from the slot, and destroy the associated gameobject.

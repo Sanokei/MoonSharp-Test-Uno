@@ -1,64 +1,85 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Icon/Inventory", fileName = "Inventory.asset")]
-[System.Serializable]
-public class Inventory : ScriptableObject
+// So i made it generic, so it can be used for any type of icon.
+// to do that i made it inheritable by specific Inventory types which will fill in the generic type.
+
+
+// OLD
+    // This is programmed as a singleton but its a ScriptableObject.
+    // This is because we want to be able to save and load the inventory.
+    // But this wont work if we want to have multiple inventories.
+    // however sciptableobjects might not count as non-singletons.
+
+    // but scriptableobjects aren't serializable(?) which is pretty stupid if true.
+    // so we need to make a custom serializable class.
+    // idk if thats how it works
+    // but it works.
+
+    // --DONE--
+    // TODO: replace all the Json stuff with the:
+    // JsonUtility.FromJsonOverwrite(stringJson, scriptableObject);
+    // JsonUtility.ToJson(scriptableObject);
+    // --END_DONE--
+public class Inventory<T> : ScriptableObject
 {
-    private static Inventory instance;
-    public static Inventory Instance
-    {
-        get {
-            if (!instance) {
-                Inventory[] tmp = Resources.FindObjectsOfTypeAll<Inventory>();
-                if (tmp.Length > 0) {
-                    instance = tmp[0];
-                    Debug.Log("Found inventory as: " + instance);
-                } else {
-                    Debug.Log("Did not find inventory, loading from file or template.");
-                    SaveManager.LoadOrInitializeInventory();
-                }
-            }
+    public bool useAsDefault = false;
+    public static Inventory<T> instance {private get; set;}
 
-            return instance;
-        }
-    }
-    
-    public static void InitializeFromDefault() {
-        if (instance) DestroyImmediate(instance);
+    /// <summary>
+    /// Reads the default file and loads it into the inventory.
+    /// </summary>
+    public static Inventory<T> InitializeFromDefault() {
         Debug.Log("Loading DEFAULT Inventory from " + Application.persistentDataPath);
-        instance = Instantiate((Inventory) Resources.Load("Inventory"));
+        instance = Instantiate((Inventory<T>) Resources.Load("Inventory"));
         instance.hideFlags = HideFlags.HideAndDontSave;
+        return instance;
     }
 
-    public static void LoadFromJSON(string path) {
-        if (instance) DestroyImmediate(instance);
-        instance = ScriptableObject.CreateInstance<Inventory>();
+    /// <summary>
+    /// Loads the inventory to a json file.
+    /// </summary>
+    /// <param name="path">The path to the json file.</param>
+    public static Inventory<T> LoadFromJSON(string path) {
+        Debug.Log("Loading Inventory from " + path);
         JsonUtility.FromJsonOverwrite(System.IO.File.ReadAllText(path), instance);
         instance.hideFlags = HideFlags.HideAndDontSave;
+        return instance;
     }
 
+    /// <summary>
+    /// Saves the inventory to a json file.
+    /// </summary>
+    /// <param name="path">The path to save the json file to.</param>
     public void SaveToJSON(string path) {
         Debug.LogFormat("Saving inventory to {0}", path);
         System.IO.File.WriteAllText(path, JsonUtility.ToJson(this, true));
     }
 
     /* Inventory START */
-    public IconInstance[] inventory;
+    public T[] inventory;
 
+    /// <summary>
+    /// Checks if a slot is empty.
+    /// </summary>
+    /// <param name="index">The index of the slot to check.</param>
+    /// <returns>True if the slot is empty, false if it is not.</returns>
     public bool SlotEmpty(int index) {
-        if (inventory[index] == null || inventory[index].icon == null)
+        if (inventory[index] == null || inventory[index] == null)
             return true;
 
         return false;
     }
 
+    /// <summary>
     // Get an icon if it exists.
-    public bool GetIcon(int index, out IconInstance icon) {
+    /// </summary>
+    /// <param name="index">The index of the icon.</param>
+    /// <param name="icon">The icon to return.</param>
+    /// <returns>True if the icon exists, false if it doesn't.</returns>
+    public bool GetIcon(int index, out T icon) {
         // inventory[index] doesn't return null, so check icon instead.
         if (SlotEmpty(index)) {
-            icon = null;
+            icon = default(T);
             return false;
         }
 
@@ -66,20 +87,28 @@ public class Inventory : ScriptableObject
         return true;
     }
 
-    // Remove an icon at an index if one exists at that index.
+    /// <summary>
+    /// Remove an icon at an index if one exists at that index.
+    /// </summary>
+    /// <param name="index">The index of the icon to remove.</param>
+    /// <returns>True if the icon was removed, false if it didn't exist.</returns>
     public bool RemoveIcon(int index) {
         if (SlotEmpty(index)) {
             // Nothing existed at the specified slot.
             return false;
         }
 
-        inventory[index] = null;
+        inventory[index] = default(T);
 
         return true;
     }
 
-    // Push an icon, return the index where it was inserted.  -1 if error.
-    public int PushIcon(IconInstance icon) {
+    /// <summary>
+    /// Push an icon, return the index where it was inserted. If the icon already exists, return -1
+    /// </summary>
+    /// <param name="icon">The icon to insert.</param>
+    /// <returns>The index where the icon was inserted. If the icon already exists, return -1.</returns>
+    public int PushIcon(T icon) {
         for (int i = 0; i < inventory.Length; i++) {
             if (SlotEmpty(i)) {
                 inventory[i] = icon;
@@ -91,17 +120,17 @@ public class Inventory : ScriptableObject
         return -1;
     }
 
-    public int InsertIcon(int index, IconInstance icon){
+    /// <summary>
+    /// Push an icon, return the index where it was inserted. If the icon already exists, return -1
+    /// </summary>
+    /// <param name="icon">The icon to insert.</param>
+    /// <returns>The index where the icon was inserted. If the icon already exists, return -1.</returns>
+    public int InsertIcon(int index, T icon){
         if(SlotEmpty(index)){
             inventory[index] = icon;
             return index;
         }
         // Was not a free slot.
         return -1;
-    }
-
-    // Simply save.
-    private void Save() {
-        SaveManager.SaveInventory();
     }
 }

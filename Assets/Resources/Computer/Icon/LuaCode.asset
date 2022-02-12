@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: LuaCode
   m_EditorClassIdentifier: 
   iconName: 
-  path: 
   image: {fileID: 0}
-  physicalRepresentation: {fileID: 0}
+  physicalRepresentation: {fileID: 1058548086568388827, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
   textType: 1

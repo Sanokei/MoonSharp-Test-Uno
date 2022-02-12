@@ -6,6 +6,13 @@ public class DesktopManager : MonoBehaviour
 {
     public List<Slot> inventorySlots;
 
+    
+    /// <summary>
+    /// The singleton instance of the Inventory.
+    /// </summary>
+    /// <summary>
+    /// Creates a list of slots for the inventory.
+    /// </summary>
     // Use this for initialization
     void Start () 
     {
@@ -16,26 +23,34 @@ public class DesktopManager : MonoBehaviour
         inventorySlots.Sort((a, b) => a.index - b.index);
         PopulateInitial();
     }
-
+    /// <summary>
+    /// Populates the inventory with some icons.
+    /// </summary>
     public void PopulateInitial()
     {
         for (int i = 0; i < inventorySlots.Count; i++) 
         {
-            IconInstance instance;
+            Icon instance = null;
             // If an object exists at the specified location.
-            if (Inventory.Instance.GetIcon(i, out instance)) {
+            if (IconInventory.Instance.GetIcon(i, out instance)) {
                 inventorySlots[i].SetSlot(instance);
             }
         }
     }
-
+    /// <summary>
+    /// Removes the icon from all the non-specified slots.
+    /// </summary>
     public void Clear() 
-    { // Doesnt change the Inventory.Instance
+    { 
+        // Doesnt change the Inventory.Instance
         for (int i = 0; i < inventorySlots.Count; i++) {
             inventorySlots[i].RemoveSlot();
         }
     }
 
+    /// <summary>
+    /// Removes the icon from all slots then populates the inventory with the specified icons.
+    /// </summary>
     public void Refresh() 
     {
         // There's probably a better way to do this.
@@ -44,6 +59,9 @@ public class DesktopManager : MonoBehaviour
         PopulateInitial();
     }
     
+    /// <summary>
+    /// Saves the inventory on quit.
+    /// </summary>
     void OnApplicationQuit()
     {
         // Save the inventory.
