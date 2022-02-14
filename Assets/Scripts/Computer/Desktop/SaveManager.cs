@@ -16,16 +16,16 @@ public class SaveManager
     /// Loads the specified json file.
     /// if the file doesnt exist, it will create a new one.
     /// </summary>
-    public static IconInventory LoadOrInitializeInventory() 
+    public static TextIconInventory LoadOrInitializeInventory() 
     {
         // Saving and loading.
         if (File.Exists(Path.Combine(Application.persistentDataPath, "inventory.json")))
         {
-            return (IconInventory) IconInventory.LoadFromJSON(Path.Combine(Application.persistentDataPath, "inventory.json"));
+            return (TextIconInventory) TextIconInventory.LoadFromJSON(Path.Combine(Application.persistentDataPath, "inventory.json"));
         } 
         else 
         {
-            return (IconInventory) IconInventory.InitializeFromDefault();
+            return (TextIconInventory) TextIconInventory.InitializeFromDefault();
         }
     }
 
@@ -34,13 +34,13 @@ public class SaveManager
     /// </summary>
     public static void SaveInventory() 
     {
-        IconInventory.Instance.SaveToJSON(Path.Combine(Application.persistentDataPath, "inventory.json"));
+        TextIconInventory.Instance.SaveToJSON(Path.Combine(Application.persistentDataPath, "inventory.json"));
     }
 
 
     // Load from the default, for situations where we just want to reset.
     public static void LoadFromTemplate() 
     {
-        IconInventory.InitializeFromDefault();
+        TextIconInventory.InitializeFromDefault();
     }
 }

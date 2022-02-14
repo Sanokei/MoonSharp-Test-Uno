@@ -23,7 +23,7 @@ using UnityEngine;
 public class Inventory<T> : ScriptableObject
 {
     public bool useAsDefault = false;
-    public static Inventory<T> instance {private get; set;}
+    public static Inventory<T> instance {protected get; set;}
 
     /// <summary>
     /// Reads the default file and loads it into the inventory.
@@ -41,6 +41,9 @@ public class Inventory<T> : ScriptableObject
     /// <param name="path">The path to the json file.</param>
     public static Inventory<T> LoadFromJSON(string path) {
         Debug.Log("Loading Inventory from " + path);
+        // theres a really stupid bug where if the inventory is 
+        // of a different type than the default
+        // it will be null
         JsonUtility.FromJsonOverwrite(System.IO.File.ReadAllText(path), instance);
         instance.hideFlags = HideFlags.HideAndDontSave;
         return instance;

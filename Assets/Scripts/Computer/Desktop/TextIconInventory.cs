@@ -2,16 +2,16 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Icon/Inventory", fileName = "Inventory.asset")]
 [System.Serializable]
-public class IconInventory : Inventory<Icon> {
-    public static IconInventory Instance {
+public class TextIconInventory : Inventory<TextIcon> {
+    public static TextIconInventory Instance {
         get {
-            Inventory<Icon>[] tmp = Resources.FindObjectsOfTypeAll<Inventory<Icon>>();
-            foreach (Inventory<Icon> ins in tmp) {
+            Inventory<TextIcon>[] tmp = Resources.FindObjectsOfTypeAll<Inventory<TextIcon>>();
+            foreach (Inventory<TextIcon> ins in tmp) {
                 if(ins.useAsDefault) {
                     Debug.Log("Found inventory as: " + ins);
                     ins.hideFlags = HideFlags.HideAndDontSave;
                     instance = ins;
-                    return (IconInventory) ins;
+                    return (TextIconInventory) ins;
                 }
             }
             Debug.Log("Did not find inventory, loading from file or template.");

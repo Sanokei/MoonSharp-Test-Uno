@@ -6,7 +6,6 @@ public class DesktopManager : MonoBehaviour
 {
     public List<Slot> inventorySlots;
 
-    
     /// <summary>
     /// The singleton instance of the Inventory.
     /// </summary>
@@ -30,9 +29,9 @@ public class DesktopManager : MonoBehaviour
     {
         for (int i = 0; i < inventorySlots.Count; i++) 
         {
-            Icon instance = null;
+            TextIcon instance = null;
             // If an object exists at the specified location.
-            if (IconInventory.Instance.GetIcon(i, out instance)) {
+            if (TextIconInventory.Instance.GetIcon(i, out instance)) {
                 inventorySlots[i].SetSlot(instance);
             }
         }

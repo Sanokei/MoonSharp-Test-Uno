@@ -6,16 +6,16 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour
 {
     public int index = 0;
-    private Icon iconInstance;    // Inventory backend representation.
+    private TextIcon iconInstance;    // Inventory backend representation.
     private GameObject prefabInstance = null;    // Inventory frontend representation.
     
     /// <summary> 
     /// Sets the slot to the specified icon.
     /// </summary>
     /// <param name="icon">The icon to set the slot to.</param>
-    public void SetSlot(Icon instance) 
+    public void SetSlot(TextIcon instance) 
     {
-        this.iconInstance = Icon.CreateInstance<Icon>();
+        this.iconInstance = TextIcon.CreateInstance<TextIcon>();
         
         // TODO: it would be better if i used SetActive() etc rather than Instantiate/Destroy.
         this.prefabInstance = Instantiate(
@@ -28,7 +28,7 @@ public class Slot : MonoBehaviour
         // All of this wouldnt need to be done if i just used SetActive instead of instantiating new prefabs everytime...
         // {
             // probably should've picked a better name for this lol xd
-            this.prefabInstance.GetComponent<IconManager>().text.text = instance.name;
+            this.prefabInstance.GetComponent<IconManager>().text.text = $"{instance.name}.{instance.textType.ToString()}";
             this.prefabInstance.GetComponentInChildren<IconManager>().image.sprite = instance.image;
 
             // ew.
