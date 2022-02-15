@@ -23,7 +23,7 @@ using UnityEngine;
 public class Inventory<T> : ScriptableObject
 {
     public bool useAsDefault = false;
-    public static Inventory<T> instance {protected get; set;}
+    public static Inventory<T> instance {private get; set;}
 
     /// <summary>
     /// Reads the default file and loads it into the inventory.

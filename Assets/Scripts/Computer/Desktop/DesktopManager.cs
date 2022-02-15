@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: this could be static and just be a singleton.
 public class DesktopManager : MonoBehaviour
 {
     public List<Slot> inventorySlots;
+    TextIconInventory Instance;
 
     /// <summary>
     /// The singleton instance of the Inventory.
@@ -15,6 +17,7 @@ public class DesktopManager : MonoBehaviour
     // Use this for initialization
     void Start () 
     {
+        Instance = TextIconInventory.Instance;
         inventorySlots = new List<Slot>();
         inventorySlots.AddRange(GameObject.FindObjectsOfType<Slot>());
 
@@ -31,7 +34,7 @@ public class DesktopManager : MonoBehaviour
         {
             TextIcon instance = null;
             // If an object exists at the specified location.
-            if (TextIconInventory.Instance.GetIcon(i, out instance)) {
+            if (Instance.GetIcon(i, out instance)) {
                 inventorySlots[i].SetSlot(instance);
             }
         }

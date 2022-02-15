@@ -15,7 +15,7 @@ public class Slot : MonoBehaviour
     /// <param name="icon">The icon to set the slot to.</param>
     public void SetSlot(TextIcon instance) 
     {
-        this.iconInstance = TextIcon.CreateInstance<TextIcon>();
+        this.iconInstance = TextIcon.CreateInstance<TextIcon>(); // Not used... too bad.
         
         // TODO: it would be better if i used SetActive() etc rather than Instantiate/Destroy.
         this.prefabInstance = Instantiate(
@@ -35,6 +35,11 @@ public class Slot : MonoBehaviour
             this.prefabInstance.GetComponent<DragUI>()._Camera = Camera.main; // TODO: this is a hack.
             this.prefabInstance.GetComponent<DragUI>()._Canvas = GameObject.Find("Screen Canvas").GetComponent<Canvas>();
             this.prefabInstance.GetComponent<DragUI>()._CanvasRectTransform = this.prefabInstance.GetComponent<DragUI>()._Canvas.GetComponent<RectTransform>();
+
+            //
+            this.prefabInstance.GetComponent<IconManager>()._TextIcon = instance;
+            this.prefabInstance.GetComponent<IconManager>()._Index = index;
+            this.prefabInstance.GetComponent<IconManager>()._DesktopManager = this.GetComponentInParent<DesktopManager>();
         // }
         Debug.Log("Slot " + index + " set to " + instance.name);
     }
