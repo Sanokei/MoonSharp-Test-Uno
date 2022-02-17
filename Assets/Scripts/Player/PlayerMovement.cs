@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
 
         // Needs to be unlocked to work with World Space UI
-        // Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         // Kinda screws with the World Space UI
         // heavily recommend enabling visiblity when in UI mode
         // Cursor.visible = false;

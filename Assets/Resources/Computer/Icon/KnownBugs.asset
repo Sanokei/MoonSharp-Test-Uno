@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 829e5bc01a2fccf45931f7f36255b66d, type: 3}
-  m_Name: Inventory
+  m_Script: {fileID: 11500000, guid: 7bcc2416e2c59384199dc8cb82ac9f8f, type: 3}
+  m_Name: KnownBugs
   m_EditorClassIdentifier: 
-  useAsDefault: 0
-  inventory: []
+  image: {fileID: 0}
+  physicalRepresentation: {fileID: 0}
+  textType: 0

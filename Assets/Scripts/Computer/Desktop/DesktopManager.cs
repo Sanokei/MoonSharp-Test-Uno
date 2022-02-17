@@ -51,13 +51,13 @@ public class DesktopManager : MonoBehaviour
     /// </summary>
     public void Refresh() 
     {
-        // There's probably a better way to do this.
         // TODO: This is a bit of a hack.
         Clear();
         PopulateInitial();
     }
 
     // FIXME: All of this is super slow..
+    // WARNING: This drops the FPS by a lot!!!!
     /// <summary>
     /// Opens the inventory.
     /// </summary>
