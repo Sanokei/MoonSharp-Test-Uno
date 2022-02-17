@@ -9,8 +9,4 @@
 ![image](https://user-images.githubusercontent.com/36809574/154549778-549a441a-4017-4fdb-be0c-83cf9e54f6e2.png)
 
 # These are some of the known bugs:
-- Files that are a lower Z than another file will make them interact in undefined ways.
-- Editing the scriptable object with a seriziable JSON LOCKS the inventory SO making it unable to accept new icon entries
-(this is technically intended behavior from seralizing scriptable objects)
-- Tabs are very wide(?)
-- clicked windows default to moving the center to the mouse position
+![Bugs](https://www.github.com/sanokei/programmed-dystopia/issues)
