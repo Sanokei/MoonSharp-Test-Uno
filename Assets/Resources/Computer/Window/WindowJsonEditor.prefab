@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2845060210695032944}
   - component: {fileID: 2845060210695033231}
   - component: {fileID: 2845060210695032945}
-  - component: {fileID: 3038316133674241417}
+  - component: {fileID: 2856773519283730847}
   m_Layer: 5
-  m_Name: WindowLuaEditor
+  m_Name: WindowJsonEditor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   _GameObjectRectTransform: {fileID: 2845060210695033230}
   _Canvas: {fileID: 0}
   _CanvasRectTransform: {fileID: 0}
---- !u!114 &3038316133674241417
+--- !u!114 &2856773519283730847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: filename.lua
+  m_text: filename.json
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1600,7 +1600,7 @@ MonoBehaviour:
   lineNumberBackground: {fileID: 4853314660688024023}
   scrollbar: {fileID: 4853538782374538135}
   editorTheme: {fileID: 11400000, guid: cc00b7a428afd6a4bb470014b4f75320, type: 2}
-  languageTheme: {fileID: 11400000, guid: a201704c3fb02f2468dfcc546f553552, type: 2}
+  languageTheme: {fileID: 11400000, guid: c6f1f6a6ee109b349b4d4ef9e68fc431, type: 2}
   lineNumbers: 1
   lineNumbersSize: 20
   applyLineOffsetFix: 0

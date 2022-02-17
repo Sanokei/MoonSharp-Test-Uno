@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// why isnt this a IDraggable interface? idk either...
 public class DragUI : MonoBehaviour, IDragHandler{
     // This is such a garbage way of doing this omg...
     [HideInInspector] public Camera _Camera;

@@ -4,17 +4,18 @@ using UnityEngine.EventSystems;
 using TMPro;
 
 public class IconManager : MonoBehaviour, 
-IDropHandler, IBeginDragHandler,IPointerDownHandler, IPointerUpHandler
+IDropHandler, IBeginDragHandler, IPointerClickHandler
+//,IPointerDownHandler
 {
     public TextMeshProUGUI text;
     public Image image;
-
     [SerializeField] private GameObject _GameObject;
     [HideInInspector] public TextIcon _TextIcon;
     [HideInInspector] public int _Index;
     [HideInInspector] public DesktopManager _DesktopManager;
     Vector3 _StartPosition;
     TextIconInventory Instance;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("OnBeginDrag");
@@ -48,13 +49,12 @@ IDropHandler, IBeginDragHandler,IPointerDownHandler, IPointerUpHandler
         }
     }
 
-    void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
+    void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
-    }
-
-    void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
+        if (eventData.clickCount == 2)
+        {
+            Debug.Log("Double Click");
+            _DesktopManager.OpenTextEditor(_TextIcon);
+        }
     }
 }

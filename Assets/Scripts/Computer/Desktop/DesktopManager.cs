@@ -7,14 +7,8 @@ public class DesktopManager : MonoBehaviour
 {
     public List<Slot> inventorySlots;
     TextIconInventory Instance;
+    [HideInInspector] public IconManager clicked;
 
-    /// <summary>
-    /// The singleton instance of the Inventory.
-    /// </summary>
-    /// <summary>
-    /// Creates a list of slots for the inventory.
-    /// </summary>
-    // Use this for initialization
     void Start () 
     {
         Instance = TextIconInventory.Instance;
@@ -25,6 +19,7 @@ public class DesktopManager : MonoBehaviour
         inventorySlots.Sort((a, b) => a.index - b.index);
         PopulateInitial();
     }
+
     /// <summary>
     /// Populates the inventory with some icons.
     /// </summary>
@@ -39,6 +34,7 @@ public class DesktopManager : MonoBehaviour
             }
         }
     }
+    
     /// <summary>
     /// Removes the icon from all the non-specified slots.
     /// </summary>
@@ -59,6 +55,28 @@ public class DesktopManager : MonoBehaviour
         // TODO: This is a bit of a hack.
         Clear();
         PopulateInitial();
+    }
+
+    // FIXME: All of this is super slow..
+    /// <summary>
+    /// Opens the inventory.
+    /// </summary>
+    /// <param name="textIcon">The icon that was clicked.</param>
+    public void OpenTextEditor(TextIcon textIcon)
+    {
+        //WindowJsonEditor, WindowLuaEditor
+        string windowType = $"Window{textIcon.textType.ToString()}Editor";
+        Debug.Log(windowType);
+        GameObject window = Instantiate(Resources.Load($"Computer/Window/{windowType}") as GameObject, transform.parent);
+        
+        window.GetComponent<WindowMaker>().CreateWindow(textIcon);
+
+        // ew.
+        window.GetComponent<DragUI>()._Camera = Camera.main; // TODO: this is a hack.
+        window.GetComponent<DragUI>()._Canvas = GameObject.Find("Screen Canvas").GetComponent<Canvas>();
+        window.GetComponent<DragUI>()._CanvasRectTransform = window.GetComponent<DragUI>()._Canvas.GetComponent<RectTransform>();
+
+        window.transform.SetParent(transform.parent);
     }
     
     /// <summary>

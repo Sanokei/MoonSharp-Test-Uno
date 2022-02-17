@@ -12,7 +12,7 @@ public class Slot : MonoBehaviour
     /// <summary> 
     /// Sets the slot to the specified icon.
     /// </summary>
-    /// <param name="icon">The icon to set the slot to.</param>
+    /// <param name="instance">The instance of TextIcon.</param>
     public void SetSlot(TextIcon instance) 
     {
         this.iconInstance = TextIcon.CreateInstance<TextIcon>(); // Not used... too bad.
@@ -24,7 +24,7 @@ public class Slot : MonoBehaviour
             )
             as GameObject
         ;
-
+        //FIXME: Seriously this is important. Fix it asap.
         // All of this wouldnt need to be done if i just used SetActive instead of instantiating new prefabs everytime...
         // {
             // probably should've picked a better name for this lol xd
@@ -45,6 +45,9 @@ public class Slot : MonoBehaviour
     }
 
     // Remove the icon from the slot, and destroy the associated gameobject.
+    /// <summary>
+    /// Removes the icon from the slot.
+    /// </summary>
     public void RemoveSlot() 
     {
         this.iconInstance = null;

@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2845060210695032944}
   - component: {fileID: 2845060210695033231}
   - component: {fileID: 2845060210695032945}
+  - component: {fileID: 412918233934594428}
   m_Layer: 5
-  m_Name: WindowJsonEditorContent
+  m_Name: WindowTxtEditor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,11 +92,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea271f19401b7b848bade440618922ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
+  _Camera: {fileID: 0}
   _GameObject: {fileID: 2845060210695033229}
   _GameObjectRectTransform: {fileID: 2845060210695033230}
   _Canvas: {fileID: 0}
-  _canvasRectTransform: {fileID: 0}
+  _CanvasRectTransform: {fileID: 0}
+--- !u!114 &412918233934594428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2845060210695033229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845fbc54fe8541145b0f22b5c7d7e3d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  codeEditor: {fileID: 4852966584659260153}
+  text: {fileID: 2845060210726900541}
 --- !u!1 &2845060210726900539
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: filename.json
+  m_text: filename.txt
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

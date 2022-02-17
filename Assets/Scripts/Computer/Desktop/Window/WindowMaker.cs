@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using InGameCodeEditor;
+using TMPro;
 
 public class WindowMaker : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    [SerializeField] CodeEditor codeEditor;
+    [SerializeField] TextMeshProUGUI text;
+    public void CreateWindow(TextIcon textIcon){
+        codeEditor.Text = textIcon.FileData;
+        text.text = $"{textIcon.name}.{textIcon.textType.ToString()}";
     }
 }

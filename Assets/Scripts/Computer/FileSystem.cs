@@ -8,7 +8,7 @@ namespace FileSystem
         public static bool WriteFile(string filename, string fileData, string fileTag)
         {
             try{
-                string path = Application.persistentDataPath + "/ingamefiles/"+filename+"."+fileTag;
+                string path = $"{Application.persistentDataPath}/ingamefiles/{filename}";
                 //Write some text to the test.txt file
                 StreamWriter writer = new StreamWriter(path, true);
                 writer.WriteLine(fileData);
@@ -23,7 +23,7 @@ namespace FileSystem
         public static string ReadFile(string filename, string fileTag)
         {
             try{
-                string path = Application.persistentDataPath + "/ingamefiles/"+filename+"."+ fileTag;
+                string path = $"{Application.persistentDataPath}/ingamefiles/{filename}.{fileTag}";
                 //Read the text from directly from the test.txt file
                 StreamReader reader = new StreamReader(path);
                 return reader.ReadToEnd();

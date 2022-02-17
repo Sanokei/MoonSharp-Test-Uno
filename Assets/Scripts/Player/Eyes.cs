@@ -5,12 +5,30 @@ using UnityEngine.EventSystems;
 
 public class Eyes : MonoBehaviour
 {
-    delegate void OnHoverandClick(GameObject go);
-    
-
-    // Update is called once per frame
+    bool _computerMode = false;
     void Update()
     {
-        
+        if(!_computerMode && Input.GetKeyDown(KeyCode.H))
+        {
+            Debug.Log("Hacker Mode");
+            _computerMode = !_computerMode;
+        }
+        if(_computerMode)
+        {
+            
+        }
+        else
+        {
+
+        }
+    }
+
+    void OnGUI()
+    {
+        if (_computerMode && Event.current.Equals(Event.KeyboardEvent(KeyCode.Escape.ToString())))
+        {
+            Debug.Log("Escape key is pressed.");
+            _computerMode = !_computerMode;
+        }
     }
 }
