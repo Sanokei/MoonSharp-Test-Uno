@@ -9,4 +9,4 @@
 ![image](https://user-images.githubusercontent.com/36809574/154549778-549a441a-4017-4fdb-be0c-83cf9e54f6e2.png)
 
 # These are some of the known bugs:
-![Bugs](https://github.com/Sanokei/Programmed-Dystopia/issues)
+[Bugs](https://github.com/Sanokei/Programmed-Dystopia/issues)
