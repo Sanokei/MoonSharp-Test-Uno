@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// Change the inventory to something to be able to hold all icons
+// TODO: Hold TextIcon and Folders
 [CreateAssetMenu(menuName = "Icon/Inventory", fileName = "Inventory.asset")]
 [System.Serializable]
 public class TextIconInventory : Inventory<TextIcon> {
