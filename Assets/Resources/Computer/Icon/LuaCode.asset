@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bcc2416e2c59384199dc8cb82ac9f8f, type: 3}
   m_Name: LuaCode
   m_EditorClassIdentifier: 
-  iconName: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: f60c9f30412cb764a8cdbc3164fcd12d, type: 3}
   physicalRepresentation: {fileID: 1058548086568388827, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
   textType: 1

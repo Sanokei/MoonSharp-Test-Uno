@@ -23,7 +23,31 @@ using UnityEngine;
 public class Inventory<T> : ScriptableObject
 {
     public bool useAsDefault = false;
-    public static Inventory<T> instance {private get; set;}
+    public static Inventory<T> Instance {
+        get {
+            Inventory<T>[] tmp = Resources.FindObjectsOfTypeAll<Inventory<T>>();
+            foreach (Inventory<T> ins in tmp) {
+                if(ins.useAsDefault) {
+                    Debug.Log("Found inventory as: " + ins);
+                    ins.hideFlags = HideFlags.HideAndDontSave;
+                    instance = ins;
+                    return ins;
+                }
+            }
+            Debug.Log("Did not find inventory, loading from file or template.");
+            return SaveManager<T>.LoadOrInitializeInventory();
+        }
+    }
+    public T[] InventorySlots{
+        get{
+            return (T[])(instance.inventory);
+        }
+        set{
+            instance.inventory = value;
+        }
+    }
+    private static Inventory<T> instance {get; set;}
+    [SerializeField] private T[] inventory;
 
     /// <summary>
     /// Reads the default file and loads it into the inventory.
@@ -59,7 +83,6 @@ public class Inventory<T> : ScriptableObject
     }
 
     /* Inventory START */
-    public T[] inventory;
 
     /// <summary>
     /// Checks if a slot is empty.
@@ -86,7 +109,7 @@ public class Inventory<T> : ScriptableObject
             return false;
         }
 
-        icon = inventory[index];
+        icon = (T)inventory[index];
         return true;
     }
 
@@ -134,6 +157,16 @@ public class Inventory<T> : ScriptableObject
             return index;
         }
         // Was not a free slot.
+        return -1;
+    }
+
+    public int GetIndexOfIcon(T icon) {
+        for (int i = 0; i < inventory.Length; i++) {
+            if (inventory[i].Equals(icon)) {
+                return i;
+            }
+        }
+
         return -1;
     }
 }

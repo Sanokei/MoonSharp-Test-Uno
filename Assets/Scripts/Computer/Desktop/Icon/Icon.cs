@@ -6,7 +6,6 @@ using UnityEngine;
 [System.Serializable]
 public class Icon : ScriptableObject {
     public Sprite image;
-    public GameObject physicalRepresentation;
 }
 
 

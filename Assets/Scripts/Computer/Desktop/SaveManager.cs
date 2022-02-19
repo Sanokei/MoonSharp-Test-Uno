@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class SaveManager
+public class SaveManager<T>
 {
     // TODO: The names of the json are hardcoded, gotta make it dynamic and pass the name through when it is called.
     // this is a terrible hack and should be fixed.
@@ -16,16 +16,16 @@ public class SaveManager
     /// Loads the specified json file.
     /// if the file doesnt exist, it will create a new one.
     /// </summary>
-    public static TextIconInventory LoadOrInitializeInventory() 
+    public static Inventory<T> LoadOrInitializeInventory() 
     {
         // Saving and loading.
         if (File.Exists(Path.Combine(Application.persistentDataPath, "inventory.json")))
         {
-            return (TextIconInventory) TextIconInventory.LoadFromJSON(Path.Combine(Application.persistentDataPath, "inventory.json"));
+            return Inventory<T>.LoadFromJSON(Path.Combine(Application.persistentDataPath, "inventory.json"));
         } 
         else 
         {
-            return (TextIconInventory) TextIconInventory.InitializeFromDefault();
+            return Inventory<T>.InitializeFromDefault();
         }
     }
 
@@ -34,13 +34,13 @@ public class SaveManager
     /// </summary>
     public static void SaveInventory() 
     {
-        TextIconInventory.Instance.SaveToJSON(Path.Combine(Application.persistentDataPath, "inventory.json"));
+        Inventory<T>.Instance.SaveToJSON(Path.Combine(Application.persistentDataPath, "inventory.json"));
     }
 
 
     // Load from the default, for situations where we just want to reset.
     public static void LoadFromTemplate() 
     {
-        TextIconInventory.InitializeFromDefault();
+        Inventory<T>.InitializeFromDefault();
     }
 }

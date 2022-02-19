@@ -6,12 +6,12 @@ using FileSystem;
 /// <summary>
 /// A variant of the Icon ScriptableObject that is used to represent a file.
 /// </summary>
+//requireComponent:
 [System.Serializable]
 [CreateAssetMenu(menuName = "Icon/Text", fileName = "TextName.asset")]
 public class TextIcon : Icon {
     public enum TextType { Json, Lua, txt }
     public TextType textType;
-    
     private string fileData;
     public string FileData {
         get {

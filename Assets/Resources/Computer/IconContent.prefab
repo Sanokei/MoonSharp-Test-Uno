@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1058548086568388816}
   - component: {fileID: 1058548086568388823}
   - component: {fileID: 1058548086568388821}
-  - component: {fileID: 5340931854935029894}
   m_Layer: 5
   m_Name: IconContent
   m_TagString: Untagged
@@ -92,25 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Camera: {fileID: 0}
-  _GameObject: {fileID: 1058548086568388827}
-  _GameObjectRectTransform: {fileID: 1058548086568388820}
   _Canvas: {fileID: 0}
   _CanvasRectTransform: {fileID: 0}
---- !u!114 &5340931854935029894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1058548086568388827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b478f3a53d4dcb49ad9f691d703b7ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 1058548086964889853}
-  image: {fileID: 1058548087087892932}
-  _GameObject: {fileID: 1058548086568388827}
 --- !u!1 &1058548086964889827
 GameObject:
   m_ObjectHideFlags: 0
