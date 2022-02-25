@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using FileSystem;
+using TMPro;
+using InGameCodeEditor;
 
-public class SaveAndExit : MonoBehaviour
+public class SaveAndExit : MonoBehaviour,IPointerClickHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] CodeEditor text;
+    [SerializeField] TextMeshProUGUI filename;
+    [SerializeField] GameObject window;
+    public void OnPointerClick(PointerEventData eventData)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        FileSystem.File.WriteFile(filename.text,text.Text);
+        Destroy(window);
     }
 }

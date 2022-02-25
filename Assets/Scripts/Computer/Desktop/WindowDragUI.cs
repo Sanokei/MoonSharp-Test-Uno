@@ -1,35 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-// why isnt this a IDraggable interface? idk either...
-public class DragUI : MonoBehaviour, IDragHandler
+public class WindowDragUI : MonoBehaviour, IDragHandler
 {
+    
     public Camera _Camera;
     public RectTransform _GameObjectRectTransform;
     public Canvas _Canvas;
     public RectTransform _CanvasRectTransform;
-    public delegate void OnIconBeginDrag(GameObject icon);
-    public delegate void OnIconDrop(GameObject icon);
-    public static event OnIconBeginDrag OnBeginDragEvent;
-    public static event OnIconDrop OnDropEvent;
-    public void OnBeginDrag(PointerEventData eventdata)
-    {
-        OnBeginDragEvent(gameObject);
-    }
-
-    // public void OnDrop(PointerEventData data)
-    // {
-    //     OnDropEvent(data);
-    // }
-
-    // For some reason the eventdata gives the pointer position
-    // which i guess makes sense since it is the eventsystem 
-    // that is handling the drag for the mouse not the draggable 
-    // gameobject.
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        OnDropEvent(gameObject);
-    }
+   
     /// <summary>
     /// Makes the icon draggable.
     /// </summary>

@@ -8,12 +8,15 @@ using UnityEngine.EventSystems;
 public class DesktopManager : MonoBehaviour
 {
     TextIconInventory Instance;
-    List<TextIconInventorySlot> _slots;
+    List<TextIconInventorySlot> _Slots;
     Vector3 _StartPosition;
+    TextIcon _SelectedIcon;
+    public Camera _Camera;
+    public Canvas _Canvas;
+    public RectTransform _CanvasRectTransform;
     void Awake()
     {
-        TextIconInventorySlot.OnBeginDragEvent += OnBeginDragEvent;
-        TextIconInventorySlot.OnDropEvent += OnDropEvent;
+        DragUI.OnBeginDragEvent += OnBeginDragEvent;
         TextIconInventorySlot.OnDoubleClickEvent += OnDoubleClickEvent;
         TextIconInventorySlot.OnSetSlotEvent += OnSetSlotEvent;
         TextIconInventorySlot.OnRemoveSlotEvent += OnRemoveSlotEvent;
@@ -21,9 +24,9 @@ public class DesktopManager : MonoBehaviour
     void Start()
     {
         this.Instance = (TextIconInventory) TextIconInventory.Instance;
-        _slots = new List<TextIconInventorySlot>();
-        _slots.AddRange(TextIconInventorySlot.FindObjectsOfType<TextIconInventorySlot>());
-        _slots.Sort((a, b) => a.index - b.index);
+        _Slots = new List<TextIconInventorySlot>();
+        _Slots.AddRange(TextIconInventorySlot.FindObjectsOfType<TextIconInventorySlot>());
+        _Slots.Sort((a, b) => a.index - b.index);
         PopulateInitial();
     }
 
@@ -37,8 +40,8 @@ public class DesktopManager : MonoBehaviour
             TextIcon instance = null;
             // If an object exists at the specified location.
             if (this.Instance.GetIcon(i, out instance)) {
-                Debug.Log($"Found icon at {instance}");
-                _slots[i].SetSlot(instance);
+                // Debug.Log($"Found icon at {instance}");
+                _Slots[i].SetSlot(instance);
             }
         }
     }
@@ -53,7 +56,7 @@ public class DesktopManager : MonoBehaviour
             TextIcon instance = null;
             // If an object exists at the specified location.
             if (this.Instance.GetIcon(i, out instance)) {
-                _slots[i].RemoveSlot(instance);
+                _Slots[i].RemoveSlot(instance);
             }
         }
     }
@@ -74,51 +77,67 @@ public class DesktopManager : MonoBehaviour
     /// Opens the inventory.
     /// </summary>
     /// <param name="textIcon">The icon that was clicked.</param>
-    public void OnDoubleClickEvent(PointerEventData eventData)
+    public void OnDoubleClickEvent(TextIcon instance)
     {
-        TextIcon instance = eventData.selectedObject.GetComponent<TextIcon>();
-        //WindowJsonEditor, WindowLuaEditor
+        // get the index of the ico nwith the start position variable then get the icon with
+        // inventory instance
         string windowType = $"Window{instance.textType.ToString()}Editor";
         Debug.Log(windowType);
         GameObject window = Instantiate(Resources.Load($"Computer/Window/{windowType}") as GameObject, transform.parent);
         
         window.GetComponent<WindowMaker>().CreateWindow(instance);
-
+        WindowDragUI du = window.GetComponent<WindowDragUI>();
+        du._GameObjectRectTransform =  window.GetComponent<RectTransform>();
+        du._Canvas = _Canvas;
+        du._CanvasRectTransform = _CanvasRectTransform;
+        du._Camera = _Camera;
+    
         window.transform.SetParent(transform.parent);
     }
 
-    void OnBeginDragEvent(PointerEventData eventData){
-        _StartPosition = transform.position;
+    void OnBeginDragEvent(GameObject startingObject){
+        if(!startingObject.name.Contains("Icon"))
+            return;
+        _StartPosition = startingObject.transform.position;
+        this.Instance.GetIcon(startingObject.GetComponentInParent<TextIconInventorySlot>().index, out _SelectedIcon);
+        DragUI.OnDropEvent += OnDropEvent;
     }
 
-    void OnDropEvent(PointerEventData eventData){
-        TextIcon textIcon = null;
+    void OnDropEvent(GameObject draggedObject){
+        TextIcon instance;
+        this.Instance.GetIcon(draggedObject.GetComponentInParent<TextIconInventorySlot>().index, out instance);
+        if(!instance.Equals(_SelectedIcon))
+            return;
         // Debug.Log(_GameObject.transform.position);
         // Make the X and Y position of the icon snap to the center of the slot.
-        int x = (10 + Mathf.RoundToInt(eventData.position.x / .4f));
-        int y = ( 8 - Mathf.RoundToInt(eventData.position.y / .4f));
-        int slotindex = (y * 8) + x;
-        Debug.Log($"{eventData.position.x}, {eventData.position.y}\n{x}, {y} = {slotindex}");
-        // this.Instance.GetIcon(slotindex, out textIcon);
-        // if(this.Instance.InsertIcon(slotindex,textIcon) != -1)
-        // {
-        //     _slots[slotindex].PhysicalRepresentation.transform.position = new Vector3(x * .4f, y * .4f, 0);
-        //     // Remove the icon from the slot.
-        //     this.Instance.RemoveIcon(slotindex);
-        //     SaveManager<TextIcon>.SaveInventory();
-        //     SaveManager<TextIcon>.LoadOrInitializeInventory();
+        int x = Mathf.Clamp(13 + Mathf.RoundToInt(draggedObject.transform.position.x / 0.3f), 0, 9);
+        int y = Mathf.Clamp(10 - Mathf.RoundToInt(draggedObject.transform.position.y / 0.3f), 0, 4);
 
-        //     Refresh();
-        // }
-        // else
-        // {
-        //     Debug.Log("Failed to insert Icon");
-        //     _slots[slotindex].PhysicalRepresentation.transform.position = _StartPosition;
-        // }
+        int slotindex = ((int)y * 10) + x;
+        // Debug.Log($"{draggedObject.transform.position.x}, {draggedObject.transform.position.y}\n{x}, {y} = {slotindex}");
+        TextIcon textIcon = null;
+        this.Instance.GetIcon(slotindex, out textIcon);
+        if(this.Instance.InsertIcon(slotindex,textIcon) != -1)
+        {
+            _Slots[slotindex].PhysicalRepresentation.transform.position = new Vector3(x * .3f, y * .4f, 0);
+            // Remove the icon from the slot.
+            this.Instance.RemoveIcon(slotindex);
+            SaveManager<TextIcon>.SaveInventory();
+            SaveManager<TextIcon>.LoadOrInitializeInventory();
+
+            Refresh();
+        }
+        else
+        {
+            Debug.Log("Failed to insert Icon");
+            _Slots[slotindex].PhysicalRepresentation.transform.position = _StartPosition;
+        }
+        
+        DragUI.OnDropEvent -= OnDropEvent;
     }
-    void OnRemoveSlotEvent(TextIcon textIcon){
+    void OnRemoveSlotEvent(TextIcon instance){
     }
-    void OnSetSlotEvent(TextIcon textIcon){
+    void OnSetSlotEvent(TextIcon instance){
     }
     /// <summary>
     /// Saves the inventory on quit.

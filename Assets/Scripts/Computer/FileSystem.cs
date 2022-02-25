@@ -5,7 +5,7 @@ namespace FileSystem
 {
     public static class File
     {
-        public static bool WriteFile(string filename, string fileData, string fileTag)
+        public static bool WriteFile(string filename, string fileData)
         {
             try{
                 string path = $"{Application.persistentDataPath}/ingamefiles/{filename}";

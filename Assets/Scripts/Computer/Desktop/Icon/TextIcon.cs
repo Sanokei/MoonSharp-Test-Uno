@@ -12,7 +12,6 @@ using FileSystem;
 public class TextIcon : Icon {
     public enum TextType { Json, Lua, txt }
     public TextType textType;
-    private string fileData;
     public string FileData {
         get {
             // cant return fileData directly, because 
@@ -21,8 +20,7 @@ public class TextIcon : Icon {
             return FileSystem.File.ReadFile(name, textType.ToString());
         }
         set {
-            fileData = value;
-            FileSystem.File.WriteFile(name, value, textType.ToString());
+            FileSystem.File.WriteFile(name, value);
         }
     }
 }
