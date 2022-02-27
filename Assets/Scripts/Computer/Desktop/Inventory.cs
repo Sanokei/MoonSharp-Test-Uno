@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Runtime.Serialization;
 
 // So i made it generic, so it can be used for any type of icon.
 // to do that i made it inheritable by specific Inventory types which will fill in the generic type.
@@ -20,13 +21,15 @@ using UnityEngine;
     // JsonUtility.FromJsonOverwrite(stringJson, scriptableObject);
     // JsonUtility.ToJson(scriptableObject);
     // --END_DONE--
-public class Inventory<T> : ScriptableObject
+[CreateAssetMenu(menuName = "Icon/Inventory", fileName = "Inventory.asset")]
+[DataContract(Name = "Inventory")]
+public class Inventory : ScriptableObject, IIcon
 {
     public bool useAsDefault = false;
-    public static Inventory<T> Instance {
+    public static Inventory Instance {
         get {
-            Inventory<T>[] tmp = Resources.FindObjectsOfTypeAll<Inventory<T>>();
-            foreach (Inventory<T> ins in tmp) {
+            Inventory[] tmp = Resources.FindObjectsOfTypeAll<Inventory>();
+            foreach (Inventory ins in tmp) {
                 if(ins.useAsDefault) {
                     Debug.Log("Found inventory as: " + ins);
                     ins.hideFlags = HideFlags.HideAndDontSave;
@@ -35,26 +38,27 @@ public class Inventory<T> : ScriptableObject
                 }
             }
             Debug.Log("Did not find inventory, loading from file or template.");
-            return SaveManager<T>.LoadOrInitializeInventory();
+            return SaveManager<IIcon>.LoadOrInitializeInventory();
         }
     }
-    public T[] InventorySlots{
+    public IIcon[] InventorySlots{
         get{
-            return (T[])(instance.inventory);
+            return (IIcon[])(instance.inventory);
         }
         set{
             instance.inventory = value;
         }
     }
-    private static Inventory<T> instance {get; set;}
-    [SerializeField] private T[] inventory;
+    private static Inventory instance {get; set;}
+    [DataMember]
+    [SerializeField] private IIcon[] inventory;
 
     /// <summary>
     /// Reads the default file and loads it into the inventory.
     /// </summary>
-    public static Inventory<T> InitializeFromDefault() {
+    public static Inventory InitializeFromDefault() {
         Debug.Log("Loading DEFAULT Inventory from " + Application.persistentDataPath);
-        instance = Instantiate((Inventory<T>) Resources.Load("Inventory"));
+        instance = Instantiate((Inventory) Resources.Load("Inventory"));
         instance.hideFlags = HideFlags.HideAndDontSave;
         return instance;
     }
@@ -63,7 +67,7 @@ public class Inventory<T> : ScriptableObject
     /// Loads the inventory to a json file.
     /// </summary>
     /// <param name="path">The path to the json file.</param>
-    public static Inventory<T> LoadFromJSON(string path) {
+    public static Inventory LoadFromJSON(string path) {
         Debug.Log("Loading Inventory from " + path);
         // theres a really stupid bug where if the inventory is 
         // of a different type than the default
@@ -102,14 +106,14 @@ public class Inventory<T> : ScriptableObject
     /// <param name="index">The index of the icon.</param>
     /// <param name="icon">The icon to return.</param>
     /// <returns>True if the icon exists, false if it doesn't.</returns>
-    public bool GetIcon(int index, out T icon) {
+    public bool GetIcon(int index, out IIcon icon) {
         // inventory[index] doesn't return null, so check icon instead.
         if (SlotEmpty(index)) {
-            icon = default(T);
+            icon = null;
             return false;
         }
 
-        icon = (T)inventory[index];
+        icon = inventory[index];
         return true;
     }
 
@@ -124,7 +128,7 @@ public class Inventory<T> : ScriptableObject
             return false;
         }
 
-        inventory[index] = default(T);
+        inventory[index] = null;
 
         return true;
     }
@@ -134,7 +138,7 @@ public class Inventory<T> : ScriptableObject
     /// </summary>
     /// <param name="icon">The icon to insert.</param>
     /// <returns>The index where the icon was inserted. If the icon already exists, return -1.</returns>
-    public int PushIcon(T icon) {
+    public int PushIcon(IIcon icon) {
         for (int i = 0; i < inventory.Length; i++) {
             if (SlotEmpty(i)) {
                 inventory[i] = icon;
@@ -151,7 +155,7 @@ public class Inventory<T> : ScriptableObject
     /// </summary>
     /// <param name="icon">The icon to insert.</param>
     /// <returns>The index where the icon was inserted. If the icon already exists, return -1.</returns>
-    public int InsertIcon(int index, T icon){
+    public int InsertIcon(int index, IIcon icon){
         if(SlotEmpty(index)){
             inventory[index] = icon;
             return index;
@@ -160,7 +164,7 @@ public class Inventory<T> : ScriptableObject
         return -1;
     }
 
-    public int GetIndexOfIcon(T icon) {
+    public int GetIndexOfIcon(IIcon icon) {
         for (int i = 0; i < inventory.Length; i++) {
             if (inventory[i].Equals(icon)) {
                 return i;

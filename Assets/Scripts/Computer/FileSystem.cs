@@ -23,6 +23,8 @@ namespace FileSystem
         public static string ReadFile(string filename, string fileTag)
         {
             try{
+                // If moonsharp cant read the lua file use this instead
+                // {(fileTag.ToLower() == "lua" ? "txt" : fileTag)}
                 string path = $"{Application.persistentDataPath}/ingamefiles/{filename}.{fileTag}";
                 //Read the text from directly from the test.txt file
                 StreamReader reader = new StreamReader(path);

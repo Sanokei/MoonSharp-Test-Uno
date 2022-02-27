@@ -9,7 +9,8 @@ using FileSystem;
 //requireComponent:
 [System.Serializable]
 [CreateAssetMenu(menuName = "Icon/Text", fileName = "TextName.asset")]
-public class TextIcon : Icon {
+public class TextIcon : Icon, IIcon
+{
     public enum TextType { Json, Lua, txt }
     public TextType textType;
     public string FileData {

@@ -7,10 +7,10 @@ using UnityEngine.EventSystems;
 // TODO: this could be static and just be a singleton.
 public class DesktopManager : MonoBehaviour
 {
-    TextIconInventory Instance;
+    Inventory Instance;
     List<TextIconInventorySlot> _Slots;
     Vector3 _StartPosition;
-    TextIcon _SelectedIcon;
+    IIcon _SelectedIcon;
     public Camera _Camera;
     public Canvas _Canvas;
     public RectTransform _CanvasRectTransform;
@@ -23,7 +23,7 @@ public class DesktopManager : MonoBehaviour
     }
     void Start()
     {
-        this.Instance = (TextIconInventory) TextIconInventory.Instance;
+        this.Instance = Inventory.Instance;
         _Slots = new List<TextIconInventorySlot>();
         _Slots.AddRange(TextIconInventorySlot.FindObjectsOfType<TextIconInventorySlot>());
         _Slots.Sort((a, b) => a.index - b.index);
@@ -35,13 +35,18 @@ public class DesktopManager : MonoBehaviour
     /// </summary>
     public void PopulateInitial()
     {
+        if(this.Instance.InventorySlots == null || this.Instance.InventorySlots.Length == 0)
+        {
+            this.Instance.InventorySlots = new IIcon[32];
+        }
         for (int i = 0; i < this.Instance.InventorySlots.Length; i++) 
         {
-            TextIcon instance = null;
+            IIcon instance = null;
             // If an object exists at the specified location.
             if (this.Instance.GetIcon(i, out instance)) {
                 // Debug.Log($"Found icon at {instance}");
-                _Slots[i].SetSlot(instance);
+                if(instance is TextIcon)
+                    _Slots[i].SetSlot((TextIcon)instance);
             }
         }
     }
@@ -53,10 +58,11 @@ public class DesktopManager : MonoBehaviour
     {
         for (int i = 0; i < this.Instance.InventorySlots.Length; i++) 
         {
-            TextIcon instance = null;
+            IIcon instance = null;
             // If an object exists at the specified location.
             if (this.Instance.GetIcon(i, out instance)) {
-                _Slots[i].RemoveSlot(instance);
+                if(instance is TextIcon)
+                    _Slots[i].RemoveSlot((TextIcon)instance);
             }
         }
     }
@@ -77,22 +83,26 @@ public class DesktopManager : MonoBehaviour
     /// Opens the inventory.
     /// </summary>
     /// <param name="textIcon">The icon that was clicked.</param>
-    public void OnDoubleClickEvent(TextIcon instance)
+    public void OnDoubleClickEvent(IIcon instance)
     {
         // get the index of the ico nwith the start position variable then get the icon with
         // inventory instance
-        string windowType = $"Window{instance.textType.ToString()}Editor";
-        Debug.Log(windowType);
-        GameObject window = Instantiate(Resources.Load($"Computer/Window/{windowType}") as GameObject, transform.parent);
+        if(instance is TextIcon)
+        {
+            TextIcon textIcon = (TextIcon)instance;
+            string windowType = $"Window{textIcon.textType.ToString()}Editor";
+            Debug.Log(windowType);
+            GameObject window = Instantiate(Resources.Load($"Computer/Window/{windowType}") as GameObject, transform.parent);
+            
+            window.GetComponent<WindowMaker>().CreateWindow(textIcon);
+            WindowDragUI du = window.GetComponent<WindowDragUI>();
+            du._GameObjectRectTransform =  window.GetComponent<RectTransform>();
+            du._Canvas = _Canvas;
+            du._CanvasRectTransform = _CanvasRectTransform;
+            du._Camera = _Camera;
         
-        window.GetComponent<WindowMaker>().CreateWindow(instance);
-        WindowDragUI du = window.GetComponent<WindowDragUI>();
-        du._GameObjectRectTransform =  window.GetComponent<RectTransform>();
-        du._Canvas = _Canvas;
-        du._CanvasRectTransform = _CanvasRectTransform;
-        du._Camera = _Camera;
-    
-        window.transform.SetParent(transform.parent);
+            window.transform.SetParent(transform.parent);
+        }
     }
 
     void OnBeginDragEvent(GameObject startingObject){
@@ -104,7 +114,7 @@ public class DesktopManager : MonoBehaviour
     }
 
     void OnDropEvent(GameObject draggedObject){
-        TextIcon instance;
+        IIcon instance;
         this.Instance.GetIcon(draggedObject.GetComponentInParent<TextIconInventorySlot>().index, out instance);
         if(!instance.Equals(_SelectedIcon))
             return;
@@ -115,15 +125,15 @@ public class DesktopManager : MonoBehaviour
 
         int slotindex = ((int)y * 10) + x;
         // Debug.Log($"{draggedObject.transform.position.x}, {draggedObject.transform.position.y}\n{x}, {y} = {slotindex}");
-        TextIcon textIcon = null;
+        IIcon textIcon = null;
         this.Instance.GetIcon(slotindex, out textIcon);
         if(this.Instance.InsertIcon(slotindex,textIcon) != -1)
         {
             _Slots[slotindex].PhysicalRepresentation.transform.position = new Vector3(x * .3f, y * .4f, 0);
             // Remove the icon from the slot.
             this.Instance.RemoveIcon(slotindex);
-            SaveManager<TextIcon>.SaveInventory();
-            SaveManager<TextIcon>.LoadOrInitializeInventory();
+            SaveManager<IIcon>.SaveInventory();
+            SaveManager<IIcon>.LoadOrInitializeInventory();
 
             Refresh();
         }
@@ -135,16 +145,17 @@ public class DesktopManager : MonoBehaviour
         
         DragUI.OnDropEvent -= OnDropEvent;
     }
-    void OnRemoveSlotEvent(TextIcon instance){
+    void OnRemoveSlotEvent(IIcon instance){
     }
-    void OnSetSlotEvent(TextIcon instance){
+    void OnSetSlotEvent(IIcon instance){
     }
+    
     /// <summary>
     /// Saves the inventory on quit.
     /// </summary>
     void OnApplicationQuit()
     {
         // Save the inventory.
-        SaveManager<TextIcon>.SaveInventory();
+        SaveManager<IIcon>.SaveInventory();
     }
 }

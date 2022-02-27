@@ -16,16 +16,16 @@ public class SaveManager<T>
     /// Loads the specified json file.
     /// if the file doesnt exist, it will create a new one.
     /// </summary>
-    public static Inventory<T> LoadOrInitializeInventory() 
+    public static Inventory LoadOrInitializeInventory() 
     {
         // Saving and loading.
         if (File.Exists(Path.Combine(Application.persistentDataPath, "inventory.json")))
         {
-            return Inventory<T>.LoadFromJSON(Path.Combine(Application.persistentDataPath, "inventory.json"));
+            return Inventory.LoadFromJSON(Path.Combine(Application.persistentDataPath, "inventory.json"));
         } 
         else 
         {
-            return Inventory<T>.InitializeFromDefault();
+            return Inventory.InitializeFromDefault();
         }
     }
 
@@ -34,13 +34,13 @@ public class SaveManager<T>
     /// </summary>
     public static void SaveInventory() 
     {
-        Inventory<T>.Instance.SaveToJSON(Path.Combine(Application.persistentDataPath, "inventory.json"));
+        Inventory.Instance.SaveToJSON(Path.Combine(Application.persistentDataPath, "inventory.json"));
     }
 
 
     // Load from the default, for situations where we just want to reset.
     public static void LoadFromTemplate() 
     {
-        Inventory<T>.InitializeFromDefault();
+        Inventory.InitializeFromDefault();
     }
 }

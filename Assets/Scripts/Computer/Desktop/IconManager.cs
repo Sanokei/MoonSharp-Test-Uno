@@ -4,10 +4,9 @@ using UnityEngine.EventSystems;
 [System.Serializable]
 public abstract class IconManager<T> : MonoBehaviour
 {
-    public delegate void OnDoubleClick(T icon);
-    public delegate void  OnSetSlot(T icon);
-    public delegate void OnRemoveSlot(T icon);
-
+    public delegate void  OnSetSlot(IIcon icon);
+    public delegate void OnRemoveSlot(IIcon icon);
+    public delegate void OnDoubleClick(IIcon icon);
     // OnDrop only tests if the mouse is over the canvas.
     // public void OnDrop(PointerEventData data)
     // {

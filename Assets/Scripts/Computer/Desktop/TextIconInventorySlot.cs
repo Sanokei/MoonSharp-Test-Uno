@@ -20,8 +20,6 @@ public class TextIconInventorySlot : InventorySlot<TextIcon>, IPointerClickHandl
     public override void RemoveSlot(TextIcon icon)
     {
         PhysicalRepresentation.SetActive(false);
-        textObject.text = $"filename.{icon.textType.ToString()}";
-        imageObject.sprite = null;
         OnRemoveSlotEvent(icon);
     }
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
@@ -29,8 +27,8 @@ public class TextIconInventorySlot : InventorySlot<TextIcon>, IPointerClickHandl
         if (eventData.clickCount == 2)
         {
             Debug.Log("Double Click");
-            TextIcon icon = null;
-            Inventory<TextIcon>.Instance.GetIcon(index, out icon);
+            IIcon icon = null;
+            Inventory.Instance.GetIcon(index, out icon);
             OnDoubleClickEvent(icon);
         }
     }

@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using FileSystem;
 using TMPro;
 using InGameCodeEditor;
 
