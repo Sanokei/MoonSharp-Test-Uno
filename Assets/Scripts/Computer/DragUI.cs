@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 // why isnt this a IDraggable interface? idk either...
-public class DragUI : MonoBehaviour, IDragHandler
+public class DragUI : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     public Camera _Camera;
     public RectTransform _GameObjectRectTransform;

@@ -7,8 +7,8 @@ using FileSystem;
 /// A variant of the Icon ScriptableObject that is used to represent a file.
 /// </summary>
 //requireComponent:
+[CreateAssetMenu(menuName = "Icons/Text", fileName = "TextName.asset")]
 [System.Serializable]
-[CreateAssetMenu(menuName = "Icon/Text", fileName = "TextName.asset")]
 public class TextIcon : Icon {
     public enum TextType { Json, Lua, txt }
     public TextType textType;

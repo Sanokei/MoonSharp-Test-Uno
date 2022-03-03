@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2845060210695032944}
   - component: {fileID: 2845060210695033231}
   - component: {fileID: 412918233934594428}
-  - component: {fileID: 5511662121152878106}
+  - component: {fileID: 4235564768343515651}
   m_Layer: 5
   m_Name: WindowTxtEditor
   m_TagString: Untagged
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   codeEditor: {fileID: 4852966584659260153}
   text: {fileID: 2845060210726900541}
---- !u!114 &5511662121152878106
+--- !u!114 &4235564768343515651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2845060210695033229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6636e39487e6d8540bff8f4605766198, type: 3}
+  m_Script: {fileID: 11500000, guid: ea271f19401b7b848bade440618922ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Camera: {fileID: 0}
