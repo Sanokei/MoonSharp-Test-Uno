@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   codeEditor: {fileID: 4852966584659260153}
   text: {fileID: 2845060210726900541}
+  dragUI: {fileID: 0}
 --- !u!114 &7471043418613729131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +111,7 @@ MonoBehaviour:
   _GameObjectRectTransform: {fileID: 2845060210695033230}
   _Canvas: {fileID: 0}
   _CanvasRectTransform: {fileID: 0}
+  self: {fileID: 0}
 --- !u!1 &2845060210726900539
 GameObject:
   m_ObjectHideFlags: 0

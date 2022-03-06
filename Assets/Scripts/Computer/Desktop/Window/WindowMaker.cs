@@ -6,10 +6,19 @@ using TMPro;
 
 public class WindowMaker : MonoBehaviour
 {
-    [SerializeField] CodeEditor codeEditor;
-    [SerializeField] TextMeshProUGUI text;
+    void Start()
+    {
+        Eyes.DeactivateInputFieldEvent += DeactivateInputField;
+    }
+    public CodeEditor codeEditor;
+    public TextMeshProUGUI text;
+    public DragUI dragUI;
+    public TMP_InputField inputField;
     public void CreateWindow(TextIcon textIcon){
         codeEditor.Text = textIcon.FileData;
         text.text = $"{textIcon.name}.{textIcon.textType.ToString()}";
+    }
+    void DeactivateInputField(){
+        inputField.DeactivateInputField();
     }
 }

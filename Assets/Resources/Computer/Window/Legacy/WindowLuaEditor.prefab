@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2845060210695033230}
   - component: {fileID: 2845060210695032944}
   - component: {fileID: 2845060210695033231}
-  - component: {fileID: 412918233934594428}
-  - component: {fileID: 4235564768343515651}
+  - component: {fileID: 3038316133674241417}
+  - component: {fileID: 84128376812879804}
   m_Layer: 5
-  m_Name: WindowTxtEditor
+  m_Name: WindowLuaEditor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &412918233934594428
+--- !u!114 &3038316133674241417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   codeEditor: {fileID: 4852966584659260153}
   text: {fileID: 2845060210726900541}
---- !u!114 &4235564768343515651
+  dragUI: {fileID: 0}
+  inputField: {fileID: 0}
+--- !u!114 &84128376812879804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,7 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: filename.txt
+  m_text: filename.lua
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -438,7 +440,7 @@ GameObject:
   - component: {fileID: 2845060212190608654}
   - component: {fileID: 2845060212190608880}
   - component: {fileID: 2845060212190608655}
-  - component: {fileID: 2984010956538543729}
+  - component: {fileID: 9166555260775250186}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -503,7 +505,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2984010956538543729
+--- !u!114 &9166555260775250186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1004,8 +1006,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3, y: -1}
-  m_SizeDelta: {x: -34, y: 2}
+  m_AnchoredPosition: {x: -6.5, y: -1}
+  m_SizeDelta: {x: -15, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4744845383396375829
 CanvasRenderer:
@@ -1214,7 +1216,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 35, y: 0}
+  m_SizeDelta: {x: 16, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &4744693375690173941
 CanvasRenderer:
@@ -1540,7 +1542,6 @@ GameObject:
   - component: {fileID: 4745160124605114267}
   - component: {fileID: 4853254574672624039}
   - component: {fileID: 4852966584659260153}
-  - component: {fileID: 4812853407598752566}
   m_Layer: 5
   m_Name: InGameCodeEditor
   m_TagString: Untagged
@@ -1615,22 +1616,10 @@ MonoBehaviour:
   lineNumberBackground: {fileID: 4853314660688024023}
   scrollbar: {fileID: 4853538782374538135}
   editorTheme: {fileID: 11400000, guid: cc00b7a428afd6a4bb470014b4f75320, type: 2}
-  languageTheme: {fileID: 11400000, guid: c6f1f6a6ee109b349b4d4ef9e68fc431, type: 2}
+  languageTheme: {fileID: 11400000, guid: a201704c3fb02f2468dfcc546f553552, type: 2}
   lineNumbers: 1
-  lineNumbersSize: 20
+  lineNumbersSize: 1
   applyLineOffsetFix: 0
---- !u!114 &4812853407598752566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4812853407598752565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da80c7212d008834fbe4f0375a9cd1a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4812880212291994871
 GameObject:
   m_ObjectHideFlags: 0

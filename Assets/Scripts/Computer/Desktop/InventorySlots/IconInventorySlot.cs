@@ -8,7 +8,7 @@ using System;
 
 public class IconInventorySlot : InventorySlot<Icon>, IPointerClickHandler
 {
-    public delegate void OnDoubleClick(int index);
+    public delegate void OnDoubleClick(IconInventorySlot slot);
     public static event OnDoubleClick OnDoubleClickEvent;
     void Awake()
     {
@@ -23,6 +23,7 @@ public class IconInventorySlot : InventorySlot<Icon>, IPointerClickHandler
     
     public override void RemoveSlot(Icon icon)
     {
+        PhysicalRepresentation.transform.localPosition = Vector2.zero;
         PhysicalRepresentation.SetActive(false);
         imageObject.sprite = null;
     }
@@ -30,7 +31,7 @@ public class IconInventorySlot : InventorySlot<Icon>, IPointerClickHandler
     {
         if (eventData.clickCount == 2)
         {
-            OnDoubleClickEvent(index);
+            OnDoubleClickEvent(this);
         }
     }
 }

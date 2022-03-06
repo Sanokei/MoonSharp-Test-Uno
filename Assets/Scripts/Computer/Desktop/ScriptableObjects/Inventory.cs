@@ -72,9 +72,8 @@ public class Inventory : ScriptableObject
     /// <param name="index">The index of the slot to check.</param>
     /// <returns>True if the slot is empty, false if it is not.</returns>
     public bool SlotEmpty(int index) {
-        if (inventory[index] == null || inventory[index] == null)
+        if (inventory[index] == null)
             return true;
-
         return false;
     }
 
@@ -91,7 +90,7 @@ public class Inventory : ScriptableObject
             return false;
         }
 
-        icon = (Icon)inventory[index];
+        icon = inventory[index];
         return true;
     }
 
