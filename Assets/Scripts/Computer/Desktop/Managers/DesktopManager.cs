@@ -94,22 +94,26 @@ public class DesktopManager : MonoBehaviour
     {
         Icon icon;
         DesktopInventory.GetIcon(_StartPosition.index,out icon);
+
+        // If the slot is empty insert it and remove the icon from the start position.
         if(DesktopInventory.InsertIcon(index,icon) != -1)
         {
             DesktopInventory.RemoveIcon(_StartPosition.index);
             DesktopInventory.SaveInventory("DesktopInventory");
         }
-        // else if(icon is FolderIcon)
-        // {
-        //     // insert the icon into the folder, if not full
-        //     DesktopInventory.RemoveIcon(_StartPosition.index);
-        //     DesktopInventory.SaveInventory("DesktopInventory");
-        // }
+        /*<proposed feature>*/
+            // else if(icon is FolderIcon)
+            // {
+            //     // insert the icon into the folder, if not full
+            //     DesktopInventory.RemoveIcon(_StartPosition.index);
+            //     DesktopInventory.SaveInventory("DesktopInventory");
+            // }
         Refresh();
     }
 
     public void DoubleClickEvent(IconInventorySlot slot)
     {
+        // Make the classes subscribed to this event call the appropriate method if the type is correct.
         OnCreateWindowEvent(slot);
     }
     void OnApplicationQuit()

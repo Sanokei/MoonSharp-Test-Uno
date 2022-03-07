@@ -10,16 +10,22 @@ public class DragManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     public delegate void OnIconDrop(int index);
     public static event OnIconDrop OnDropEvent;
     public IconInventorySlot self;
-    public void OnBeginDrag(PointerEventData eventData)
+    public DragUI dragUI;
+    public void OnBeginDrag(PointerEventData eventdata)
     {
         OnBeginDragEvent(self);
     }
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventdata)
     {
-        int x = Mathf.Clamp(13 + Mathf.RoundToInt(gameObject.transform.position.x / 0.3f), 0, 9);
-        int y = Mathf.Clamp(10 - Mathf.RoundToInt(gameObject.transform.position.y / 0.3f), 0, 4);
-        int slotindex = ((int)y * 10) + x;
-
-        OnDropEvent(slotindex);
+        Vector2 pos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(dragUI._Canvas.transform as RectTransform, eventdata.position, dragUI._Camera, out pos);
+        // FixMe: this is a bad way to do this.
+        int x = Mathf.RoundToInt(((pos.x * 10) + 6)/.3f);
+        int y = Mathf.RoundToInt(((pos.y * 10)/.3f) - 1);
+        // convert the pos to a slot index
+        int slotindex = (int)((y * 10) + x);
+        Debug.Log("x: " + x + " y: " + y);
+        Debug.Log("x: " + pos.x + " y: " + pos.y + " slotindex: " + slotindex);
+        OnDropEvent(0);
     }
 }
