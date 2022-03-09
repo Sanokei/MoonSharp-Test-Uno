@@ -20,7 +20,7 @@ public class Eyes : MonoBehaviour
     //
     bool _computerMode = false;
     float sphereCastThickness = 1f; // The radius of the cast // sphere cast thicc asf :flushed:
-    void Start()
+    void Awake()
     {
         OnRayCastHitEvent += OnComputerModeEvent;
         OnSphereCastHitEvent += OnComputerModeEvent;

@@ -21,4 +21,5 @@ public abstract class IconManager<T> : MonoBehaviour
     /// Removes the icon from the slot.
     /// </summary>
     public abstract void RemoveSlot(T instance);
+    public abstract void CreateWindow(IconInventorySlot slot);
 }

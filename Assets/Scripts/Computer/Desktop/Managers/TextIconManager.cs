@@ -11,7 +11,7 @@ public class TextIconManager : MonoBehaviour
     public CodeLanguageTheme[] codeLanguageTheme;
     public enum languageThemeNames{json, lua, txt, cs, ms}; // Csharp and Miniscript is just for future proofing. Not actually used meaningfully.
 
-    void Start()
+    void Awake()
     {
         DesktopManager.OnSetSlotEvent += SetSlot;
         DesktopManager.OnCreateWindowEvent += CreateWindow;

@@ -246,7 +246,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1035571 stripped
 RectTransform:
@@ -476,7 +477,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &9032402 stripped
 RectTransform:
@@ -762,7 +764,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &42130453 stripped
 RectTransform:
@@ -944,7 +947,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &44223060 stripped
 RectTransform:
@@ -1221,7 +1225,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &71725946 stripped
 RectTransform:
@@ -1602,7 +1607,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &139923603 stripped
 RectTransform:
@@ -1973,7 +1979,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &188870079 stripped
 RectTransform:
@@ -2345,7 +2352,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &224140744 stripped
 RectTransform:
@@ -2778,7 +2786,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &322737804 stripped
 RectTransform:
@@ -2960,7 +2969,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &330765587 stripped
 RectTransform:
@@ -3190,7 +3200,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &343146349 stripped
 RectTransform:
@@ -3372,7 +3383,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &365750702 stripped
 RectTransform:
@@ -3635,7 +3647,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &399567198 stripped
 RectTransform:
@@ -3817,7 +3830,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &410390067 stripped
 RectTransform:
@@ -4745,7 +4759,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &609897589 stripped
 RectTransform:
@@ -5166,7 +5181,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &664979809 stripped
 RectTransform:
@@ -5348,7 +5364,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &696013423 stripped
 RectTransform:
@@ -5530,7 +5547,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &703553417 stripped
 RectTransform:
@@ -5861,7 +5879,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &739446570 stripped
 RectTransform:
@@ -6075,7 +6094,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &742972985 stripped
 RectTransform:
@@ -6352,7 +6372,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &747928233 stripped
 RectTransform:
@@ -6867,7 +6888,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &794924726 stripped
 RectTransform:
@@ -7145,7 +7167,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &812997431 stripped
 RectTransform:
@@ -7327,7 +7350,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &818333745 stripped
 RectTransform:
@@ -7671,7 +7695,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &867416735 stripped
 RectTransform:
@@ -8236,7 +8261,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &949602458 stripped
 RectTransform:
@@ -8418,7 +8444,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &952009653 stripped
 RectTransform:
@@ -8761,7 +8788,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &989483868 stripped
 RectTransform:
@@ -9644,7 +9672,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1171083222 stripped
 RectTransform:
@@ -9826,7 +9855,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1173819446 stripped
 RectTransform:
@@ -10008,7 +10038,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1185341562 stripped
 RectTransform:
@@ -10238,7 +10269,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1205196137 stripped
 RectTransform:
@@ -10420,7 +10452,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1232390369 stripped
 RectTransform:
@@ -10454,31 +10487,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1058548086568388827, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
   m_PrefabInstance: {fileID: 1232390368}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1232390373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232390372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef82c46dd7473b4d88f3c6d8639e87e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  self: {fileID: 1619713260}
-  dragUI: {fileID: 1232390376}
---- !u!114 &1232390376 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1058548086568388821, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
-  m_PrefabInstance: {fileID: 1232390368}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232390372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea271f19401b7b848bade440618922ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1238014092
 GameObject:
   m_ObjectHideFlags: 0
@@ -10793,7 +10801,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1263890811 stripped
 RectTransform:
@@ -11437,7 +11446,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1321499728 stripped
 RectTransform:
@@ -11817,7 +11827,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1357634428 stripped
 RectTransform:
@@ -12198,7 +12209,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1417670049 stripped
 RectTransform:
@@ -12523,7 +12535,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1458172907 stripped
 RectTransform:
@@ -12753,7 +12766,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1489089000 stripped
 RectTransform:
@@ -12935,7 +12949,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1501339374 stripped
 RectTransform:
@@ -13365,7 +13380,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1589783428 stripped
 RectTransform:
@@ -13815,7 +13831,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1741968235 stripped
 RectTransform:
@@ -14340,7 +14357,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1865164274 stripped
 RectTransform:
@@ -14570,7 +14588,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1908883140 stripped
 RectTransform:
@@ -14800,7 +14819,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1923838916 stripped
 RectTransform:
@@ -15078,7 +15098,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &1996936115 stripped
 RectTransform:
@@ -15260,7 +15281,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &2000167809 stripped
 RectTransform:
@@ -15864,7 +15886,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Icon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
 --- !u!224 &2143067278 stripped
 RectTransform:

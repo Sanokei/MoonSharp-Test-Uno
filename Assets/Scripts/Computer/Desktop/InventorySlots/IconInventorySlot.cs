@@ -10,18 +10,16 @@ public class IconInventorySlot : InventorySlot<Icon>, IPointerClickHandler
 {
     public delegate void OnDoubleClick(IconInventorySlot slot);
     public static event OnDoubleClick OnDoubleClickEvent;
-    void Awake()
-    {
-        DesktopManager.OnRemoveSlotEvent += RemoveSlot;
-    }
-    public override void SetSlot(Icon icon)
+    
+    // Gets called DIRECTLY from Inventory Managers (i.e DesktopManager)
+    public void SetSlot(Icon icon)
     {
         textObject.text = $"{icon.name}";
         imageObject.sprite = icon.image;
         PhysicalRepresentation.SetActive(true);
     }
     
-    public override void RemoveSlot(Icon icon)
+    public void RemoveSlot(Icon icon)
     {
         PhysicalRepresentation.transform.localPosition = Vector2.zero;
         PhysicalRepresentation.SetActive(false);

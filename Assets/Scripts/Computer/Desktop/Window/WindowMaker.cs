@@ -6,7 +6,7 @@ using TMPro;
 
 public class WindowMaker : MonoBehaviour
 {
-    void Start()
+    void Awake()
     {
         Eyes.DeactivateInputFieldEvent += DeactivateInputField;
     }

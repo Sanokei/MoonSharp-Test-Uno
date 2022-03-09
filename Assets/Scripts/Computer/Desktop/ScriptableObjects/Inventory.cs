@@ -141,7 +141,6 @@ public class Inventory : ScriptableObject
         return -1;
     }
 
-    
     public void SaveInventory(string filename) {
         SaveToJSON(Path.Combine(Application.persistentDataPath, filename + ".json"));
     }

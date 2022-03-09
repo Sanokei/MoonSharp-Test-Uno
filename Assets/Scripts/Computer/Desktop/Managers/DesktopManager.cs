@@ -13,7 +13,7 @@ public class DesktopManager : MonoBehaviour
     private static IconInventorySlot _StartPosition;
 
     // Delegates
-    public delegate void  OnSetSlot(int index, Icon icon);
+    public delegate void OnSetSlot(int index, Icon icon);
     public static event OnSetSlot OnSetSlotEvent;
     public delegate void OnRemoveSlot(Icon icon);
     public static event OnRemoveSlot OnRemoveSlotEvent;
@@ -72,7 +72,10 @@ public class DesktopManager : MonoBehaviour
             // If an object exists at the specified location.
             DesktopInventory.GetIcon(i, out icon);
             _Slots[i].RemoveSlot(icon);
-            OnRemoveSlotEvent(icon);
+
+            // Not really useful here..
+            // if(OnRemoveSlotEvent != null)
+            //     OnRemoveSlotEvent(icon);
         }
     }
 
@@ -90,15 +93,19 @@ public class DesktopManager : MonoBehaviour
     {
         _StartPosition = slot;
     }
-    void OnDrop(int index)
+    void OnDrop(PointerEventData eventdata, IconInventorySlot iconInventorySlot)
     {
         Icon icon;
-        DesktopInventory.GetIcon(_StartPosition.index,out icon);
+        IconInventorySlot slot = eventdata.lastPress.gameObject.GetComponent<IconInventorySlot>();
+        if(slot == null)
+            return;
+
+        DesktopInventory.GetIcon(slot.index,out icon);
 
         // If the slot is empty insert it and remove the icon from the start position.
-        if(DesktopInventory.InsertIcon(index,icon) != -1)
+        if(DesktopInventory.InsertIcon(slot.index,icon) != -1)
         {
-            DesktopInventory.RemoveIcon(_StartPosition.index);
+            DesktopInventory.RemoveIcon(iconInventorySlot.index);
             DesktopInventory.SaveInventory("DesktopInventory");
         }
         /*<proposed feature>*/
@@ -114,7 +121,8 @@ public class DesktopManager : MonoBehaviour
     public void DoubleClickEvent(IconInventorySlot slot)
     {
         // Make the classes subscribed to this event call the appropriate method if the type is correct.
-        OnCreateWindowEvent(slot);
+        if(OnCreateWindowEvent != null)
+            OnCreateWindowEvent(slot);
     }
     void OnApplicationQuit()
     {
