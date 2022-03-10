@@ -13,17 +13,7 @@ public class TextIconManager : MonoBehaviour
 
     void Awake()
     {
-        DesktopManager.OnSetSlotEvent += SetSlot;
-        DesktopManager.OnCreateWindowEvent += CreateWindow;
-    }
-
-    // 
-    void SetSlot(int index, Icon icon)
-    {
-        if(icon is TextIcon textIcon)
-        {
-            DesktopManager._Slots[index].textObject.text += $".{textIcon.textType.ToString()}";
-        }
+        InventoryPhysical.OnCreateWindowEvent += CreateWindow;
     }
 
     // Fixed by making it a coroutine.
@@ -33,12 +23,10 @@ public class TextIconManager : MonoBehaviour
     /// Opens the inventory.
     /// </summary>
     /// <param name="slot">The icon slot that was clicked.</param>
-    public void CreateWindow(IconInventorySlot slot)
+    public void CreateWindow(Icon icon, IconInventorySlot slot)
     {
-        Icon icon;
-        if(DesktopManager.DesktopInventory.GetIcon(slot.index, out icon))
-            if(icon is TextIcon textIcon)
-                StartCoroutine((IEnumerator)CreateWindowRoutine(slot, textIcon));
+        if(icon is TextIcon textIcon)
+            StartCoroutine((IEnumerator)CreateWindowRoutine(slot, textIcon));
     }
     private IEnumerator CreateWindowRoutine(IconInventorySlot slot, TextIcon textIcon)
     {

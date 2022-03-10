@@ -23,7 +23,7 @@ using System.IO;
         // JsonUtility.FromJsonOverwrite(stringJson, scriptableObject);
         // JsonUtility.ToJson(scriptableObject);
         // --END_DONE--
-[CreateAssetMenu(menuName = "Inventory", fileName = "Inventory.asset")]
+[CreateAssetMenu(menuName = "Inventory/Inventory", fileName = "Inventory.asset")]
 [System.Serializable]
 public class Inventory : ScriptableObject
 {

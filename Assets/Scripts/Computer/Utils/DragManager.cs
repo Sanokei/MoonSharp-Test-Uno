@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class DragManager : MonoBehaviour, IBeginDragHandler, IPointerClickHandler, IEndDragHandler
+{
+    public delegate void OnIconBeginDrag(IconInventorySlot iconInventorySlot);
+    public static event OnIconBeginDrag OnBeginDragEvent;
+    public delegate void OnDoubleClick(IconInventorySlot slot);
+    public static event OnDoubleClick OnDoubleClickEvent;
+    public delegate void OnEndDragged(Vector3 position);
+    public static event OnEndDragged OnEndDraggedEvent;
+    public delegate void OnIconDrop(IconInventorySlot iconInventorySlot);
+    public static event OnIconDrop OnDropEvent;
+    public IconInventorySlot self;
+    public DragUI dragUI;
+    public void OnBeginDrag(PointerEventData eventdata)
+    {
+        if(OnBeginDragEvent != null)
+            OnBeginDragEvent(self);
+    }
+    public void OnEndDrag(PointerEventData eventdata)
+    {
+        OnEndDraggedEvent(eventdata.pointerDrag.transform.localPosition);
+        OnDropEvent(self);
+    }
+    void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.clickCount == 2)
+        {
+            OnDoubleClickEvent(self);
+        }
+    }
+}
