@@ -28,15 +28,10 @@ using System.IO;
 public class Inventory : ScriptableObject
 {
     public Icon[] inventory;
-
-    public static Inventory _instance;
+    private static Inventory _instance;
     public static Inventory Instance(string filename)
     {
-        if (_instance == null)
-        {
-            _instance = ScriptableObject.CreateInstance<Inventory>();
-            Inventory.LoadInventory(filename, out _instance);
-        }
+        _instance = _instance ?? LoadInventory(filename); 
         return _instance;
     }
 
@@ -144,7 +139,7 @@ public class Inventory : ScriptableObject
     public void SaveInventory(string filename) {
         SaveToJSON(Path.Combine(Application.persistentDataPath, filename + ".json"));
     }
-    public static void LoadInventory(string filename, out Inventory inventory)
+    public static Inventory LoadInventory(string filename)
     {
         if (File.Exists(Path.Combine(Application.persistentDataPath, (filename + ".json"))))
             {
@@ -163,6 +158,6 @@ public class Inventory : ScriptableObject
                     Debug.LogAssertion("No inventory file found." + e.Message);
                 }
             }
-        inventory = _instance;
+        return _instance;
     }
 }

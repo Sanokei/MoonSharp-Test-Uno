@@ -17,19 +17,18 @@ public class DragManager : MonoBehaviour, IBeginDragHandler, IPointerClickHandle
     public DragUI dragUI;
     public void OnBeginDrag(PointerEventData eventdata)
     {
-        if(OnBeginDragEvent != null)
-            OnBeginDragEvent(self);
+        OnBeginDragEvent?.Invoke(self);
     }
     public void OnEndDrag(PointerEventData eventdata)
     {
         OnEndDraggedEvent(eventdata.pointerDrag.transform.localPosition);
-        OnDropEvent(self);
+        OnDropEvent?.Invoke(self);
     }
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
         if (eventData.clickCount == 2)
         {
-            OnDoubleClickEvent(self);
+            OnDoubleClickEvent?.Invoke(self);
         }
     }
 }

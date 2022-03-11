@@ -1,11 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.IO;
 
-// TODO: this could be static and just be a singleton.
 [CreateAssetMenu(menuName = "Inventory/Physical", fileName = "InventoryPhysical.asset")]
 [System.Serializable]
 [RequireComponent(typeof(Inventory))]
@@ -20,18 +15,27 @@ public class InventoryPhysical : ScriptableObject
     public static event OnCreateWindow OnCreateWindowEvent;
     
     // Instance of the inventory Scriptable Object
-    public Inventory inventory;
+    [SerializeField] private Inventory inventory;
+
+    // public: gets used in drag manager
     [HideInInspector] public List<IconInventorySlot> iconinventorySlots;
 
     void OnEnable() // Right after Awake in execution order
     {
+        // it requires the inventory scriptable object
+        if(inventory == null) // gaurd clause
+            Debug.LogAssertion("InventoryPhysical requires an Inventory scriptable object.");
         DragManager.OnDropEvent += OnDrop;
         DragManager.OnDoubleClickEvent += DoubleClickEvent;
     }
+    void OnDisable() // Right before Destroy in execution order
+    {
+        DragManager.OnDropEvent -= OnDrop;
+        DragManager.OnDoubleClickEvent -= DoubleClickEvent;
+    }
     public void Begin()
     {
-        if(inventory == null)
-            inventory = Inventory.Instance(name);
+        inventory = inventory ?? Inventory.Instance(name);
         // iconinventorySlots.Sort((a, b) => a.index - b.index);
         PopulateInitial();
     }
@@ -48,8 +52,7 @@ public class InventoryPhysical : ScriptableObject
             if(inventory.GetIcon(i, out icon))
             {
                 iconinventorySlots[i].SetSlot(icon);
-                if(OnSetSlotEvent != null)
-                    OnSetSlotEvent(i, icon);
+                OnSetSlotEvent?.Invoke(i, icon);
             }
         }
     }
@@ -78,6 +81,8 @@ public class InventoryPhysical : ScriptableObject
     public void Refresh() 
     {
         // TODO: This is a bit of a hack.
+            // This should be some sort of "should assemble" 
+            // flag that gets called etc etc
         Clear();
         PopulateInitial();
     }
@@ -87,17 +92,31 @@ public class InventoryPhysical : ScriptableObject
         float smallestDistance = float.MaxValue;
         IconInventorySlot closestSlot = null;
         // var isnt slow, we guuchi
+        // still not gonna use it for readability sake xd
         // https://stackoverflow.com/questions/5995876/is-using-var-actually-slow-if-so-why
-        foreach (var slot in iconinventorySlots)
+        
+        foreach (IconInventorySlot slot in iconinventorySlots)
         {
-            if(slot.Equals(iconInventorySlot))
-                continue;
             if(slot.distanceToDroppedIcon < smallestDistance)
             {
                 smallestDistance = slot.distanceToDroppedIcon;
                 closestSlot = slot;
             }
         }
+        // ^
+        // FIXME: this is inefficient.
+            // This is a terrible way to do this but it works.
+            // Im getting the values and testing which one has the least distance
+            // and then setting the icon to that slot.
+            // This is so slow and dumb, but it works and I cant be bothered
+            // to make it better.
+        
+        // ----------
+
+        // means it was picked up then put back down
+        if(closestSlot.Equals(iconInventorySlot))
+            Refresh();
+
         inventory.GetIcon(iconInventorySlot.index,out icon);
 
         // If the slot is empty insert it and remove the icon from the start position.
@@ -120,10 +139,17 @@ public class InventoryPhysical : ScriptableObject
     {
         Icon icon;
         // Make the classes subscribed to this event call the appropriate method if the type is correct.
-        if(OnCreateWindowEvent != null)
-            if(inventory.GetIcon(slot.index, out icon))
-                OnCreateWindowEvent(icon, slot);
+        // if(OnCreateWindowEvent == null) return; // gaurd clause
+        if(inventory.GetIcon(slot.index, out icon))
+            OnCreateWindowEvent?.Invoke(icon, slot);
     }
+
+    // dont remember why this is needed
+    // you would think i dont need it beause every 
+    // change i make is then reflected when i save the inventory
+    // inside of the on drop event etc
+    // but i do need it or it doesnt work and i dont remember why..
+    // too bad!
     void OnApplicationQuit()
     {
         inventory.SaveInventory(name);

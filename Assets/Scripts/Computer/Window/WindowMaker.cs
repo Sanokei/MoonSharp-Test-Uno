@@ -6,9 +6,13 @@ using TMPro;
 
 public class WindowMaker : MonoBehaviour
 {
-    void Awake()
+    void OnEnable()
     {
         Eyes.DeactivateInputFieldEvent += DeactivateInputField;
+    }
+    void OnDisable()
+    {
+        Eyes.DeactivateInputFieldEvent -= DeactivateInputField;
     }
     public CodeEditor codeEditor;
     public TextMeshProUGUI text;
@@ -20,5 +24,11 @@ public class WindowMaker : MonoBehaviour
     }
     void DeactivateInputField(){
         inputField.DeactivateInputField();
+    }
+
+    public void setDragUI(Camera camera, Canvas canvas, RectTransform canvasRectTransform){
+        dragUI._Camera = camera;
+        dragUI._Canvas = canvas;
+        dragUI._CanvasRectTransform = canvasRectTransform;
     }
 }

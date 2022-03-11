@@ -17,13 +17,13 @@ public class Eyes : MonoBehaviour
     public delegate void DeactivateInputField();
     public static event DeactivateInputField DeactivateInputFieldEvent;
     
-    //
+    // FIXME: Flag variable. Bad practice.
     bool _computerMode = false;
     float sphereCastThickness = 1f; // The radius of the cast // sphere cast thicc asf :flushed:
     void Awake()
     {
-        OnRayCastHitEvent += OnComputerModeEvent;
-        OnSphereCastHitEvent += OnComputerModeEvent;
+        OnRayCastHitEvent += Co_OnComputerModeEvent;
+        OnSphereCastHitEvent += Co_OnComputerModeEvent;
     }
     void FixedUpdate()
     {
@@ -34,7 +34,7 @@ public class Eyes : MonoBehaviour
             StartCoroutine(OnSphereCastHitEvent?.Invoke(HitType.Sphere, hit));
         
     }
-    IEnumerator OnComputerModeEvent(HitType type, RaycastHit hit)
+    private IEnumerator Co_OnComputerModeEvent(HitType type, RaycastHit hit)
     {
         // Warning: You have to be looking at the computer to leave it
         // This may cause errors later on
@@ -42,7 +42,14 @@ public class Eyes : MonoBehaviour
         {
             
         }
-        if((type == HitType.Ray && (!_computerMode && Input.GetMouseButtonDown(0) && hit.transform.tag == "Computer")) || (_computerMode && Input.GetKeyDown(KeyCode.Escape)))
+        if( // yes I know this is gross but its for future readability.
+            (type == HitType.Ray && 
+            // if you not in computer mode and you are looking at the computer and click mouse 0 (Left click)
+            (!_computerMode && Input.GetMouseButtonDown(0) && hit.transform.tag == "Computer")) 
+            || // or 
+            // if you are in computer mode and you press escape
+            (_computerMode && Input.GetKeyDown(KeyCode.Escape))
+            )
         {
             Debug.Log(!_computerMode ? "Hacker Mode" : "Normal Mode");
             _computerMode = !_computerMode;
@@ -54,11 +61,11 @@ public class Eyes : MonoBehaviour
             
             // Disable the player's movement
             playerMovement.canMove = !_computerMode;
-            StartCoroutine(ChangeMouseState(_computerMode)); // I dont remember why I made this a coroutine
+            StartCoroutine(Co_ChangeMouseState(_computerMode)); // I dont remember why I made this a coroutine
         }
         yield return null;
     }
-    private IEnumerator ChangeMouseState(bool state)
+    private IEnumerator Co_ChangeMouseState(bool state)
     {
         yield return new WaitForEndOfFrame();
         Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;

@@ -16,23 +16,21 @@ public class TextIconManager : MonoBehaviour
         InventoryPhysical.OnCreateWindowEvent += CreateWindow;
     }
 
-    // Fixed by making it a coroutine.
+    // Fixed by making it a coroutine (?)
         // FIXME: All of this is super slow..
         // WARNING: This drops the FPS by a lot!!!!
-    /// <summary>
-    /// Opens the inventory.
-    /// </summary>
-    /// <param name="slot">The icon slot that was clicked.</param>
     public void CreateWindow(Icon icon, IconInventorySlot slot)
     {
         if(icon is TextIcon textIcon)
-            StartCoroutine((IEnumerator)CreateWindowRoutine(slot, textIcon));
+            StartCoroutine((IEnumerator)Co_CreateWindowRoutine(slot, textIcon));
     }
-    private IEnumerator CreateWindowRoutine(IconInventorySlot slot, TextIcon textIcon)
+    private IEnumerator Co_CreateWindowRoutine(IconInventorySlot slot, TextIcon textIcon)
     {
         // Createw Physical Representation of Window
         GameObject window = Instantiate(Resources.Load($"Computer/Window/Window_textEditor") as GameObject, transform.parent);
         
+        // FIXME: This is super slow. Dont know how I would fix it.
+
         // Get the WindowMaker
         WindowMaker wm = window.GetComponent<WindowMaker>(); // slow
         DragUI dragUI = slot.PhysicalRepresentation.GetComponent<DragUI>(); // slow
@@ -43,16 +41,14 @@ public class TextIconManager : MonoBehaviour
         // Edit Physical Representation of Window
         wm.CreateWindow(textIcon);
 
-        // DragUI
-        wm.dragUI._Camera = dragUI._Camera;
-        wm.dragUI._Canvas = dragUI._Canvas;
-        wm.dragUI._CanvasRectTransform = dragUI._CanvasRectTransform;
+        // Setting DragUI
+        wm.setDragUI(dragUI._Camera, dragUI._Canvas, dragUI._CanvasRectTransform);
         
         // Set the window's parent.
         window.transform.SetParent(transform.parent);
 
         // Change Code Editor
-        foreach(editorThemeNames name in System.Enum.GetValues(typeof(editorThemeNames))) // This may become problematic later, if I allow users to create their own theme at runtime.
+        foreach(editorThemeNames name in System.Enum.GetValues(typeof(editorThemeNames))) // TODO: This may become problematic later, if I allow users to create their own theme at runtime.
         {
             if(name.ToString().ToLower() == PlayerOptions.Instance.defaultTheme.ToString().ToLower())
             {

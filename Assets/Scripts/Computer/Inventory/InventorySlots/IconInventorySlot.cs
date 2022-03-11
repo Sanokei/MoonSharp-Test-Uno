@@ -8,9 +8,8 @@ using System;
 [System.Serializable]
 public class IconInventorySlot : InventorySlot<Icon>
 {
+    // public: used in inventory physical
     [HideInInspector] public float distanceToDroppedIcon = float.MaxValue;
-    [HideInInspector] public float smallerThan_075;
-    [HideInInspector] public float smallerThan_106;
     void Awake()
     {
         DragManager.OnEndDraggedEvent += OnEndDrag;
