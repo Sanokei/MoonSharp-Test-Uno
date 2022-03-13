@@ -1,6 +1,5 @@
-# Programmed Dystopia
- Programmed Dystopia is a game where you use telephones to hack into gaurded systems.
- These networks are run on the programming language Lua, and your job is to exploit the code to get an expected result.
+# Hack Punk
+Hack Punk is a game centered around programming and puzzle solving. Players can create new levels and share them for others to play. The main gameplay loop consists of 'phreaks' hacking ingame IOT devices, doors, and everyday objects to get to the end of the level. Every device is controlled by an accessable phone which acts as a network hub. These networks are run on the programming language Lua, and it is the phreaks' job is to exploit the code to get to the end.
 
 # Development photos
 ![wafgf](https://user-images.githubusercontent.com/36809574/154546504-9e15e77d-d2da-4919-9588-ecd982a183dd.png)
