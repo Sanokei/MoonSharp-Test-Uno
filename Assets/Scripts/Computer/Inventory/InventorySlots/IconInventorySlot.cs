@@ -1,35 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using UnityEngine.EventSystems;
-using System;
+
 [System.Serializable]
-public class IconInventorySlot : InventorySlot<Icon>
+public abstract class IconInventorySlot : MonoBehaviour
 {
-    // public: used in inventory physical
-    [HideInInspector] public float distanceToDroppedIcon = float.MaxValue;
-    void Awake()
+    public int index;
+    public GameObject PhysicalRepresentation;
+    private Vector3 originalPosition;
+    protected virtual void Awake()
     {
         DragManager.OnEndDraggedEvent += OnEndDrag;
+        InventoryPhysical.OnSetSlotEvent += SetSlot;
+        InventoryPhysical.OnRemoveSlotEvent += RemoveSlot;
     }
-
-    // Gets called DIRECTLY from Inventory Managers (i.e DesktopManager)
-    public void SetSlot(Icon icon)
-    {
-        textObject.text = $"{icon.name}";
-        imageObject.sprite = icon.image;
-        PhysicalRepresentation.SetActive(true);
-    }
-    
-    public void RemoveSlot(Icon icon)
-    {
-        PhysicalRepresentation.transform.localPosition = transform.localPosition;
-        PhysicalRepresentation.SetActive(false);
-        imageObject.sprite = null;
-    }
-
+    [HideInInspector] public float distanceToDroppedIcon = float.MaxValue;
     public void OnEndDrag(Vector3 position)
     {
         distanceToDroppedIcon = Vector3.Distance(position, transform.localPosition);
@@ -37,5 +20,15 @@ public class IconInventorySlot : InventorySlot<Icon>
         {
             distanceToDroppedIcon = float.MaxValue;
         }
+        
+    }   
+    protected virtual void SetSlot(Inventory inventory)
+    {
+        PhysicalRepresentation.SetActive(true);
+    } 
+     protected virtual void RemoveSlot()
+    {
+        PhysicalRepresentation.transform.localPosition = transform.localPosition;
+        PhysicalRepresentation.SetActive(false);
     }
 }

@@ -38,7 +38,7 @@ public class Eyes : MonoBehaviour
     {
         // Warning: You have to be looking at the computer to leave it
         // This may cause errors later on
-        if(type == HitType.Sphere && hit.transform.tag == "Computer")
+        if(type == HitType.Sphere && !_computerMode && hit.transform.tag == "Computer")
         {
             
         }
@@ -70,5 +70,10 @@ public class Eyes : MonoBehaviour
         yield return new WaitForEndOfFrame();
         Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = state;
+    }
+
+    private IEnumerator Co_OnPhonePickUpEvent(HitType type, RaycastHit hit)
+    {
+        yield return null;
     }
 }

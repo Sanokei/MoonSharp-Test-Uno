@@ -21,7 +21,7 @@ public class DragManager : MonoBehaviour, IBeginDragHandler, IPointerClickHandle
     }
     public void OnEndDrag(PointerEventData eventdata)
     {
-        OnEndDraggedEvent(eventdata.pointerDrag.transform.localPosition);
+        OnEndDraggedEvent?.Invoke(eventdata.pointerDrag.transform.localPosition);
         OnDropEvent?.Invoke(self);
     }
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)

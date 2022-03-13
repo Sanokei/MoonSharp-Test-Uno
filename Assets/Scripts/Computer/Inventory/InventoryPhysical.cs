@@ -1,60 +1,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Inventory/Physical", fileName = "InventoryPhysical.asset")]
 [System.Serializable]
-[RequireComponent(typeof(Inventory))]
-public class InventoryPhysical : ScriptableObject
+public class InventoryPhysical : MonoBehaviour
 {
     // Delegates
-    public delegate void OnSetSlot(int index, Icon icon);
+    public delegate void OnSetSlot(Inventory inventory);
     public static event OnSetSlot OnSetSlotEvent;
-    public delegate void OnRemoveSlot(Icon icon);
+    public delegate void OnRemoveSlot();
     public static event OnRemoveSlot OnRemoveSlotEvent;
     public delegate void OnCreateWindow(Icon icon, IconInventorySlot slot);
     public static event OnCreateWindow OnCreateWindowEvent;
     
     // Instance of the inventory Scriptable Object
-    [SerializeField] private Inventory inventory;
+    [SerializeField] protected Inventory inventory;
+    [SerializeField] protected List<IconInventorySlot> iconInventorySlots;
 
     // public: gets used in drag manager
-    [HideInInspector] public List<IconInventorySlot> iconinventorySlots;
 
-    void OnEnable() // Right after Awake in execution order
+    protected virtual void Awake() // Right after Awake in execution order
     {
         // it requires the inventory scriptable object
-        if(inventory == null) // gaurd clause
-            Debug.LogAssertion("InventoryPhysical requires an Inventory scriptable object.");
         DragManager.OnDropEvent += OnDrop;
         DragManager.OnDoubleClickEvent += DoubleClickEvent;
     }
-    void OnDisable() // Right before Destroy in execution order
+    protected virtual void Start()
     {
-        DragManager.OnDropEvent -= OnDrop;
-        DragManager.OnDoubleClickEvent -= DoubleClickEvent;
-    }
-    public void Begin()
-    {
-        inventory = inventory ?? Inventory.Instance(name);
-        // iconinventorySlots.Sort((a, b) => a.index - b.index);
         PopulateInitial();
     }
-
     /// <summary>
     /// Populates the inventory with some icons.
     /// </summary>
     public void PopulateInitial()
     {
-        for (int i = 0; i < inventory.inventory.Length; i++) 
-        {
-            Icon icon = null;
-            // If an object exists at the specified location.
-            if(inventory.GetIcon(i, out icon))
-            {
-                iconinventorySlots[i].SetSlot(icon);
-                OnSetSlotEvent?.Invoke(i, icon);
-            }
-        }
+        OnSetSlotEvent?.Invoke(inventory);
     }
     
     /// <summary>
@@ -62,17 +41,7 @@ public class InventoryPhysical : ScriptableObject
     /// </summary>
     public void Clear() 
     {
-        for (int i = 0; i < inventory.inventory.Length; i++) 
-        {
-            Icon icon = null;
-            // If an object exists at the specified location.
-            inventory.GetIcon(i, out icon);
-            iconinventorySlots[i].RemoveSlot(icon);
-
-            // Not really useful here..
-            // if(OnRemoveSlotEvent != null)
-            //     OnRemoveSlotEvent(icon);
-        }
+        OnRemoveSlotEvent?.Invoke();
     }
 
     /// <summary>
@@ -95,7 +64,7 @@ public class InventoryPhysical : ScriptableObject
         // still not gonna use it for readability sake xd
         // https://stackoverflow.com/questions/5995876/is-using-var-actually-slow-if-so-why
         
-        foreach (IconInventorySlot slot in iconinventorySlots)
+        foreach (IconInventorySlot slot in iconInventorySlots)
         {
             if(slot.distanceToDroppedIcon < smallestDistance)
             {
@@ -115,8 +84,10 @@ public class InventoryPhysical : ScriptableObject
 
         // means it was picked up then put back down
         if(closestSlot.Equals(iconInventorySlot))
+        {
             Refresh();
-
+            return;
+        }
         inventory.GetIcon(iconInventorySlot.index,out icon);
 
         // If the slot is empty insert it and remove the icon from the start position.
@@ -138,8 +109,7 @@ public class InventoryPhysical : ScriptableObject
     public void DoubleClickEvent(IconInventorySlot slot)
     {
         Icon icon;
-        // Make the classes subscribed to this event call the appropriate method if the type is correct.
-        // if(OnCreateWindowEvent == null) return; // gaurd clause
+        // Make the classes subscribed to this event call the appropriate method if the type is correct...
         if(inventory.GetIcon(slot.index, out icon))
             OnCreateWindowEvent?.Invoke(icon, slot);
     }
@@ -149,7 +119,6 @@ public class InventoryPhysical : ScriptableObject
     // change i make is then reflected when i save the inventory
     // inside of the on drop event etc
     // but i do need it or it doesnt work and i dont remember why..
-    // too bad!
     void OnApplicationQuit()
     {
         inventory.SaveInventory(name);

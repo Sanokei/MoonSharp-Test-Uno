@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DesktopManager : MonoBehaviour
+public class DesktopManager : InventoryPhysical
 {
-    
-    // Instance of the ScriptableObject
-    public List<IconInventorySlot> iconinventorySlots;
-    public InventoryPhysical DesktopInventory;
-    void Start()
+    protected override void Awake()
     {
-        // FIXME: Bad Solution
-        iconinventorySlots = new List<IconInventorySlot>();
-        // this is a bad way to do this. Slow.
-        iconinventorySlots.AddRange(IconInventorySlot.FindObjectsOfType<IconInventorySlot>());
-        iconinventorySlots.Sort((a, b) => a.index - b.index);
+        base.Awake();
+    }
 
-        DesktopInventory.iconinventorySlots = iconinventorySlots;
-        DesktopInventory.Begin();
+    void OnEnable()
+    {
+        iconInventorySlots = new List<IconInventorySlot>();
+
+        // This is a bad way to do this. Slow.
+        iconInventorySlots.AddRange(IconInventorySlot.FindObjectsOfType<IconInventorySlot>());
+        iconInventorySlots.Sort((a, b) => a.index - b.index);
+    }
+
+    protected override void Start()
+    {
+        base.Start();
     }
 }

@@ -9,10 +9,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float runningSpeed = 11.5f;
     [SerializeField] private float jumpSpeed = 8.0f;
     [SerializeField] private float gravity = 20.0f;
-    [SerializeField] private Camera playerCamera;
     [SerializeField] private float lookSpeed = 2.0f;
     [SerializeField] private float lookXLimit = 45.0f;
     [SerializeField] private CharacterController characterController;
+    public Camera playerCamera;
+    
     // private
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
