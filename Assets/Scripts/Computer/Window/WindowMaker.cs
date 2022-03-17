@@ -8,11 +8,11 @@ public class WindowMaker : MonoBehaviour
 {
     void OnEnable()
     {
-        Eyes.DeactivateInputFieldEvent += DeactivateInputField;
+        ComputerManager.DeactivateInputFieldEvent += DeactivateInputField;
     }
     void OnDisable()
     {
-        Eyes.DeactivateInputFieldEvent -= DeactivateInputField;
+        ComputerManager.DeactivateInputFieldEvent -= DeactivateInputField;
     }
     public CodeEditor codeEditor;
     public TextMeshProUGUI text;
