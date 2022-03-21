@@ -6,27 +6,31 @@ using UnityEngine.EventSystems;
 // hehe im so clever 
 // preaking hehehe
 
-public class PhreakingManager : MonoBehaviour, IPickable, IDottedCircle
+public class PhreakingManager : MonoBehaviour, IDroppable
 {
     [SerializeField] private GameObject _DottedCircle;
 
     void Awake()
     {
-        _DottedCircle.SetActive(false);
+        Eyes.OnSphereCastHitEvent += ShowDottedCircle;
+        Eyes.OnNoRayCastHitEvent += HideDottedCircle;
+    }
+    void Update()
+    {
     }
     public void Drop(PointerEventData eventData)
     {
         throw new System.NotImplementedException();
     }
 
-    public void PickUp(PointerEventData eventData)
+    public void PickUp(RaycastHit hit)
     {
-        throw new System.NotImplementedException();
+        
     }
 
-    public void ShowDottedCircle(DottedCircleEventData eventData)
+    public void ShowDottedCircle(RaycastHit hit)
     {
-        if(eventData.hit.transform.tag == "Phone")
+        if(hit.transform.tag == "Phone")
         {
             _DottedCircle.SetActive(true);
         }
@@ -34,5 +38,9 @@ public class PhreakingManager : MonoBehaviour, IPickable, IDottedCircle
         {
             _DottedCircle.SetActive(false);
         }
+    }
+    public void HideDottedCircle()
+    {
+        _DottedCircle.SetActive(false);
     }
 }

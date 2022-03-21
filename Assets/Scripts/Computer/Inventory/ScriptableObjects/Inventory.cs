@@ -27,7 +27,21 @@ using System.IO;
 [System.Serializable]
 public class Inventory : ScriptableObject
 {
-    public Icon[] inventory;
+    private Icon[] inventory;
+
+    // using an indexer, isnt needed in this context
+    // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/indexers/
+    // public Icon this[int index]
+    // {
+    //     get
+    //     {
+    //         return inventory[index];
+    //     }
+    //     set
+    //     {
+    //         inventory[index] = value;
+    //     }
+    // }
     private static Inventory _instance;
     public static Inventory Instance(string filename)
     {
