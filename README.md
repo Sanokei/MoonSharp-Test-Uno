@@ -1,4 +1,4 @@
-# Hack Punk
+# Hack Punk: The game with a thousand pieces
 Hack Punk is a game centered around programming and puzzle solving. Players can create new levels and share them for others to play. The main gameplay loop consists of 'phreaks' hacking ingame IOT devices, doors, and everyday objects to get to the end of the level. Every device is controlled by an accessable phone which acts as a network hub. These networks are run on the programming language Lua, and it is the phreaks' job is to exploit the code to get to the end.
 
 # Development photos
