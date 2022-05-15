@@ -18,16 +18,23 @@ public class InventoryPhysical : MonoBehaviour
 
     // public: gets used in drag manager
 
-    protected virtual void Awake() // Right after Awake in execution order
+    protected virtual void OnEnable() // Right after Awake in execution order
     {
         // it requires the inventory scriptable object
         DragManager.OnDropEvent += OnDrop;
         DragManager.OnDoubleClickEvent += DoubleClickEvent;
+        PlayerComputerConnection.OnSpawnedComputerEvent += SpawnedComputerEvent;
     }
-    protected virtual void Start()
+    protected virtual void Start() // Obselete in execution order
     {
         PopulateInitial();
     }
+
+    void SpawnedComputerEvent()
+    {
+        PopulateInitial();
+    }
+
     /// <summary>
     /// Populates the inventory with some icons.
     /// </summary>
@@ -60,6 +67,7 @@ public class InventoryPhysical : MonoBehaviour
         Icon icon;
         float smallestDistance = float.MaxValue;
         IconInventorySlot closestSlot = null;
+
         // var isnt slow, we guuchi
         // still not gonna use it for readability sake xd
         // https://stackoverflow.com/questions/5995876/is-using-var-actually-slow-if-so-why
@@ -96,6 +104,7 @@ public class InventoryPhysical : MonoBehaviour
             inventory.RemoveIcon(iconInventorySlot.index);
             inventory.SaveInventory(name);
         }
+        // FIXME: this feature wont work if I dont fix the fixme for the closestslot thing
         /*<proposed feature>*/
             // else if(icon is FolderIcon)
             // {

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class DesktopManager : InventoryPhysical
 {
-    protected override void Awake()
-    {
-        base.Awake();
-    }
+    // protected override void Awake()
+    // {
+    //     base.Awake();
+    // }
 
-    void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         iconInventorySlots = new List<IconInventorySlot>();
 
         // This is a bad way to do this. Slow.
