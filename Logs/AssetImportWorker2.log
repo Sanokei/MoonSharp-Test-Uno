@@ -1,0 +1,1240 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.2f1 (d6360bedb9a0) revision 14038539'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit Core' Language: 'en' Physical Memory: 32668 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.2f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/wkeif/Desktop/Github Projects/HackPunk
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+52982
+Successfully changed project path to: C:/Users/wkeif/Desktop/Github Projects/HackPunk
+C:/Users/wkeif/Desktop/Github Projects/HackPunk
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 55.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.2f1 (d6360bedb9a0)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/wkeif/Desktop/Github Projects/HackPunk/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     8079 MB
+    Driver:   30.0.15.1259
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56156
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.016009 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 58.15 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.075 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1076ms)
+		BeginReloadAssembly (123ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (741ms)
+			LoadAssemblies (120ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (193ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (420ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (58ms)
+				BeforeProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadAttributes (275ms)
+				ProcessInitializeOnLoadMethodAttributes (68ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006302 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.01 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.357 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1358ms)
+		BeginReloadAssembly (173ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (1015ms)
+			LoadAssemblies (112ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (294ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (69ms)
+			SetupLoadedEditorAssemblies (481ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (324ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
+Refreshing native plugins compatible for Editor in 0.92 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2029 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (48.0 KB). Loaded Objects now: 2495.
+Memory consumption went from 83.8 MB to 83.7 MB.
+Total: 4.407000 ms (FindLiveObjects: 0.292400 ms CreateObjectMapping: 0.108300 ms MarkObjects: 3.910400 ms  DeleteObjects: 0.094800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1060376.125133 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Execution/VM/CallStackItem.cs
+  artifactKey: Guid(b0ca8870651834b14b0d156d519c4fd5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Execution/VM/CallStackItem.cs using Guid(b0ca8870651834b14b0d156d519c4fd5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'bd9982b4d2fee4c3556de9b503d90f63') in 0.136941 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset
+  artifactKey: Guid(5302535af1044152a457ed104f1f4b91) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset using Guid(5302535af1044152a457ed104f1f4b91) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '805899b54429bff54e1c0796aef031a4') in 0.020200 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Yellow to Orange - Vertical.asset
+  artifactKey: Guid(69a525efa7e6472eab268f6ea605f06e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Yellow to Orange - Vertical.asset using Guid(69a525efa7e6472eab268f6ea605f06e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9fa5ea4d0b621dd36aee3a18afd43138') in 0.013449 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Execution/Scopes/ClosureContext.cs
+  artifactKey: Guid(72b8addb6dc01451c9f00b9e3fa6e99c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Execution/Scopes/ClosureContext.cs using Guid(72b8addb6dc01451c9f00b9e3fa6e99c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '877dc1864addd94ad357fd5addd74332') in 0.011867 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/Attributes/MoonSharpPropertyAttribute.cs
+  artifactKey: Guid(c6bd97fe737d342759d142ccf0f4b9cd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/Attributes/MoonSharpPropertyAttribute.cs using Guid(c6bd97fe737d342759d142ccf0f4b9cd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '52993a1b6bc330680ed452c6e18391b9') in 0.012732 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/REPL/ReplHistoryNavigator.cs
+  artifactKey: Guid(b54be6e9e41364e02968550fb2cf7c4d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/REPL/ReplHistoryNavigator.cs using Guid(b54be6e9e41364e02968550fb2cf7c4d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8ed3fab1ad2a4b3265c7b0f606d48e77') in 0.013158 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF - Sunny Days.mat
+  artifactKey: Guid(6522f30e342599e4e9dd4cc2cc03c830) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF - Sunny Days.mat using Guid(6522f30e342599e4e9dd4cc2cc03c830) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2926905dbbd97a2855451736696fbc12') in 0.025877 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Scripts/Computer/Inventory/ScriptableObjects/Icon.cs
+  artifactKey: Guid(a3f3dcecefd24da4c948eb8c0921aa07) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Scripts/Computer/Inventory/ScriptableObjects/Icon.cs using Guid(a3f3dcecefd24da4c948eb8c0921aa07) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3e89ed3559c8e8e5c17521dd550a3e92') in 0.012376 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Diagnostics/PerformanceCounters/PerformanceStopwatch.cs
+  artifactKey: Guid(9412c984a07ac419ebfe125e10587369) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Diagnostics/PerformanceCounters/PerformanceStopwatch.cs using Guid(9412c984a07ac419ebfe125e10587369) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '12f955839d314369eb7f489fdb9833df') in 0.012119 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Tree/Statements/AssignmentStatement.cs
+  artifactKey: Guid(984d08ac2d2c649f0937d1a8e239ef6a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Tree/Statements/AssignmentStatement.cs using Guid(984d08ac2d2c649f0937d1a8e239ef6a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f4163db70817219ca6020bdc398c9e2b') in 0.012820 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Tree/Statements/ScopeBlockStatement.cs
+  artifactKey: Guid(908e6665aa8a94114b90c8061da39a21) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Tree/Statements/ScopeBlockStatement.cs using Guid(908e6665aa8a94114b90c8061da39a21) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7bb8c16180a547d438611742e7af693e') in 0.012112 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Serialization/Json/JsonNull.cs
+  artifactKey: Guid(eb11cd56d51474a3a9ee3d63f52c7e3d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Serialization/Json/JsonNull.cs using Guid(eb11cd56d51474a3a9ee3d63f52c7e3d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4811df5b6e9c09bdd224e0a74d2195d9') in 0.012629 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/RegistrationPolicies/DefaultRegistrationPolicy.cs
+  artifactKey: Guid(c2265b5b2975b4d0ab2200362101da9e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/RegistrationPolicies/DefaultRegistrationPolicy.cs using Guid(c2265b5b2975b4d0ab2200362101da9e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6793ff0c35f4de62fd748dd9c2b23f65') in 0.013087 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/StandardUserDataDescriptor.cs
+  artifactKey: Guid(29d5118b685fd415ead4294ee7d93b79) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/StandardUserDataDescriptor.cs using Guid(29d5118b685fd415ead4294ee7d93b79) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2706128f37dea5454b65d3d8907a9fcf') in 0.012606 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/Converters/ClrToScriptConversions.cs
+  artifactKey: Guid(8987bd245f18a47329890d8e91c3201e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/Converters/ClrToScriptConversions.cs using Guid(8987bd245f18a47329890d8e91c3201e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '391f4a49be57e0ecfd9a8323ed47f0c5') in 0.012863 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/Converters/ScriptToClrConversions.cs
+  artifactKey: Guid(1ab7d32bef2374608a4029d5dc7d6d0f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/Converters/ScriptToClrConversions.cs using Guid(1ab7d32bef2374608a4029d5dc7d6d0f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'dad1bda30a8b983f78bc35ae3c521578') in 0.011437 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/ProxyObjects/DelegateProxyFactory.cs
+  artifactKey: Guid(8a78a604367d5437c8bc7738a353e330) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/ProxyObjects/DelegateProxyFactory.cs using Guid(8a78a604367d5437c8bc7738a353e330) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7f064e24fb1dae730736cde6e073b314') in 0.012422 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Tree/Fast_Interface/Loader_Fast.cs
+  artifactKey: Guid(d2b48e341b32244b7b804e5c678d43e8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Tree/Fast_Interface/Loader_Fast.cs using Guid(d2b48e341b32244b7b804e5c678d43e8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '029e0e1f500fc64cab83c72e3f7f9ef9') in 0.013479 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Tree/Lexer/Lexer.cs
+  artifactKey: Guid(36f7acbfc89a742ae98ca7798c9fa46c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Tree/Lexer/Lexer.cs using Guid(36f7acbfc89a742ae98ca7798c9fa46c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ae0a5bd5565688c05d58959712e8da2a') in 0.011158 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Tree/Expressions/LiteralExpression.cs
+  artifactKey: Guid(5b79e917718e94fc2ad0c27697cb8f72) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Tree/Expressions/LiteralExpression.cs using Guid(5b79e917718e94fc2ad0c27697cb8f72) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '41cbd9421eace4fa6bccfad102485b45') in 0.011987 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Tree/Expressions/DynamicExprExpression.cs
+  artifactKey: Guid(2ad167454775547d2b876de4ba0fd483) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Tree/Expressions/DynamicExprExpression.cs using Guid(2ad167454775547d2b876de4ba0fd483) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e2fc2736a3e3c6ac860b934cc4ab7619') in 0.012055 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/LuaStateInterop/LuaLBuffer.cs
+  artifactKey: Guid(7ced9744069c3426897ab8ab28f78e19) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/LuaStateInterop/LuaLBuffer.cs using Guid(7ced9744069c3426897ab8ab28f78e19) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6ff90705359385a8fb968800c6bc2413') in 0.011461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Tree/Expressions/ExprListExpression.cs
+  artifactKey: Guid(dd8ca3d30a17e4eaf8b77c38a66ba301) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Tree/Expressions/ExprListExpression.cs using Guid(dd8ca3d30a17e4eaf8b77c38a66ba301) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '735d4a09a47e201e31222efbadd5d454') in 0.013038 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000374 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Tree/Expressions/IndexExpression.cs
+  artifactKey: Guid(ddb1f940605694b16a3484b5ff7efdfb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Tree/Expressions/IndexExpression.cs using Guid(ddb1f940605694b16a3484b5ff7efdfb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '50068064d27f4b39122734ab5a5e9f33') in 0.013552 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Tree/Expressions/FunctionDefinitionExpression.cs
+  artifactKey: Guid(818d56204214b495cac1759ba69e62cc) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Tree/Expressions/FunctionDefinitionExpression.cs using Guid(818d56204214b495cac1759ba69e62cc) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd453b1959acb318e636cb7baf32ec52d') in 0.012130 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Tree/Expressions/FunctionCallExpression.cs
+  artifactKey: Guid(3fa461df57eb84d5f9427189139597c9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Tree/Expressions/FunctionCallExpression.cs using Guid(3fa461df57eb84d5f9427189139597c9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4d2c6866d0587f6c98aabff0bcbba099') in 0.012211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/EventFacade.cs
+  artifactKey: Guid(59883d2da472c41518f0226b0304586d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/EventFacade.cs using Guid(59883d2da472c41518f0226b0304586d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2ea744d7ee90c8b890d17138b16eae87') in 0.012697 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Tree/Lexer/TokenType.cs
+  artifactKey: Guid(6951b5c7d34424ebc93855f3a8e6abd0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Tree/Lexer/TokenType.cs using Guid(6951b5c7d34424ebc93855f3a8e6abd0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '39a0a8c816aa2ccd0f3a1ed002249a6e') in 0.015095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/StandardEnumUserDataDescriptor.cs
+  artifactKey: Guid(3ad85406d968d4e16b8f8bbb261c515e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/StandardEnumUserDataDescriptor.cs using Guid(3ad85406d968d4e16b8f8bbb261c515e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fae620705c561edbbb7000b4a4ba02fb') in 0.019508 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Diagnostics/PerformanceResult.cs
+  artifactKey: Guid(4a35566b08a4648eb8fc450a2f474ab5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Diagnostics/PerformanceResult.cs using Guid(4a35566b08a4648eb8fc450a2f474ab5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'deebaf5a9d0da0420a42a5c6e579b0fb') in 0.012134 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/REPL/ReplInterpreter.cs
+  artifactKey: Guid(cf481bf6781294381b77d6aadecbd712) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/REPL/ReplInterpreter.cs using Guid(cf481bf6781294381b77d6aadecbd712) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '545d6b7ffc9b83afc07014e586f82920') in 0.012025 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Execution/VM/ByteCode.cs
+  artifactKey: Guid(69f30676f2c1f43129e1951bcf1fbb78) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Execution/VM/ByteCode.cs using Guid(69f30676f2c1f43129e1951bcf1fbb78) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'aa3e4eaf09d2b4020964c414fe502665') in 0.012939 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/BasicDescriptors/IMemberDescriptor.cs
+  artifactKey: Guid(f537e8782afd64f3cb92fde721e22630) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/BasicDescriptors/IMemberDescriptor.cs using Guid(f537e8782afd64f3cb92fde721e22630) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '207f43c38e186a7c18de9751aa6462bc') in 0.015500 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Compatibility/Framework.cs
+  artifactKey: Guid(96e3b35563b935d4c8baa02b06f40965) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Compatibility/Framework.cs using Guid(96e3b35563b935d4c8baa02b06f40965) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c9d86c547212fa2471433c1b364e3e67') in 0.019230 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/ScriptGlobalOptions.cs
+  artifactKey: Guid(019755db0735e4261a6d88f4cc170256) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/ScriptGlobalOptions.cs using Guid(019755db0735e4261a6d88f4cc170256) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f5534162846fa587ad1dc6288d332a61') in 0.019026 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Desktop90_UI/Prefabs/UIElements/Alert Window.prefab
+  artifactKey: Guid(179f80d4b13504117a137066b2ebd15c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Desktop90_UI/Prefabs/UIElements/Alert Window.prefab using Guid(179f80d4b13504117a137066b2ebd15c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9dde1f6457ff7758ff50828cea734472') in 0.052850 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/F6_Key_Dark.png
+  artifactKey: Guid(08aedaad211b0f14eb3b8637ffc9b491) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/F6_Key_Dark.png using Guid(08aedaad211b0f14eb3b8637ffc9b491) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'be802c678c2430827dd2ffa9fcb82143') in 0.077167 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Asterisk_Key_Dark.png
+  artifactKey: Guid(5519947b75cd7a945b0b372cd159beda) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Asterisk_Key_Dark.png using Guid(5519947b75cd7a945b0b372cd159beda) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd1df5fb81605680af67aa6145963c17a') in 0.013970 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/6_Key_Dark.png
+  artifactKey: Guid(007680136e0ba0946bb3c456f9b90942) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/6_Key_Dark.png using Guid(007680136e0ba0946bb3c456f9b90942) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '83f9f1b23884f80ef69e096e74eda3aa') in 0.011815 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Minus_Key_Dark.png
+  artifactKey: Guid(1bb01f92d59998241a829217fe64c24b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Minus_Key_Dark.png using Guid(1bb01f92d59998241a829217fe64c24b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'bcbcd5e9da7c2a8189fe47a008b70608') in 0.015386 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/F5_Key_Dark.png
+  artifactKey: Guid(d650cfc8aabb97d41be6b2b419fc1cd7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/F5_Key_Dark.png using Guid(d650cfc8aabb97d41be6b2b419fc1cd7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '69102bcfded9ec59e9567119defd0a05') in 0.011000 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/F11_Key_Dark.png
+  artifactKey: Guid(13c6fe91aada09a44bab902fab66e6b5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/F11_Key_Dark.png using Guid(13c6fe91aada09a44bab902fab66e6b5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9b50f7a22fdadd6533fca0fa2915e1f3') in 0.011301 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/F3_Key_Dark.png
+  artifactKey: Guid(26c3b27d2bddd0d4684728d89011b173) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/F3_Key_Dark.png using Guid(26c3b27d2bddd0d4684728d89011b173) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'deeb209ac468edc1e2938338d51b07fc') in 0.014008 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Bracket_Left_Key_Dark.png
+  artifactKey: Guid(91a6e8d73541c414f8290f272623b1a5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Bracket_Left_Key_Dark.png using Guid(91a6e8d73541c414f8290f272623b1a5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'dddfdf249c01be239db0287b20a7effb') in 0.013035 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Bracket_Right_Key_Dark.png
+  artifactKey: Guid(a145c98ba4d35914cbc23ce031e663ac) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Bracket_Right_Key_Dark.png using Guid(a145c98ba4d35914cbc23ce031e663ac) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '86770f850da3d8636aa842eb53e7131c') in 0.013462 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/7_Key_Dark.png
+  artifactKey: Guid(4ff190ded2c8df84aa8c15500572934e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/7_Key_Dark.png using Guid(4ff190ded2c8df84aa8c15500572934e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4ef7e2ad93364ba170f6748770f55f32') in 0.015078 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Mouse_Simple_Key_Dark.png
+  artifactKey: Guid(da8f52ecae6c58f429fb5dcdf6ed1136) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Mouse_Simple_Key_Dark.png using Guid(da8f52ecae6c58f429fb5dcdf6ed1136) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '365ba1fbc121be77e6e2306f17dab638') in 0.011865 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Num_Lock_Key_Dark.png
+  artifactKey: Guid(8c3378d30f373584cb643d27fcca3e18) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Num_Lock_Key_Dark.png using Guid(8c3378d30f373584cb643d27fcca3e18) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6ef4fc42f07b0469b616d61ad71b74ff') in 0.013382 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/5_Key_Dark.png
+  artifactKey: Guid(8ad039ef82aa27e468cbd70c502d5f4f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/5_Key_Dark.png using Guid(8ad039ef82aa27e468cbd70c502d5f4f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'dc4e5cf0e8ffb615709d9ba44ec44055') in 0.011736 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Blanks/Blank_Black_Wide.png
+  artifactKey: Guid(614ce7e846a29f84398fd04f50218c46) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Blanks/Blank_Black_Wide.png using Guid(614ce7e846a29f84398fd04f50218c46) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ca2246b2ea7c0a543ae561bcf5a0482a') in 0.012588 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/8_Key_Dark.png
+  artifactKey: Guid(e946a6fc90ca1ae41bd85d2b746fbca5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/8_Key_Dark.png using Guid(e946a6fc90ca1ae41bd85d2b746fbca5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2c03354e2c15f41ed1a69417bcbaed59') in 0.012703 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/1_Key_Dark.png
+  artifactKey: Guid(376f5b79633aa0e428739ab0870a13b3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/1_Key_Dark.png using Guid(376f5b79633aa0e428739ab0870a13b3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'cf6446bc00234227c021fa2361553688') in 0.017940 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Page_Up_Key_Dark.png
+  artifactKey: Guid(ce92d1d6c49e60b4789defdb3942d7e8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Page_Up_Key_Dark.png using Guid(ce92d1d6c49e60b4789defdb3942d7e8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '24cc19326aa9b44f8c4bb1b7c1d0bcbc') in 0.014405 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Enter_Alt_Key_Dark.png
+  artifactKey: Guid(7553c85c62b2b424394d0a1272b8f090) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Enter_Alt_Key_Dark.png using Guid(7553c85c62b2b424394d0a1272b8f090) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a6caf204dab7563616b4c6deff6c2f9d') in 0.015298 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Enter_Tall_Key_Dark.png
+  artifactKey: Guid(76193131597adc546908d80be5b80980) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Enter_Tall_Key_Dark.png using Guid(76193131597adc546908d80be5b80980) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4e1367ab0f3938e0e6d688387739b239') in 0.022162 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/K_Key_Dark.png
+  artifactKey: Guid(e75adb087289f4a4885d112f59026bef) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/K_Key_Dark.png using Guid(e75adb087289f4a4885d112f59026bef) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '56d95fa31a5c1ffa2f65acbf11d341f5') in 0.017100 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Plus_Key_Dark.png
+  artifactKey: Guid(bbfd654ee15f89b4e950b72e1d3becb0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Plus_Key_Dark.png using Guid(bbfd654ee15f89b4e950b72e1d3becb0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '712cd7cf6da0fdf42165bd282fd893ab') in 0.016510 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/Art/3D models/CRT/CRT.fbm/electronica408D_14_low_Glass_Metallic-electronica408D_14_low.png
+  artifactKey: Guid(2299bbdd182d05b479f9dec3b3e32144) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/3D models/CRT/CRT.fbm/electronica408D_14_low_Glass_Metallic-electronica408D_14_low.png using Guid(2299bbdd182d05b479f9dec3b3e32144) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7094443ff85e5eb06d0716e741d27757') in 0.039704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Desktop90_UI/Prefabs/UIElements/D90 Input Field.prefab
+  artifactKey: Guid(d3fa38805b806bc4a9082035ffb959eb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Desktop90_UI/Prefabs/UIElements/D90 Input Field.prefab using Guid(d3fa38805b806bc4a9082035ffb959eb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '627b72c366840810e89e9ccc9db83b3d') in 0.020915 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/F8_Key_Light.png
+  artifactKey: Guid(824398d6f0451d54cb224cf19c99682a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/F8_Key_Light.png using Guid(824398d6f0451d54cb224cf19c99682a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6e1af5ef6023f962d4b8bfcc931ff849') in 0.014828 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Slash_Key_Dark.png
+  artifactKey: Guid(60e1daf45c31f0d4cb6460d99bfdc0a4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Slash_Key_Dark.png using Guid(60e1daf45c31f0d4cb6460d99bfdc0a4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '93ba433882bc2384b34915d05c1e8019') in 0.010818 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/F5_Key_Light.png
+  artifactKey: Guid(79e6dab7cb59a79439dfca42f0c7ee5b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/F5_Key_Light.png using Guid(79e6dab7cb59a79439dfca42f0c7ee5b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '508cadb2df7885fcb56eb68fad565e0e') in 0.013619 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/R_Key_Dark.png
+  artifactKey: Guid(c79438252033d004f90ef7bf5e18a308) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/R_Key_Dark.png using Guid(c79438252033d004f90ef7bf5e18a308) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '08f2bb412a1e2a9d824e2de514c75bbf') in 0.010763 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/F11_Key_Light.png
+  artifactKey: Guid(00f22d0b20134524dbd7247278b410a6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/F11_Key_Light.png using Guid(00f22d0b20134524dbd7247278b410a6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '40bf4b63fbae979a1d521a902659e1e7') in 0.015301 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/K_Key_Light.png
+  artifactKey: Guid(0c55357775942a54493f0615dd5d6a67) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/K_Key_Light.png using Guid(0c55357775942a54493f0615dd5d6a67) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2e43ef0bdfd34be6d978b57f3805ff19') in 0.013493 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Tab_Key_Dark.png
+  artifactKey: Guid(c176dda7b8329c04ba434e61e51617cf) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Tab_Key_Dark.png using Guid(c176dda7b8329c04ba434e61e51617cf) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1ab09f67ab46224c1db52b9a20270c32') in 0.013785 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Quote_Key_Dark.png
+  artifactKey: Guid(6bcdf9d6c1caf91429f333b2a9b1cda6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Quote_Key_Dark.png using Guid(6bcdf9d6c1caf91429f333b2a9b1cda6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '57646fa3d032a4641f667508dc1a5bc9') in 0.012748 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/2_Key_Light.png
+  artifactKey: Guid(bad73512d78b3964191235ea47441c83) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/2_Key_Light.png using Guid(bad73512d78b3964191235ea47441c83) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6a249e46b22d8be3002568a8288b453c') in 0.013580 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Question_Key_Dark.png
+  artifactKey: Guid(63814f3215ea2624fbdc66459bf9daa2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Question_Key_Dark.png using Guid(63814f3215ea2624fbdc66459bf9daa2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '63e68528a61382f253494a5bb4be8c0e') in 0.014535 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/F1_Key_Light.png
+  artifactKey: Guid(636548be420c0f14093fbbd49a0bb5d5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/F1_Key_Light.png using Guid(636548be420c0f14093fbbd49a0bb5d5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1f4840f95b17d580a74ae7347af61d4f') in 0.012964 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Q_Key_Dark.png
+  artifactKey: Guid(2d61f4a49ed79894ca0accd8f1f381df) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Q_Key_Dark.png using Guid(2d61f4a49ed79894ca0accd8f1f381df) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b81f1f980aef750070cadc6ba0c09f82') in 0.014276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/Backspace_Alt_Key_Light.png
+  artifactKey: Guid(0293baba0e0cfbd459a15f8383ce524e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/Backspace_Alt_Key_Light.png using Guid(0293baba0e0cfbd459a15f8383ce524e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a8a6178e2c0c95e642bf2e010a5637ce') in 0.011631 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/H_Key_Light.png
+  artifactKey: Guid(1c6bf6054e9447248a52a7fbc20c5f30) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/H_Key_Light.png using Guid(1c6bf6054e9447248a52a7fbc20c5f30) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fb54da948ae149edac12b05a0c11b09a') in 0.013809 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/Mark_Right_Key_Light.png
+  artifactKey: Guid(365cd76a4dcf25c46917369d6cff4be0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/Mark_Right_Key_Light.png using Guid(365cd76a4dcf25c46917369d6cff4be0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a7cdeb931464d660dac426039df30905') in 0.018603 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/Insert_Key_Light.png
+  artifactKey: Guid(6292a69ff745fa84cbbc0a65cfa6d399) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/Insert_Key_Light.png using Guid(6292a69ff745fa84cbbc0a65cfa6d399) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '78f4927b7853b1b6f2c755c4a4a2b68e') in 0.013903 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/Enter_Key_Light.png
+  artifactKey: Guid(c9c16dcc41a4ddc45ad6075d7f7f398a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/Enter_Key_Light.png using Guid(c9c16dcc41a4ddc45ad6075d7f7f398a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '51e84818cc5ace1b5d0b1c9e24e7d7aa') in 0.011526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/F10_Key_Light.png
+  artifactKey: Guid(fd30a62fea24a18478570728c57e9b7a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/F10_Key_Light.png using Guid(fd30a62fea24a18478570728c57e9b7a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e06ac96aa868484986f5362168ae99e5') in 0.011822 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/3_Key_Light.png
+  artifactKey: Guid(d7a568aea58dd16468d6cbc2cfc7d94d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/3_Key_Light.png using Guid(d7a568aea58dd16468d6cbc2cfc7d94d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '282c4f9276b1e21248c8715b06e18780') in 0.012809 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/F4_Key_Light.png
+  artifactKey: Guid(cb82ef632893b524cac73638bc21ea5d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/F4_Key_Light.png using Guid(cb82ef632893b524cac73638bc21ea5d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '38cd42873f8d706405afa98c549f93bb') in 0.011483 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/Bracket_Right_Key_Light.png
+  artifactKey: Guid(fc5321a1fdd747a44ae470c8e47f97a1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/Bracket_Right_Key_Light.png using Guid(fc5321a1fdd747a44ae470c8e47f97a1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2e87c57969ea3370a9b8690e43c8d849') in 0.013701 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/W_Key_Dark.png
+  artifactKey: Guid(3835482fd68ace44f988647a5bb9b376) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/W_Key_Dark.png using Guid(3835482fd68ace44f988647a5bb9b376) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '41349a82eca53caf5f9f3a9d9fe097b6') in 0.014869 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/Bracket_Left_Key_Light.png
+  artifactKey: Guid(e91cad506e758d848b17e7ce0c8249e1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/Bracket_Left_Key_Light.png using Guid(e91cad506e758d848b17e7ce0c8249e1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '90a4b8f83a37e84f91bf41d33f1e5506') in 0.021761 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Z_Key_Dark.png
+  artifactKey: Guid(a240cd97bf79e9549ad22ca14dc00dda) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/Z_Key_Dark.png using Guid(a240cd97bf79e9549ad22ca14dc00dda) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e157e41d5e958e41c218fcd30e8d4cf2') in 0.021620 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/F2_Key_Dark.png
+  artifactKey: Guid(0afe253ae4b044f4280397b7631a2deb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/F2_Key_Dark.png using Guid(0afe253ae4b044f4280397b7631a2deb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9db804b24842f38abf670deb7e8c37c2') in 0.011830 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Execution/VM/Processor/DebugContext.cs
+  artifactKey: Guid(ff385e31e89d24d64857ab6853481c94) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Execution/VM/Processor/DebugContext.cs using Guid(ff385e31e89d24d64857ab6853481c94) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9ab970040c83a32d5c9b74091794b40a') in 0.012630 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/V_Key_Light.png
+  artifactKey: Guid(45b6763ed597dda479cad3b22e06d829) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/V_Key_Light.png using Guid(45b6763ed597dda479cad3b22e06d829) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5985bced28ee327cd550f2a805a168e6') in 0.014486 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/Print_Screen_Key_Light.png
+  artifactKey: Guid(067c36b7579dafb47ab34feb61406e3e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/Print_Screen_Key_Light.png using Guid(067c36b7579dafb47ab34feb61406e3e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ae682d14ebf9e83834cece4b17044e15') in 0.012618 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/Semicolon_Key_Light.png
+  artifactKey: Guid(dcd16b517ae17664f95ebe98db46413b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/Semicolon_Key_Light.png using Guid(dcd16b517ae17664f95ebe98db46413b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd58c859233581068110b049d03ba5e0e') in 0.017174 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Execution/VM/Processor/Processor_BinaryDump.cs
+  artifactKey: Guid(77aed18c39bbf4622b4f89b55462f9fe) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Execution/VM/Processor/Processor_BinaryDump.cs using Guid(77aed18c39bbf4622b4f89b55462f9fe) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '23ff313218e37d77138f628badd5e0e2') in 0.014877 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/HardwiredDescriptors/HardwiredMemberDescriptor.cs
+  artifactKey: Guid(9e219ae3995f14bca923411ed343be4c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/HardwiredDescriptors/HardwiredMemberDescriptor.cs using Guid(9e219ae3995f14bca923411ed343be4c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9454b464c03caf4f6cdde52369a476c7') in 0.014109 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/HardwiredDescriptors/HardwiredMethodMemberDescriptor.cs
+  artifactKey: Guid(509d3c7494a174d159037c1ce772f139) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/HardwiredDescriptors/HardwiredMethodMemberDescriptor.cs using Guid(509d3c7494a174d159037c1ce772f139) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b0e83cc9891a02189b314148e23747ea') in 0.014665 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/Shift_Alt_Key_Light.png
+  artifactKey: Guid(9e39b7df80b96b54da0d91eafeeb3072) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/Shift_Alt_Key_Light.png using Guid(9e39b7df80b96b54da0d91eafeeb3072) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f4982723999ab1a37b7c569d54a053ea') in 0.015243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Execution/VM/Processor/Processor_Scope.cs
+  artifactKey: Guid(844ac2c7bb2c44b2984dc9a12fc56249) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Execution/VM/Processor/Processor_Scope.cs using Guid(844ac2c7bb2c44b2984dc9a12fc56249) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7b07e017611733d9e44ffa018b0f242a') in 0.011323 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/Quote_Key_Light.png
+  artifactKey: Guid(b6a8e520f3a9fed4c997cc53bc1f6987) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/Quote_Key_Light.png using Guid(b6a8e520f3a9fed4c997cc53bc1f6987) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b85fdb6eca7a888be57c1f648ec04db7') in 0.012596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/ReflectionMemberDescriptors/PropertyMemberDescriptor.cs
+  artifactKey: Guid(1751047691c3846a7ade184baf0c247c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/ReflectionMemberDescriptors/PropertyMemberDescriptor.cs using Guid(1751047691c3846a7ade184baf0c247c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7a91e05ac08142ded162c178356b3fe7') in 0.010797 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/N_Key_Light.png
+  artifactKey: Guid(e1b0ee6cbb1623444898f98035e00239) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/N_Key_Light.png using Guid(e1b0ee6cbb1623444898f98035e00239) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '500d89568204212c3f81704714fe2786') in 0.012200 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/MemberDescriptors/DynValueMemberDescriptor.cs
+  artifactKey: Guid(c886654d00dad4d1b9c3f337bb813cc0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/MemberDescriptors/DynValueMemberDescriptor.cs using Guid(c886654d00dad4d1b9c3f337bb813cc0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5a5aae227d7c3b7d38fe02434dfbce7d') in 0.013183 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Light/Mouse_Right_Key_Light.png
+  artifactKey: Guid(5be932c61837aed4fb45eecb48c99fb1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Light/Mouse_Right_Key_Light.png using Guid(5be932c61837aed4fb45eecb48c99fb1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '91a3a861586669494fde865790d39eb0') in 0.011391 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/HardwiredDescriptors/HardwiredUserDataDescriptor.cs
+  artifactKey: Guid(e68a6f21a26414d3593a07cf99936209) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/HardwiredDescriptors/HardwiredUserDataDescriptor.cs using Guid(e68a6f21a26414d3593a07cf99936209) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '33f32ff75ecfb9b208c02500cbdc1401') in 0.015635 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Execution/VM/Processor/Processor.cs
+  artifactKey: Guid(ba54b0d11328c46bca41774da91778ac) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Execution/VM/Processor/Processor.cs using Guid(ba54b0d11328c46bca41774da91778ac) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e77c2cf139e7cd1c9d80e7036b325381') in 0.014118 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Execution/VM/Processor/Processor_Errors.cs
+  artifactKey: Guid(2c4f89d27a6dc4f6c9b4b047b14ad0ae) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Execution/VM/Processor/Processor_Errors.cs using Guid(2c4f89d27a6dc4f6c9b4b047b14ad0ae) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd2dfc7f93c5dfbb843f28b7b6ce1469b') in 0.011177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/MemberDescriptors/ObjectCallbackMemberDescriptor.cs
+  artifactKey: Guid(caf88b714be7b4cf39d668ad94a2cdbf) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Interop/StandardDescriptors/MemberDescriptors/ObjectCallbackMemberDescriptor.cs using Guid(caf88b714be7b4cf39d668ad94a2cdbf) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5b2780593eeedeb9799a0c33117416b2') in 0.014537 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/MoonSharp/Interpreter/Compatibility/Frameworks/Base/FrameworkReflectionBase.cs
+  artifactKey: Guid(f03cffebd263dcb4ab8680ce8d152968) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Plugins/MoonSharp/Interpreter/Compatibility/Frameworks/Base/FrameworkReflectionBase.cs using Guid(f03cffebd263dcb4ab8680ce8d152968) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '912621bf369a305723606f64d82abde7') in 0.012491 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Desktop90_UI/Scripts/Editor/PrefabInstantiatorMethods.cs
+  artifactKey: Guid(f29a546b9fe440a42be978b511528b1c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Desktop90_UI/Scripts/Editor/PrefabInstantiatorMethods.cs using Guid(f29a546b9fe440a42be978b511528b1c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '74bfc82b3cda50a3578b62b52a6fd3e4') in 0.011359 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/P_Key_Dark.png
+  artifactKey: Guid(f8dfb16504e88da4aa339444b4d5b267) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/P_Key_Dark.png using Guid(f8dfb16504e88da4aa339444b4d5b267) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'db1e5d02f9fd2f049b7e305294097653') in 0.013014 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/Art/UI/Keyboard & Mouse/Dark/V_Key_Dark.png
+  artifactKey: Guid(e199825275f04d246a18e117a23245cb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Art/UI/Keyboard & Mouse/Dark/V_Key_Dark.png using Guid(e199825275f04d246a18e117a23245cb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6de318214aa34e585cabc100b7ff2805') in 0.012053 seconds 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 3.13 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 12 unused Assets / (21.9 KB). Loaded Objects now: 2495.
+Memory consumption went from 42.5 MB to 42.5 MB.
+Total: 3.105200 ms (FindLiveObjects: 0.219900 ms CreateObjectMapping: 0.078100 ms MarkObjects: 2.786100 ms  DeleteObjects: 0.020000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 46.742896 seconds.
+  path: Assets/Resources/Prefabs/Computer/Computer.prefab
+  artifactKey: Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Prefabs/Computer/Computer.prefab using Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f2bbb0743189215a55fac00e23a5d1d0') in 0.029644 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.427782 seconds.
+  path: Assets/Resources/Prefabs/Computer/Computer.prefab
+  artifactKey: Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Prefabs/Computer/Computer.prefab using Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '328d5a34e4c7872e4d29b502f62456f0') in 0.027199 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.275090 seconds.
+  path: Assets/Resources/Prefabs/Computer/Computer.prefab
+  artifactKey: Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Prefabs/Computer/Computer.prefab using Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '10c60e75c4ab745a4160e1e27d90d53e') in 0.034566 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.394852 seconds.
+  path: Assets/Resources/Prefabs/Computer/Computer.prefab
+  artifactKey: Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Resources/Prefabs/Computer/Computer.prefab using Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '59629a99ff6423bf2c9767942d50d810') in 0.027506 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004961 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.227 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1227ms)
+		BeginReloadAssembly (166ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (42ms)
+		EndReloadAssembly (895ms)
+			LoadAssemblies (92ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (291ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (51ms)
+			SetupLoadedEditorAssemblies (406ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (47ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (61ms)
+				ProcessInitializeOnLoadAttributes (234ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (27ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.90 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2010 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 12 unused Assets / (24.6 KB). Loaded Objects now: 2498.
+Memory consumption went from 82.5 MB to 82.5 MB.
+Total: 3.373800 ms (FindLiveObjects: 0.187600 ms CreateObjectMapping: 0.059400 ms MarkObjects: 3.104100 ms  DeleteObjects: 0.021400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005005 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.073 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1074ms)
+		BeginReloadAssembly (149ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (44ms)
+		EndReloadAssembly (779ms)
+			LoadAssemblies (86ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (243ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (43ms)
+			SetupLoadedEditorAssemblies (355ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (60ms)
+				ProcessInitializeOnLoadAttributes (234ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.72 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2010 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 12 unused Assets / (24.6 KB). Loaded Objects now: 2501.
+Memory consumption went from 82.5 MB to 82.5 MB.
+Total: 3.522300 ms (FindLiveObjects: 0.184400 ms CreateObjectMapping: 0.059300 ms MarkObjects: 3.258500 ms  DeleteObjects: 0.018600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 215.394172 seconds.
+  path: Assets/Resources/Prefabs/OLD_Computer.prefab
+  artifactKey: Guid(5cc4b9dfc036cc5439ff730b1cd26c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/OLD_Computer.prefab using Guid(5cc4b9dfc036cc5439ff730b1cd26c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3079a51a3dd61cf7bddbf4bc08af3995') in 0.191649 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.284497 seconds.
+  path: Assets/Scripts/Computer/DesktopManager.cs
+  artifactKey: Guid(12684430698b2d44fa2c575945f52bc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Computer/DesktopManager.cs using Guid(12684430698b2d44fa2c575945f52bc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bef4867710bf013f3734376d551b2d9') in 0.009505 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004746 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.152 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1153ms)
+		BeginReloadAssembly (161ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (46ms)
+		EndReloadAssembly (860ms)
+			LoadAssemblies (97ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (292ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (375ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (57ms)
+				ProcessInitializeOnLoadAttributes (254ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (13ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.71 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2009 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13 unused Assets / (24.6 KB). Loaded Objects now: 2511.
+Memory consumption went from 86.9 MB to 86.9 MB.
+Total: 3.282800 ms (FindLiveObjects: 0.184600 ms CreateObjectMapping: 0.061100 ms MarkObjects: 3.013900 ms  DeleteObjects: 0.022000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 31.562863 seconds.
+  path: Assets/Scripts/Computer/Inventory/InventoryPhysical.cs
+  artifactKey: Guid(0ee18d4f87d356f49b4e256dc8f0d9a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Computer/Inventory/InventoryPhysical.cs using Guid(0ee18d4f87d356f49b4e256dc8f0d9a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8d9a8efeb255d3e25c1653eca4313b9') in 0.010257 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 118.125267 seconds.
+  path: Assets/Resources/Prefabs/OLD_Computer.prefab
+  artifactKey: Guid(5cc4b9dfc036cc5439ff730b1cd26c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/OLD_Computer.prefab using Guid(5cc4b9dfc036cc5439ff730b1cd26c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '126b06175c489eb858de37d3a7950e0b') in 0.125104 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.865522 seconds.
+  path: Assets/Resources/Prefabs/Computer/Computer.prefab
+  artifactKey: Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Computer/Computer.prefab using Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23fd9c3e39e76c345efe2fa704b86478') in 0.078409 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 74.567572 seconds.
+  path: Assets/Resources/Prefabs/Computer/Desktop/IconContent.prefab
+  artifactKey: Guid(59b86cf91da6edc428c8169425f8ec1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Computer/Desktop/IconContent.prefab using Guid(59b86cf91da6edc428c8169425f8ec1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '145738f0cde9695bb9cd2ff923f999c1') in 0.042604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.077888 seconds.
+  path: Assets/Resources/Prefabs/Computer/Desktop/IconContent.prefab
+  artifactKey: Guid(59b86cf91da6edc428c8169425f8ec1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Computer/Desktop/IconContent.prefab using Guid(59b86cf91da6edc428c8169425f8ec1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bca19ec2102cd5476d7984a530546f4') in 0.026832 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.991316 seconds.
+  path: Assets/Resources/Prefabs/Computer/Desktop/IconContent.prefab
+  artifactKey: Guid(59b86cf91da6edc428c8169425f8ec1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Computer/Desktop/IconContent.prefab using Guid(59b86cf91da6edc428c8169425f8ec1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c876bd0c38d636df4d1fcfcf913ba87') in 0.027831 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.754792 seconds.
+  path: Assets/Resources/Prefabs/Computer/Desktop/IconContent.prefab
+  artifactKey: Guid(59b86cf91da6edc428c8169425f8ec1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Computer/Desktop/IconContent.prefab using Guid(59b86cf91da6edc428c8169425f8ec1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db6caedf2220a102b23ee91a740c87d3') in 0.026208 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.869670 seconds.
+  path: Assets/Resources/Prefabs/Computer/Computer.prefab
+  artifactKey: Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Computer/Computer.prefab using Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4732cf15de3b2e4d31dcf8ea8e6d4e89') in 0.040210 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003790 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.056 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1057ms)
+		BeginReloadAssembly (152ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (42ms)
+		EndReloadAssembly (776ms)
+			LoadAssemblies (90ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (230ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (354ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (16ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (59ms)
+				ProcessInitializeOnLoadAttributes (234ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.73 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2009 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 12 unused Assets / (24.7 KB). Loaded Objects now: 2515.
+Memory consumption went from 87.1 MB to 87.0 MB.
+Total: 4.231800 ms (FindLiveObjects: 0.198900 ms CreateObjectMapping: 0.060900 ms MarkObjects: 3.950900 ms  DeleteObjects: 0.019800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 134.061787 seconds.
+  path: Assets/Resources/Prefabs/Computer/Computer.prefab
+  artifactKey: Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Computer/Computer.prefab using Guid(1d22f6724b8d6c14fb37dae77547f239) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b583b6440b10b80d19caa2ee87b3f4f7') in 0.135410 seconds 

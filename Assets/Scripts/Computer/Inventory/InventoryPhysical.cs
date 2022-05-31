@@ -14,21 +14,23 @@ public class InventoryPhysical : MonoBehaviour
     
     // Instance of the inventory Scriptable Object
     [SerializeField] protected Inventory inventory;
-    [SerializeField] protected List<IconInventorySlot> iconInventorySlots;
+    // Initialize the inventory
+    protected List<IconInventorySlot> iconInventorySlots;
 
     // public: gets used in drag manager
 
-    protected virtual void OnEnable() // Right after Awake in execution order
+    protected void OnEnable() // Right after Awake in execution order
     {
         // it requires the inventory scriptable object
         DragManager.OnDropEvent += OnDrop;
         DragManager.OnDoubleClickEvent += DoubleClickEvent;
         PlayerComputerConnection.OnSpawnedComputerEvent += SpawnedComputerEvent;
-    }
-    protected virtual void Start() // Obselete in execution order
-    {
         PopulateInitial();
     }
+    // protected virtual void Start() // Obselete in execution order
+    // {
+    //     PopulateInitial();
+    // }
 
     void SpawnedComputerEvent()
     {
