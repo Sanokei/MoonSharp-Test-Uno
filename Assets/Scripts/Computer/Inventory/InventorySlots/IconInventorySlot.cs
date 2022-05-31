@@ -24,7 +24,7 @@ public abstract class IconInventorySlot : MonoBehaviour
     }   
     protected virtual void SetSlot(Inventory inventory)
     {
-        PhysicalRepresentation.SetActive(true);
+        Instantiate(PhysicalRepresentation, transform);
     } 
      protected virtual void RemoveSlot()
     {

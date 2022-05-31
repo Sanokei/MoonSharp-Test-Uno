@@ -6,7 +6,6 @@ public class ComputerManager : MonoBehaviour//, IDottedCircle
 {
     public delegate void DeactivateInputField();
     public static event DeactivateInputField DeactivateInputFieldEvent;
-    public PlayerMovement playerMovement;
     
     // FIXME: Flag variable. Bad practice.
     bool _computerMode = false;
@@ -50,16 +49,6 @@ public class ComputerManager : MonoBehaviour//, IDottedCircle
             // https://github.com/Sanokei/Programmed-Dystopia/issues/5
             if(!_computerMode && DeactivateInputFieldEvent != null)
                 DeactivateInputFieldEvent();
-            
-            // Disable the player's movement
-            playerMovement.canMove = !_computerMode;
-            StartCoroutine(Co_ChangeMouseState(_computerMode)); // I dont remember why I made this a coroutine
         }
-    }
-    private IEnumerator Co_ChangeMouseState(bool state)
-    {
-        yield return new WaitForEndOfFrame();
-        Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = state;
     }
 }

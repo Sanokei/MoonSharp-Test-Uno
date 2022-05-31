@@ -27,7 +27,7 @@ using System.IO;
 [System.Serializable]
 public class Inventory : ScriptableObject
 {
-    private Icon[] inventory;
+    [SerializeField] private Icon[] inventory;
 
     // using an indexer, isnt needed in this context
     // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/indexers/

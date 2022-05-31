@@ -25,6 +25,13 @@ public class DragUI : MonoBehaviour, IDragHandler
     /// <summary>
     /// Makes the icon draggable.
     /// </summary>
+
+    void OnEnable()
+    {
+        if (_Camera == null)
+            _Camera = Camera.main; // TODO: yes yes this bad 
+    }
+
     public void OnDrag(PointerEventData eventdata)
     {
         Vector2 pos;
