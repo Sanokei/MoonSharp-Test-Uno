@@ -14,6 +14,7 @@ public class ComputerManager : MonoBehaviour//, IDottedCircle
     [SerializeField] private GameObject _Phone;
     void Awake()
     {
+        gameObject.SetActive(false);
         _DottedCircle.SetActive(false);
         _Phone.SetActive(false);
         Eyes.OnRayCastHitEvent += OnComputerModeEvent;

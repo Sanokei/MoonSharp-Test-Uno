@@ -17,8 +17,7 @@ public class Eyes : MonoBehaviour
     void FixedUpdate()
     {
         RaycastHit hit;
-        if(SendRayCastHit(out hit));
-        else
+        if(!SendRayCastHit(out hit))
             OnNoRayCastHitEvent?.Invoke();
     }
 
