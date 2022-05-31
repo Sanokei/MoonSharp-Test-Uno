@@ -4695,6 +4695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerMovement: {fileID: 1251342502}
   _computer: {fileID: 909922111}
+  _phone: {fileID: 8546950564845714435}
 --- !u!4 &653020667
 Transform:
   m_ObjectHideFlags: 0
@@ -12887,9 +12888,10 @@ GameObject:
   - component: {fileID: 1798091743}
   - component: {fileID: 1798091742}
   - component: {fileID: 1798091744}
+  - component: {fileID: 1798091745}
   m_Layer: 0
   m_Name: ThePhone
-  m_TagString: Untagged
+  m_TagString: Phone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12970,8 +12972,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 26.35448, y: 2.2245526, z: 7.3089895}
-  m_Center: {x: 0.26542124, y: 15.442883, z: -0.00318123}
+  m_Size: {x: 26.354454, y: 2.3759468, z: 7.3089895}
+  m_Center: {x: 0.26542124, y: 15.518573, z: -0.00318123}
+--- !u!54 &1798091745
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798091740}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1817322929 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1058548086568388827, guid: fb05c4c7f572f5b4196bbce62a4cc0cb, type: 3}
@@ -15289,6 +15307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4112355537449755420}
+  - component: {fileID: 4112355537449755421}
   m_Layer: 0
   m_Name: BaseStation
   m_TagString: Untagged
@@ -15350,6 +15369,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &4112355537449755421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3628165437851564454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5ab42426d08c544b27f3d1cea56bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _phone: {fileID: 1798091740}
+  _playerMovement: {fileID: 1251342502}
+  _phoneRb: {fileID: 1798091745}
 --- !u!1 &4341478056390083362
 GameObject:
   m_ObjectHideFlags: 0

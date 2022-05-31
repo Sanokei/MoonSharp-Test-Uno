@@ -38,7 +38,7 @@ public class ComputerManager : MonoBehaviour//, IDottedCircle
             // This may cause errors later on.
         if( // yes I know this is gross but its for future readability.
             // if you not in computer mode and you are looking at the computer and click mouse 0 (Left click)
-            (!_computerMode && Input.GetMouseButtonDown(0) && hit.transform.tag == "Computer")
+            (hit.transform.tag == "Computer" && !_computerMode && Input.GetMouseButtonDown(0))
             || // or
             // if you are in computer mode and you press escape
             (_computerMode && Input.GetKeyDown(KeyCode.Escape))
