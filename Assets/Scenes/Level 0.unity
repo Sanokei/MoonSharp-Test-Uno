@@ -7173,7 +7173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e88e17f58dbdf34699dccaf2cd26245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 1251342502}
   _DottedCircle: {fileID: 784926219}
   _Phone: {fileID: 72632882}
 --- !u!65 &909922115
@@ -9542,7 +9541,7 @@ GameObject:
   - component: {fileID: 1271421471}
   - component: {fileID: 1271421473}
   - component: {fileID: 1271421474}
-  - component: {fileID: 1271421472}
+  - component: {fileID: 1271421475}
   m_Layer: 0
   m_Name: Desktop Inventory
   m_TagString: Untagged
@@ -9665,20 +9664,6 @@ Transform:
   m_Father: {fileID: 98611979}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1271421472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271421470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12684430698b2d44fa2c575945f52bc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 72f741bddd8ff5e43b505009365462c5, type: 2}
-  iconInventorySlots: []
 --- !u!114 &1271421473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9715,6 +9700,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultTheme: 1
   defaultShowReticle: 1
+--- !u!114 &1271421475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271421470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee18d4f87d356f49b4e256dc8f0d9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 72f741bddd8ff5e43b505009365462c5, type: 2}
 --- !u!1 &1277844238
 GameObject:
   m_ObjectHideFlags: 0
