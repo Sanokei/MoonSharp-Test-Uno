@@ -19,7 +19,7 @@ public class InventoryPhysical : MonoBehaviour
 
     // public: gets used in drag manager
 
-    protected void OnEnable() // Right after Awake in execution order
+    virtual protected void OnEnable() // Right after Awake in execution order
     {
         // it requires the inventory scriptable object
         DragManager.OnDropEvent += OnDrop;
@@ -27,10 +27,10 @@ public class InventoryPhysical : MonoBehaviour
         PlayerComputerConnection.OnSpawnedComputerEvent += SpawnedComputerEvent;
         PopulateInitial();
     }
-    // protected virtual void Start() // Obselete in execution order
-    // {
-    //     PopulateInitial();
-    // }
+    protected virtual void Start() // Obselete in execution order
+    {
+        PopulateInitial();
+    }
 
     void SpawnedComputerEvent()
     {
