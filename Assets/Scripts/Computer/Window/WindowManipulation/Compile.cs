@@ -42,8 +42,14 @@ namespace CodeSystem
                 _compiledCode = value;
             }
         }
+
         [SerializeField] CodeEditor text;
         public void OnPointerClick(PointerEventData eventData)
+        {
+            CompileCode();
+        }
+
+        public void CompileCode()
         {
             _compiledCode = text.Text;
         }

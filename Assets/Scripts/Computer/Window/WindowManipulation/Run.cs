@@ -15,7 +15,10 @@ namespace CodeSystem
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            Debug.Log(script.DoString(compiler.compiledCode));
+            compiler.CompileCode();
+            script.Options.DebugPrint = (x) => Debug.Log(x);
+            DynValue fn = script.LoadString(compiler.compiledCode);
+            fn.Function.Call();
         }
     }
 }
