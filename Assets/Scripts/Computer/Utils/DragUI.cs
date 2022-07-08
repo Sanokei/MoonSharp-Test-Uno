@@ -22,6 +22,7 @@ public class DragUI : MonoBehaviour, IDragHandler
     // {
     //     OnDropEvent(gameObject);
     // }
+    
     /// <summary>
     /// Makes the icon draggable.
     /// </summary>
@@ -29,9 +30,16 @@ public class DragUI : MonoBehaviour, IDragHandler
     {
         Vector2 pos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(_Canvas.transform as RectTransform, eventdata.position, _Camera, out pos);
+
+        Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+
         float width = _GameObjectRectTransform.rect.width * _GameObjectRectTransform.localScale.x;
         float height = _GameObjectRectTransform.rect.height * _GameObjectRectTransform.localScale.y;
-        Vector2 newPos = new Vector2(Mathf.Clamp(pos.x, -((_CanvasRectTransform.rect.width) / 2) + (width / 2), (_CanvasRectTransform.rect.width / 2) - (width / 2)), Mathf.Clamp(pos.y, -(_CanvasRectTransform.rect.height / 2) + (height / 2), _CanvasRectTransform.rect.height / 2 - (height / 2)));
+        // Clamps the position of the dragged object to stay on the screen
+        Vector2 newPos = new Vector2(
+            Mathf.Clamp(pos.x, -((_CanvasRectTransform.rect.width) / 2) + (width / 2), (_CanvasRectTransform.rect.width / 2) - (width / 2)), 
+            Mathf.Clamp(pos.y, -(_CanvasRectTransform.rect.height / 2) + (height / 2), _CanvasRectTransform.rect.height / 2 - (height / 2))
+        );
         gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, _Canvas.transform.TransformPoint(newPos), Time.deltaTime * 60f);
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Icon
   - Computer
   - Phone
+  - debug
   layers:
   - Default
   - TransparentFX
