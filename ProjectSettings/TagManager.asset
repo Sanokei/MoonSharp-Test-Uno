@@ -9,6 +9,7 @@ TagManager:
   - Computer
   - Phone
   - debug
+  - Filename
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Taskbar
   - 
   - 
   - 
