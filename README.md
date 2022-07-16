@@ -1,5 +1,5 @@
 # Hack Punk: The game with a thousand pieces
-Hack Punk is a game centered around programming and puzzle solving. Players can create new levels and share them for others to play. The main gameplay loop consists of 'phreaks' hacking ingame IOT devices, doors, and everyday objects to get to the end of the level. Every device is controlled by an accessable phone which acts as a network hub. These networks are run on the programming language Lua, and it is the phreaks' job is to exploit the code to get to the end.
+Hackpunk is a game centered around programming and puzzle solving. Players can create new levels and share them for others to play. The main gameplay loop consists of 'phreaks' hacking ingame IOT devices, doors, and everyday objects to get to the end of the level. Every device is controlled by an accessible phone which acts as a network hub. These networks are run on the programming language Lua.
 
 # Development photos
 ![SidePhone](https://user-images.githubusercontent.com/36809574/158339422-3e46f893-10b9-4645-8b79-eb16254a13b9.png)
