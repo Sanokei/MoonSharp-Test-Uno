@@ -11,6 +11,7 @@ public class ActivateComputer : MonoBehaviour
 
     private void Start()
     {
+        //fixme
         _animation = _phone.GetComponent<Animation>();
     }
 
@@ -18,12 +19,7 @@ public class ActivateComputer : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if(_computer.activeSelf)
-            {
-                _animation.Play("Toaster Hide");
-                _computer.SetActive(false);
-            }
-            else // doesnt work since its disabled lmao
+            if(!_computer.activeSelf)
             {
                 _computer.SetActive(true);
                 _animation.Play("Toaster Pop");

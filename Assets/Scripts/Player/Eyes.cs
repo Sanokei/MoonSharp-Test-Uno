@@ -14,7 +14,7 @@ public class Eyes : MonoBehaviour
 
     //
     float sphereCastThickness = 1f; // The radius of the cast // sphere cast thicc asf :flushed:
-    void FixedUpdate()
+    void Update()
     {
         RaycastHit hit;
         if(!SendRayCastHit(out hit))

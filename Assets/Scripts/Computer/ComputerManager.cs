@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pickup;
 
 public class ComputerManager : MonoBehaviour//, IDottedCircle
 {
@@ -10,8 +11,10 @@ public class ComputerManager : MonoBehaviour//, IDottedCircle
     
     // FIXME: Flag variable. Bad practice.
     bool _computerMode = false;
+    [SerializeField] private Hand _Hand;
     [SerializeField] private GameObject _DottedCircle;
     [SerializeField] private GameObject _Phone;
+    [SerializeField] private Rigidbody _rb;
     void Awake()
     {
         gameObject.SetActive(false);
@@ -53,10 +56,19 @@ public class ComputerManager : MonoBehaviour//, IDottedCircle
                 DeactivateInputFieldEvent();
             
             // Disable the player's movement
-            playerMovement.canMove = !_computerMode;
-            StartCoroutine(Co_ChangeMouseState(_computerMode)); // I dont remember why I made this a coroutine
+            ChangeComputerMode();
+        }
+        if(hit.transform.tag == "Computer")
+        {
+            _Hand.inHand = new HandMaker( gameObject,_rb );
         }
     }
+    public void ChangeComputerMode()
+    {
+        playerMovement.canMove = !_computerMode;
+        StartCoroutine(Co_ChangeMouseState(_computerMode)); // I dont remember why I made this a coroutine
+    }
+
     private IEnumerator Co_ChangeMouseState(bool state)
     {
         yield return new WaitForEndOfFrame();
