@@ -21,11 +21,13 @@ namespace Pickup
     }
     public class Hand : MonoBehaviour
     {
+        bool _isInHand = false;
+        [SerializeField] PlayerMovement _playerMovement;
         void Awake()
         {
             Eyes.OnRayCastHitEvent += OnPickupEvent;
         }
-        private HandMaker _inHand;
+        private HandMaker _inHand = null;
         public HandMaker inHand
         {
             set
@@ -41,13 +43,20 @@ namespace Pickup
                 return _inHand; 
             }
         }
-
+        void Update()
+        {
+            if(_isInHand)
+            {
+                inHand.pickUp.transform.position = gameObject.transform.position;
+                inHand.objectRb.rotation = _playerMovement.gameObject.transform.rotation;
+            }
+        }
         private void OnPickupEvent(RaycastHit hit)
         {
-                if(Input.GetKeyDown(KeyCode.E))
+                if(Input.GetKeyDown(KeyCode.E) && _inHand != null)
                 {
-                    inHand.pickUp.transform.position = gameObject.transform.position;
-                    inHand.objectRb.useGravity = false;
+                    _isInHand = !_isInHand;
+                    inHand.objectRb.useGravity = !_isInHand;
                 }
         }
     }
