@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43815467, g: 0.48616165, b: 0.5664378, a: 1}
+  m_IndirectSpecularColor: {r: 0.43815434, g: 0.48616135, b: 0.5664374, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12614,6 +12614,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Window_console
       objectReference: {fileID: 0}
+    - target: {fileID: 4381894792978516631, guid: ddb1202199d644b4fb06e2da50ff4be3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381894794769581191, guid: ddb1202199d644b4fb06e2da50ff4be3, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381894794769581191, guid: ddb1202199d644b4fb06e2da50ff4be3, type: 3}
+      propertyPath: m_LineType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381894794769581191, guid: ddb1202199d644b4fb06e2da50ff4be3, type: 3}
+      propertyPath: m_OnSubmit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381894794769581191, guid: ddb1202199d644b4fb06e2da50ff4be3, type: 3}
+      propertyPath: m_OnSubmit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381894794769581191, guid: ddb1202199d644b4fb06e2da50ff4be3, type: 3}
+      propertyPath: m_OnSubmit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8568573094111090313, guid: ddb1202199d644b4fb06e2da50ff4be3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12696,6 +12720,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8568573094111090313, guid: ddb1202199d644b4fb06e2da50ff4be3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961221079115937111, guid: ddb1202199d644b4fb06e2da50ff4be3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961221079115937111, guid: ddb1202199d644b4fb06e2da50ff4be3, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
