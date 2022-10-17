@@ -9,5 +9,3 @@ Hackpunk is a game centered around programming and puzzle solving. Players can c
 
 # Tools
 The Lua to C# interpreture is called MoonSharp
-
-## fair warning: The files wont work properly because the appdata isnt being pushed to github meaning they will not be able to find coresponding file data
