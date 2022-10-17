@@ -4,25 +4,29 @@ using UnityEngine;
 using TMPro;
 using InGameCodeEditor;
 
+using UnityEngine.SceneManagement;
+
+using System.IO;
+
 public class TextIconManager : MonoBehaviour
 {
     public CodeEditorTheme[] codeEditorTheme;
     public enum editorThemeNames{light, dark, terminal}; // Dark is the default. 
     public CodeLanguageTheme[] codeLanguageTheme;
     public enum languageThemeNames{json, lua, txt, cs, ms}; // Csharp and Miniscript is just for future proofing. Not actually used meaningfully.
-
+    public string file_path;
     void Awake()
     {
         InventoryPhysical.OnCreateWindowEvent += CreateWindow;
+        file_path = Path.Combine(Application.persistentDataPath,SceneManager.GetActiveScene().name,"ingamefiles");
     }
 
     // Fixed by making it a coroutine (?)
         // FIXME: All of this is super slow..
         // WARNING: This drops the FPS by a lot!!!!
-    public void CreateWindow(Icon icon, IconInventorySlot slot)
+    public void CreateWindow(TextIcon icon, IconInventorySlot slot)
     {
-        if(icon is TextIcon textIcon)
-            StartCoroutine((IEnumerator)Co_CreateWindowRoutine(slot, textIcon));
+        StartCoroutine((IEnumerator)Co_CreateWindowRoutine(slot, icon));
     }
     private IEnumerator Co_CreateWindowRoutine(IconInventorySlot slot, TextIcon textIcon)
     {

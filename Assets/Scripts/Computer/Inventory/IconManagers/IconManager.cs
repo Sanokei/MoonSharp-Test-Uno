@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/*
+    FIXME: Forgot the use of this
+*/
+
 [System.Serializable]
 public abstract class IconManager<T> : MonoBehaviour
 {

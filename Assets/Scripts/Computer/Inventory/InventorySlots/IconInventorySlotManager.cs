@@ -15,7 +15,8 @@ public class IconInventorySlotManager : IconInventorySlot
         // Gets called DIRECTLY from Inventory Managers (i.e DesktopManager)
     protected override void SetSlot(Inventory inventory)
     {
-        Icon icon;
+        TextIcon icon;
+        // FIXME
         // I didnt know how to pass the icon to the physical slot while using a delegate...
         // This is such a stupid solution but it works for now
         if (inventory.GetIcon(index, out icon))

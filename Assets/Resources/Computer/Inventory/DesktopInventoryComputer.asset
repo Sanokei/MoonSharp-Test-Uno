@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: DesktopInventoryComputer
   m_EditorClassIdentifier: 
   inventory:
-  - {fileID: 11400000, guid: ff2be1d8b7375314ba1879a704d6da15, type: 2}
-  - {fileID: 11400000, guid: 24c9c7c4607a1454c9ff8d5305e549ed, type: 2}
-  - {fileID: 11400000, guid: a862b862aff560645b2c08eb33d2a9b0, type: 2}
-  - {fileID: 11400000, guid: 7b63e5d9caeb43c49a7dd73a1ad72ac5, type: 2}
+  - {fileID: 11400000, guid: dff854a9ffb1277488e8352467f0e9a2, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using FileSystem;
 using TMPro;
 using InGameCodeEditor;
+using SeralizedJSONSystem;
 
 public class SaveAndExit : MonoBehaviour,IPointerClickHandler
 {
@@ -13,7 +13,11 @@ public class SaveAndExit : MonoBehaviour,IPointerClickHandler
     [SerializeField] GameObject window;
     public void OnPointerClick(PointerEventData eventData)
     {
-        FileSystem.File.WriteFile(filename.text,text.Text);
+        // filename.text already has the fileTag attached
+        TextIcon ti;
+        SeralizedJSON<TextIcon>.LoadScriptableObject(filename.text,out ti);
+        ti.FileData = text.Text;
+        SeralizedJSON<TextIcon>.SaveScriptableObject(ti,filename.text);
         Destroy(window);
     }
 }

@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using FileSystem;
 using TMPro;
 using InGameCodeEditor;
+using SeralizedJSONSystem;
 
 namespace CodeSystem
 {
-    public class Save : MonoBehaviour,IPointerClickHandler
+    public class Save : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] CodeEditor text;
         [SerializeField] TextMeshProUGUI filename;
         public void OnPointerClick(PointerEventData eventData)
         {
-            FileSystem.File.WriteFile(filename.text,text.Text);
+            TextIcon ti;
+            SeralizedJSON<TextIcon>.LoadScriptableObject(filename.text,out ti);
+            ti.FileData = text.Text;
+            SeralizedJSON<TextIcon>.SaveScriptableObject(ti,filename.text);
         }
     }
 }
