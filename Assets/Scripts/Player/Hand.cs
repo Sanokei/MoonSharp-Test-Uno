@@ -8,6 +8,7 @@ namespace Pickup
     {
         public GameObject pickUp {get; private set;}
         public Rigidbody objectRb {get; private set;}
+
          public HandMaker()
          {
              pickUp = null;
@@ -21,14 +22,10 @@ namespace Pickup
     }
     public class Hand : MonoBehaviour
     {
-        bool _isInHand = false;
+        static bool _isInHand = false;
         [SerializeField] PlayerMovement _playerMovement;
-        void Awake()
-        {
-            Eyes.OnRayCastHitEvent += OnPickupEvent;
-        }
-        private HandMaker _inHand = null;
-        public HandMaker inHand
+        private static HandMaker _inHand = null;
+        public static HandMaker inHand
         {
             set
             {
@@ -43,6 +40,20 @@ namespace Pickup
                 return _inHand; 
             }
         }
+
+        private Hand _Instance;
+        public Hand Instance{
+            get
+            {
+                return _Instance;
+            }
+            
+            set
+            {
+                _Instance = _Instance == null ? new Hand() : _Instance;
+            }
+        }
+
         void Update()
         {
             if(_isInHand)
@@ -51,13 +62,13 @@ namespace Pickup
                 inHand.objectRb.rotation = _playerMovement.gameObject.transform.rotation;
             }
         }
-        private void OnPickupEvent(RaycastHit hit)
+        public void PickUpPhone(RaycastHit hit)
         {
-                if(Input.GetKeyDown(KeyCode.E) && _inHand != null)
-                {
-                    _isInHand = !_isInHand;
-                    inHand.objectRb.useGravity = !_isInHand;
-                }
+            if(Input.GetKeyDown(KeyCode.E) && _inHand != null)
+            {
+                _isInHand = !_isInHand;
+                inHand.objectRb.useGravity = !_isInHand;
+            }
         }
     }
 }

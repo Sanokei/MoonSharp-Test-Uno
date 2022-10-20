@@ -12,8 +12,7 @@ public class StartMenuManager : MonoBehaviour
     [SerializeField] Button _menu, _settingsBtn, _levelSettingsBtn, _levelsBtn, _pickCompBtn,_exitBtn;
     //example button with params
     // _settingsBtn.onClick.AddListener(delegate {TaskWithParameters("Hello"); });
-    
-    private void Awake()
+    public void Awake()
     {
         gameObject.SetActive(false);
     }
@@ -27,14 +26,15 @@ public class StartMenuManager : MonoBehaviour
         _animation = _phone.GetComponent<Animation>();
     }
 
-    void OpenStartMenu()
+    public void OpenCloseStartMenu()
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(!gameObject.activeSelf);
     }
 
     void Settings()
     {
         //open a new window of different settings
+        throw new System.NotImplementedException();
     }
 
     void LevelSettings()
@@ -47,10 +47,14 @@ public class StartMenuManager : MonoBehaviour
 
     void PickUpComputer()
     {
-        _comp.ChangeComputerMode();
+        _comp.ChangeComputerMode(Override: true, OverrideBool: false);
         gameObject.SetActive(false);
         _animation.Play("Toaster Hide");
-        _computer.SetActive(false);
+        StartCoroutine(Co_PickUpComputer());
     }
-
+    public IEnumerator Co_PickUpComputer()
+    {   
+        _computer.SetActive(false);
+        yield return new WaitForSeconds(1);
+    }
 }

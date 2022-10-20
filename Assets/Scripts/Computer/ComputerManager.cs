@@ -55,24 +55,26 @@ public class ComputerManager : MonoBehaviour//, IDottedCircle
             if(!_computerMode && DeactivateInputFieldEvent != null)
                 DeactivateInputFieldEvent();
             
-            // Disable the player's movement
-            ChangeComputerMode();
+            if(gameObject.activeSelf)
+                // Disable the player's movement
+                ChangeComputerMode();
         }
-        if(hit.transform.tag == "Computer")
+        if(hit.transform.tag == "Computer" && !_computerMode)
         {
-            _Hand.inHand = new HandMaker( gameObject,_rb );
+            Hand.inHand = new HandMaker( gameObject,_rb );
+            _Hand.PickUpPhone(hit);
         }
     }
-    public void ChangeComputerMode()
+    public void ChangeComputerMode(bool Override = false, bool OverrideBool = false)
     {
-        playerMovement.canMove = !_computerMode;
-        StartCoroutine(Co_ChangeMouseState(_computerMode)); // I dont remember why I made this a coroutine
+        playerMovement.canMove = Override ? !OverrideBool : !_computerMode;
+        StartCoroutine(Co_ChangeMouseState(Override ? OverrideBool : _computerMode)); // I dont remember why I made this a coroutine
     }
 
     private IEnumerator Co_ChangeMouseState(bool state)
     {
-        yield return new WaitForEndOfFrame();
         Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = state;
+        yield break;
     }
 }

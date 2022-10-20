@@ -5,6 +5,8 @@ using UnityEngine;
 using MoonSharp.Interpreter;
 using MoonSharp.Interpreter.Loaders;
 
+using Console;
+
 // In-game compiler
 namespace Lancet
 {
@@ -50,6 +52,14 @@ namespace Lancet
         public static void RunCode(string code)
         {
             Script script = new Script();
+            DynValue fn = script.LoadString(code);
+            fn.Function.Call();
+        }
+
+        public static void RunCodeInConsole(string code, ConsoleManager console)
+        {
+            Script script = new Script();
+            script.Options.DebugPrint = (x) => console.CreateResponse(x);
             DynValue fn = script.LoadString(code);
             fn.Function.Call();
         }
