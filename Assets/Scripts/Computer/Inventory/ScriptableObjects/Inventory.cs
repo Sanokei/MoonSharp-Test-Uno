@@ -100,4 +100,9 @@ public class Inventory : ScriptableObject
         // Was not a free slot.
         return -1;
     }
+
+    public int GetLength()
+    {
+        return inventory.Length;
+    }
 }

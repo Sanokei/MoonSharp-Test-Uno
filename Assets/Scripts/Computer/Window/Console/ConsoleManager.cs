@@ -18,6 +18,8 @@ namespace Console
         GameObject _Input;
         TextMeshProUGUI _commandText;
 
+        Inventory ConsoleCommands;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -50,7 +52,18 @@ namespace Console
                 _commandText.text = eventData.ToString();
                 
                 // make a response
-                Lancet.API.RunCodeInConsole(eventData,this);
+
+                    // Clean up the eventData String
+                    // {command}   [parameters] 
+                    //  filename  split by spaces
+                try
+                {
+                    Lancet.API.RunCodeInConsole(eventData,this);
+                }
+                catch(MoonSharp.Interpreter.ScriptRuntimeException ex)
+                {
+                    CreateResponse(ex.ToString());
+                }
                 // Should call 
 
                 // remake the input

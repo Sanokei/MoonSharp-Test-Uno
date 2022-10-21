@@ -56,11 +56,22 @@ namespace Lancet
             fn.Function.Call();
         }
 
-        public static void RunCodeInConsole(string code, ConsoleManager console)
+        public static void RunCodeInConsole(Dictionary<string,string[]> code, ConsoleManager console, Inventory ConsoleCommands)
         {
             Script script = new Script();
             script.Options.DebugPrint = (x) => console.CreateResponse(x);
-            DynValue fn = script.LoadString(code);
+            
+            TextIcon icon = new TextIcon();
+            for(int i = 0; i < ConsoleCommands.GetLength();i++)
+            {
+                ConsoleCommands.GetIcon(i,out icon);
+                if(code[icon.name] != null)
+                {
+                    break;
+                }
+            }
+
+            DynValue fn = script.LoadString(icon.FileData, );
             fn.Function.Call();
         }
     }

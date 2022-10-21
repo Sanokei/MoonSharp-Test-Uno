@@ -51,7 +51,7 @@ namespace SeralizedJSONSystem{
                 }
             }
         }
-
+        
         public static void SaveScriptableObject(T scriptableObject, string filename) {
             string jsonPath = System.IO.Path.Combine(Application.persistentDataPath,UnityEngine.SceneManagement.SceneManager.GetActiveScene().name,$"{filename}.json");
             
