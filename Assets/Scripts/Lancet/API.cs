@@ -72,7 +72,7 @@ namespace Lancet
             else
             {
                 Instance.Current_Console = console;
-                console.CreateResponse($"LancetRuntimeError: {code.Keys} does not exist in {inv.name}");
+                console.CreateResponse($"LancetRuntimeError: \"{GetKey(code)}\" does not exist in \"{inv.name}\"");
             }
                 
         }
@@ -96,6 +96,14 @@ namespace Lancet
             }
 
             return _IconExistsFlag;
+        }
+
+        public static string GetKey(Dictionary<string,string[]> code)
+        {
+            string key = "";
+                foreach(var _key in code.Keys)
+                    key += _key;
+            return key;
         }
     }
 }

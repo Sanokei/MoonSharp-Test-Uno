@@ -19,7 +19,8 @@ namespace Lancet
             catch(System.Exception ex)
             {
                 Debug.Log(ex);
-                API.Instance.Current_Console.CreateResponse("LancetRunTimeError: Filename unknown and or File may not Exist.");
+                Dictionary<string,string[]> sanin = SanatizeInput.Input(code.CastToString());
+                API.Instance.Current_Console.CreateResponse($"LancetRunTimeError: Filename {API.GetKey(sanin)} may not Exist.");
             }
         }
     }

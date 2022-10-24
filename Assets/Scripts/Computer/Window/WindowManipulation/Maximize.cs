@@ -15,7 +15,7 @@ public class Maximize : MonoBehaviour, IPointerClickHandler
     {
         Destroy(window);
 
-        // FIX ME: This is all a shit way to do this
+        // FIXME: This is all a shit way to do this
         GameObject bigWindow = Instantiate(Resources.Load($"Computer/Window/Window_big_textEditor") as GameObject, drag._Canvas.transform.parent);
         CodeEditor cd = bigWindow.GetComponentInChildren<CodeEditor>();
         DragUI bd = bigWindow.GetComponent<DragUI>();

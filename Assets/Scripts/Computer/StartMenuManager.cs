@@ -46,6 +46,7 @@ public class StartMenuManager : MonoBehaviour
 
     void CreateConsole()
     {
+        OpenCloseStartMenu();
         Console.ConsoleManager.CreateConsole();
     }
 
