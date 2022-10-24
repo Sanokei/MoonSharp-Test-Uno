@@ -11,6 +11,9 @@ public class PlayerOptions : MonoBehaviour
     //
     public TextIconManager.editorThemeNames defaultTheme = TextIconManager.editorThemeNames.dark;
     public bool defaultShowReticle = true;
+    public Camera _Camera;
+    public Canvas _Canvas;
+    public RectTransform _CanvasRectTransform;
 
     void Start()
     {

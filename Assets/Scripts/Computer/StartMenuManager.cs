@@ -9,7 +9,7 @@ public class StartMenuManager : MonoBehaviour
     [SerializeField] GameObject _phone;
     [SerializeField] ComputerManager _comp;
     Animation _animation;
-    [SerializeField] Button _menu, _settingsBtn, _levelSettingsBtn, _levelsBtn, _pickCompBtn,_exitBtn;
+    [SerializeField] Button _menu, _settingsBtn, _levelSettingsBtn, _levelsBtn, _pickCompBtn, _exitBtn, _console;
     //example button with params
     // _settingsBtn.onClick.AddListener(delegate {TaskWithParameters("Hello"); });
     public void Awake()
@@ -18,10 +18,9 @@ public class StartMenuManager : MonoBehaviour
     }
     private void Start()
     {
-        //_menu.onClick.AddListener(OpenStartMenu);
         _settingsBtn.onClick.AddListener(Settings);
         _pickCompBtn.onClick.AddListener(PickUpComputer);
-
+        _console.onClick.AddListener(CreateConsole);
         // fixme inefficent 
         _animation = _phone.GetComponent<Animation>();
     }
@@ -43,6 +42,11 @@ public class StartMenuManager : MonoBehaviour
         // restart level
         // hints
         // etc
+    }
+
+    void CreateConsole()
+    {
+        Console.ConsoleManager.CreateConsole();
     }
 
     void PickUpComputer()

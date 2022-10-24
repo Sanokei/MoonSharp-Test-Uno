@@ -5,10 +5,11 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 using Lancet;
+using System.IO;
 
 namespace Console
 {
-    public class ConsoleManager : MonoBehaviour
+    public partial class ConsoleManager : MonoBehaviour
     {
         [SerializeField] InputField _CurrentInput;
         [SerializeField] GameObject _CurrentInputModule;
@@ -19,7 +20,16 @@ namespace Console
         GameObject _Input;
         TextMeshProUGUI _commandText;
 
-        // Start is called before the first frame update
+        void OnEnable()
+        {
+            ComputerManager.DeactivateInputFieldEvent += DeactivateInputField;
+            _CurrentInput.onSubmit.AddListener(OnSubmit);
+        }
+        void OnDisable()
+        {
+            ComputerManager.DeactivateInputFieldEvent -= DeactivateInputField;
+        }
+
         void Start()
         {
             _Command = Resources.Load("Computer/Window/Console/Command") as GameObject;
@@ -34,6 +44,7 @@ namespace Console
         {
             _CurrentInputModule = input;
             _CurrentInput = inputField;
+            _CurrentInput.onSubmit.AddListener(OnSubmit);
         }
 
         public virtual void OnSubmit(string eventData)
@@ -61,15 +72,19 @@ namespace Console
                 // remake the input
                 var newS = Instantiate(_Input, new Vector3(0,0,0), Quaternion.identity);
                 newS.transform.SetParent(_vertLayoutGroup.transform,false);
+                SetCurrentInputMod(newS.gameObject,newS.GetComponentInChildren<InputField>());
             }
         }
-
         public void CreateResponse(string eventData)
         {
             var newR = Instantiate(_Response, new Vector3(0,0,0), Quaternion.identity);
             newR.transform.SetParent(_vertLayoutGroup.transform,false);
             _commandText = newR.GetComponentInChildren<TextMeshProUGUI>();
             _commandText.text = eventData;
+        }
+        void DeactivateInputField()
+        { 
+            _CurrentInput.DeactivateInputField();
         }
     }
 }

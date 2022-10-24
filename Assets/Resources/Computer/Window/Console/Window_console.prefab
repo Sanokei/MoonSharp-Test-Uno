@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8568573094111090313}
   - component: {fileID: 2845060210695032944}
-  - component: {fileID: 412918233934594428}
   - component: {fileID: 1459172191591943168}
+  - component: {fileID: 7604220644851594563}
   m_Layer: 5
   m_Name: Window_console
   m_TagString: Untagged
@@ -51,23 +51,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2845060210695033229}
   m_CullTransparentMesh: 0
---- !u!114 &412918233934594428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2845060210695033229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 845fbc54fe8541145b0f22b5c7d7e3d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  codeEditor: {fileID: 0}
-  text: {fileID: 2845060210726900541}
-  dragUI: {fileID: 1459172191591943168}
-  TMP_inputField: {fileID: 0}
-  inputField: {fileID: 0}
 --- !u!114 &1459172191591943168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +67,22 @@ MonoBehaviour:
   _GameObjectRectTransform: {fileID: 8568573094111090313}
   _Canvas: {fileID: 0}
   _CanvasRectTransform: {fileID: 0}
+--- !u!114 &7604220644851594563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2845060210695033229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8194bb27d310b4c4b9934568617c34c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _CurrentInput: {fileID: 4381894794769581191}
+  _CurrentInputModule: {fileID: 2609780507652911316}
+  _vertLayoutGroup: {fileID: 3560049002188285576}
+  _ConsoleCommands: {fileID: 11400000, guid: c79d39829fe964348929673f7d62753e, type: 2}
 --- !u!1 &2845060210726900539
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +647,6 @@ GameObject:
   - component: {fileID: 5684879248778498256}
   - component: {fileID: 883646253661667912}
   - component: {fileID: 3560049002188285576}
-  - component: {fileID: 370248219308417261}
   m_Layer: 5
   m_Name: CommandLineContrainer
   m_TagString: Untagged
@@ -741,22 +739,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &370248219308417261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3632971125227898102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8194bb27d310b4c4b9934568617c34c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _CurrentInput: {fileID: 4381894794769581191}
-  _CurrentInputModule: {fileID: 2609780507652911316}
-  _vertLayoutGroup: {fileID: 3560049002188285576}
-  submittedString: 
 --- !u!1 &7785731645501233473
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2079915125229037515, guid: f404e2fe75abffe48ac034d0b3d12c34, type: 3}
       propertyPath: m_OnSubmit.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2079915125229037515, guid: f404e2fe75abffe48ac034d0b3d12c34, type: 3}
       propertyPath: m_OnSubmit.m_PersistentCalls.m_Calls.Array.data[0].m_Target

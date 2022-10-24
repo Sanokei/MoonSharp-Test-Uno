@@ -19,7 +19,6 @@ public class WindowMaker : MonoBehaviour
     public TextMeshProUGUI text;
     public DragUI dragUI;
     public TMP_InputField TMP_inputField;
-    public InputField inputField;
     public void CreateWindow(TextIcon textIcon){
         codeEditor.Text = textIcon.FileData;
         text.text = $"{textIcon.name}.{textIcon.textType.ToString()}";
@@ -28,13 +27,11 @@ public class WindowMaker : MonoBehaviour
     // Fix for https://github.com/SidewaysTurtle/HackPunk/issues/5
     void DeactivateInputField()
     { 
-        if(TMP_inputField)
-            TMP_inputField.DeactivateInputField();
-        else if(inputField)
-            inputField.DeactivateInputField();
+        TMP_inputField.DeactivateInputField();
     }
 
-    public void setDragUI(Camera camera, Canvas canvas, RectTransform canvasRectTransform){
+    public void setDragUI(Camera camera, Canvas canvas, RectTransform canvasRectTransform)
+    {
         dragUI._Camera = camera;
         dragUI._Canvas = canvas;
         dragUI._CanvasRectTransform = canvasRectTransform;
