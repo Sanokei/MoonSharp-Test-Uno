@@ -115,11 +115,6 @@ public class InventoryPhysical : MonoBehaviour
             OnCreateWindowEvent?.Invoke(icon, slot);
     }
 
-    // dont remember why this is needed
-    // you would think i dont need it beause every 
-    // change i make is then reflected when i save the inventory
-    // inside of the on drop event etc
-    // but i do need it or it doesnt work and i dont remember why..
     void OnApplicationQuit()
     {
         SeralizedJSON<Inventory>.SaveScriptableObject(inventory,name);

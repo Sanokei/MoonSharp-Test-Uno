@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43707603, g: 0.48478377, b: 0.5650481, a: 1}
+  m_IndirectSpecularColor: {r: 0.43707654, g: 0.48478425, b: 0.56504816, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12631,7 +12631,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1598559709}
-  - component: {fileID: 1598559710}
+  - component: {fileID: 1598559712}
+  - component: {fileID: 1598559711}
   m_Layer: 0
   m_Name: Lancet
   m_TagString: Untagged
@@ -12654,7 +12655,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1598559710
+--- !u!114 &1598559711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12664,6 +12665,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 432a040ec865aff48ad54e617345a623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1598559712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598559708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05f7628801d8a5448a6b2fd5430a262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1600131542 stripped

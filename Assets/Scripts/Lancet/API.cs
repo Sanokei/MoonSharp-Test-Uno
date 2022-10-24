@@ -12,41 +12,13 @@ namespace Lancet
 {
     public class API : MonoBehaviour
     {
-        void Start()
+        public static API Instance{get; private set;}
+        public ConsoleManager Current_Console;
+        [System.Obsolete("Use RunCodeInConsole instead")]
+        void Awake()
         {
-            Script.DefaultOptions.DebugPrint = (x) => Debug.Log(x);
-
-            // https://www.moonsharp.org/scriptloaders.html
-            ((ScriptLoaderBase)Script.DefaultOptions.ScriptLoader).IgnoreLuaPathGlobal = true;
-            ((ScriptLoaderBase)Script.DefaultOptions.ScriptLoader).ModulePaths = ScriptLoaderBase.UnpackStringPaths(System.IO.Path.Combine(Application.persistentDataPath,"?") + "?.lua");
-            
-            Script.DefaultOptions.ScriptLoader = new LancetScriptLoader();
-
-            // I misundershood how this works
-            
-            // string folder = System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName) + @"\Lancet\";
-            // string filter = "*.lua";
-            // try{
-            //     foreach(var elm in System.IO.Directory.GetFiles(folder, filter))
-            //     {
-            //         try
-            //         {
-            //             ((ScriptLoaderBase)Script.DefaultOptions.ScriptLoader).ModulePaths = ScriptLoaderBase.UnpackStringPaths(elm);
-            //             Debug.Log($"Loaded module {elm}");
-            //         }
-            //         catch (System.Exception ex)
-            //         {
-            //             Debug.Log($"Error loading module{elm} \n{ex}");
-            //         }
-            //     }
-            // }
-            // catch(System.Exception ex)
-            // {
-            //     Debug.Log($"No modules loaded\n{ex}");
-            // }
+            Instance = this;
         }
-
-        
         [System.Obsolete("Use RunCodeInConsole instead")]
         public static void RunCode(string code)
         {
@@ -55,61 +27,75 @@ namespace Lancet
             fn.Function.Call();
         }
 
-        public static void RunCodeInConsole(string command, Dictionary<string,string[]> code, ConsoleManager console, Inventory ConsoleCommands)
+        public static void RunCodeInConsole(Dictionary<string,string[]> code, ConsoleManager console)
         {
             Script script = new Script();
-            TextIcon icon = new TextIcon();
+            string command = "";
+            foreach(var key in code.Keys)
+            {
+                command += key;
+            }
+            TextIcon icon = Resources.Load<TextIcon>("Computer/Icon/"+command);
 
             script.Options.DebugPrint = (x) => console.CreateResponse(x);
+            ((ScriptLoaderBase)script.Options.ScriptLoader).IgnoreLuaPathGlobal = true;
+            ((ScriptLoaderBase)script.Options.ScriptLoader).ModulePaths = ScriptLoaderBase.UnpackStringPaths(System.IO.Path.Combine(Application.persistentDataPath,"?") + "_module.lua");
+
+            Instance.Current_Console = console;
+
+            UserData.RegisterAssembly();
+            script.Globals["internal"] = new Internal();
             
-            // FIXME: awful way of getting an icon, but it works for now
-            bool _IconExistsFlag = false;
-            for(int i = 0; i < ConsoleCommands.GetLength();i++)
-            {
-                do{
-                    ConsoleCommands.GetIcon(i, out icon);
-                    ++i;
-                }while(i < ConsoleCommands.GetLength() && (icon.textType.ToString().ToLower() != "lua" || !icon.name.ToLower().Contains("_module")));// && icon.name.Split("_module.lua").Length < 1);
-                try
-                {
-                    string name = icon.name.ToLower().Split("_module")[0];
-                    _IconExistsFlag = command.ToLower() == name;
-                    break;
-                }catch(System.Exception ex){}
-            }
-            if(!_IconExistsFlag)
-            {   
-                return;
-            }
             string[] param;
+            param = code.GetValueOrDefault(icon.name); 
+            Table arrayValues = new Table(script);
+            foreach(var x in param)
+                arrayValues.Append(DynValue.NewString(x));
+            script.Globals["parameters"] = arrayValues;
             try
             {
-                param = code[icon.name.ToLower().Split("_module")[0]]; 
-                Table arrayValues = new Table(script);
-                for(int i=0; i < param.Length; i++)
-                {
-                    arrayValues.Append(DynValue.NewString(param[i]));
-                }
-                Debug.Log("Array Values:\n"+arrayValues);
-
-                try
-                {
-                    DynValue fn = script.LoadString(icon.FileData, arrayValues);
-                    fn.Function.Call();
-                }
-                catch(System.Exception ex)
-                {
-                    Debug.Log(ex);
-                    DynValue fn = script.LoadString($"print('{ex.ToString()}')");
-                    fn.Function.Call();
-                }
-            }
-            catch(System.Exception ex)
-            {
-                Debug.Log(ex);
-                DynValue fn = script.LoadString($"print('{ex.ToString()}')");
+                Debug.Log(icon.FileData);
+                DynValue fn = script.LoadString(icon.FileData);
                 fn.Function.Call();
             }
+            catch(ScriptRuntimeException ex)
+            {
+                DynValue fn = script.LoadString($"print(\"{ex.Message}\")");
+                fn.Function.Call();
+            }
+        }
+
+        public static void RunCodeInConsole(Dictionary<string,string[]> code, ConsoleManager console, Inventory inv)
+        {
+            if (CheckIfInModule(code,inv))
+                RunCodeInConsole(code,console);
+            else
+            {
+                Instance.Current_Console = console;
+                console.CreateResponse($"LancetRuntimeError: {code.Keys} does not exist in {inv.name}");
+            }
+                
+        }
+
+        public static void RunCodeInConsole(Dictionary<string,string[]> code)
+        {
+            if(!Instance.Current_Console)
+                RunCodeInConsole(code,Instance.Current_Console);
+        }
+        
+        public static bool CheckIfInModule(Dictionary<string,string[]> code, Inventory commandInventory)
+        {
+            // FIXME: awful way of getting an icon, but it works for now
+            bool _IconExistsFlag = false;
+            TextIcon icon;
+
+            for(int i = 0; i < commandInventory.GetLength();i++)
+            {
+                commandInventory.GetIcon(i, out icon);
+                _IconExistsFlag = code.ContainsKey(icon.name);   
+            }
+
+            return _IconExistsFlag;
         }
     }
 }

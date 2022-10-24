@@ -35,15 +35,7 @@ namespace Console
             _CurrentInputModule = input;
             _CurrentInput = inputField;
         }
-        public string[] RemoveFirstFromStringList(int x, string[] str)
-        {
-            string[] tempStr = new string[str.Length - x];
-            for(int i = 0; i < tempStr.Length; i++)
-            {
-                tempStr[i] = str[i+x];
-            }
-            return tempStr;
-        }
+
         public virtual void OnSubmit(string eventData)
         {
             if(_CurrentInput.isFocused)
@@ -56,25 +48,15 @@ namespace Console
                 newC.transform.SetParent(_vertLayoutGroup.transform,false);
                 //FixME: GetComponent slow
                 _commandText = newC.GetComponentInChildren<TextMeshProUGUI>();
-                _commandText.text = eventData.ToString();
+                _commandText.text = eventData;
                 
                 // make a response
 
                     // Clean up the eventData String
                     // {command} [parameters] 
                     //  filename  split by spaces
-                
-                Dictionary<string,string[]> parameters = new Dictionary<string, string[]>();
-                string name;
-                if(eventData.Contains(" "))
-                {
-                    parameters.Add(name = eventData.Split(" ")[0],RemoveFirstFromStringList(1,eventData.Split(" ")));
-                }
-                else
-                {
-                    parameters.Add(name = eventData,new string[0]);
-                }
-                Lancet.API.RunCodeInConsole(name, parameters, this, _ConsoleCommands);
+
+                Lancet.API.RunCodeInConsole(SanatizeInput.Input(eventData), this, _ConsoleCommands);
                 
                 // remake the input
                 var newS = Instantiate(_Input, new Vector3(0,0,0), Quaternion.identity);
