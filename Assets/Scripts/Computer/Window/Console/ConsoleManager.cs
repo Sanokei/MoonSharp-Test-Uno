@@ -13,12 +13,11 @@ namespace Console
         [SerializeField] InputField _CurrentInput;
         [SerializeField] GameObject _CurrentInputModule;
         [SerializeField] VerticalLayoutGroup _vertLayoutGroup;
+        [SerializeField] Inventory _ConsoleCommands;
         GameObject _Command;
         GameObject _Response;
         GameObject _Input;
         TextMeshProUGUI _commandText;
-
-        Inventory ConsoleCommands;
 
         // Start is called before the first frame update
         void Start()
@@ -36,9 +35,17 @@ namespace Console
             _CurrentInputModule = input;
             _CurrentInput = inputField;
         }
+        public string[] RemoveFirstFromStringList(int x, string[] str)
+        {
+            string[] tempStr = new string[str.Length - x];
+            for(int i = 0; i < tempStr.Length; i++)
+            {
+                tempStr[i] = str[i+x];
+            }
+            return tempStr;
+        }
         public virtual void OnSubmit(string eventData)
         {
-            Debug.Log(eventData);
             if(_CurrentInput.isFocused)
             {
                 // delete the input
@@ -54,18 +61,21 @@ namespace Console
                 // make a response
 
                     // Clean up the eventData String
-                    // {command}   [parameters] 
+                    // {command} [parameters] 
                     //  filename  split by spaces
-                try
+                
+                Dictionary<string,string[]> parameters = new Dictionary<string, string[]>();
+                string name;
+                if(eventData.Contains(" "))
                 {
-                    Lancet.API.RunCodeInConsole(eventData,this);
+                    parameters.Add(name = eventData.Split(" ")[0],RemoveFirstFromStringList(1,eventData.Split(" ")));
                 }
-                catch(MoonSharp.Interpreter.ScriptRuntimeException ex)
+                else
                 {
-                    CreateResponse(ex.ToString());
+                    parameters.Add(name = eventData,new string[0]);
                 }
-                // Should call 
-
+                Lancet.API.RunCodeInConsole(name, parameters, this, _ConsoleCommands);
+                
                 // remake the input
                 var newS = Instantiate(_Input, new Vector3(0,0,0), Quaternion.identity);
                 newS.transform.SetParent(_vertLayoutGroup.transform,false);

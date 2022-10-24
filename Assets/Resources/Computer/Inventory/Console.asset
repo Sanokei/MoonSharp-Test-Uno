@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Console
   m_EditorClassIdentifier: 
   inventory:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 50076fa1e2cf06845906390bf315eefd, type: 2}

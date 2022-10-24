@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bcc2416e2c59384199dc8cb82ac9f8f, type: 3}
-  m_Name: run
+  m_Name: run_module
   m_EditorClassIdentifier: 
-  textType: 0
-  FileData: 
-  image: {fileID: 0}
+  textType: 1
+  FileData: print("Parms")
+  image: {fileID: 21300000, guid: f60c9f30412cb764a8cdbc3164fcd12d, type: 3}

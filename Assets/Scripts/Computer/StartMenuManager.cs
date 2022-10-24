@@ -48,13 +48,19 @@ public class StartMenuManager : MonoBehaviour
     void PickUpComputer()
     {
         _comp.ChangeComputerMode(Override: true, OverrideBool: false);
-        gameObject.SetActive(false);
         _animation.Play("Toaster Hide");
+        StartCoroutine(Co_RemoveStartMenu());
         StartCoroutine(Co_PickUpComputer());
     }
     public IEnumerator Co_PickUpComputer()
     {   
         _computer.SetActive(false);
         yield return new WaitForSeconds(1);
+    }
+    
+    public IEnumerator Co_RemoveStartMenu()
+    {
+        gameObject.SetActive(false);
+        yield return new WaitForSeconds(2);
     }
 }

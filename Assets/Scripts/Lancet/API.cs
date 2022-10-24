@@ -14,7 +14,6 @@ namespace Lancet
     {
         void Start()
         {
-            // FIXME: make this the call for the console
             Script.DefaultOptions.DebugPrint = (x) => Debug.Log(x);
 
             // https://www.moonsharp.org/scriptloaders.html
@@ -48,7 +47,7 @@ namespace Lancet
         }
 
         
-        
+        [System.Obsolete("Use RunCodeInConsole instead")]
         public static void RunCode(string code)
         {
             Script script = new Script();
@@ -56,23 +55,61 @@ namespace Lancet
             fn.Function.Call();
         }
 
-        public static void RunCodeInConsole(Dictionary<string,string[]> code, ConsoleManager console, Inventory ConsoleCommands)
+        public static void RunCodeInConsole(string command, Dictionary<string,string[]> code, ConsoleManager console, Inventory ConsoleCommands)
         {
             Script script = new Script();
+            TextIcon icon = new TextIcon();
+
             script.Options.DebugPrint = (x) => console.CreateResponse(x);
             
-            TextIcon icon = new TextIcon();
+            // FIXME: awful way of getting an icon, but it works for now
+            bool _IconExistsFlag = false;
             for(int i = 0; i < ConsoleCommands.GetLength();i++)
             {
-                ConsoleCommands.GetIcon(i,out icon);
-                if(code[icon.name] != null)
+                do{
+                    ConsoleCommands.GetIcon(i, out icon);
+                    ++i;
+                }while(i < ConsoleCommands.GetLength() && (icon.textType.ToString().ToLower() != "lua" || !icon.name.ToLower().Contains("_module")));// && icon.name.Split("_module.lua").Length < 1);
+                try
                 {
+                    string name = icon.name.ToLower().Split("_module")[0];
+                    _IconExistsFlag = command.ToLower() == name;
                     break;
+                }catch(System.Exception ex){}
+            }
+            if(!_IconExistsFlag)
+            {   
+                return;
+            }
+            string[] param;
+            try
+            {
+                param = code[icon.name.ToLower().Split("_module")[0]]; 
+                Table arrayValues = new Table(script);
+                for(int i=0; i < param.Length; i++)
+                {
+                    arrayValues.Append(DynValue.NewString(param[i]));
+                }
+                Debug.Log("Array Values:\n"+arrayValues);
+
+                try
+                {
+                    DynValue fn = script.LoadString(icon.FileData, arrayValues);
+                    fn.Function.Call();
+                }
+                catch(System.Exception ex)
+                {
+                    Debug.Log(ex);
+                    DynValue fn = script.LoadString($"print('{ex.ToString()}')");
+                    fn.Function.Call();
                 }
             }
-
-            DynValue fn = script.LoadString(icon.FileData, );
-            fn.Function.Call();
+            catch(System.Exception ex)
+            {
+                Debug.Log(ex);
+                DynValue fn = script.LoadString($"print('{ex.ToString()}')");
+                fn.Function.Call();
+            }
         }
     }
 }
