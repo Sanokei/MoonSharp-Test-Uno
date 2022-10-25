@@ -37,7 +37,7 @@ namespace Lancet
             }
             TextIcon icon = Resources.Load<TextIcon>("Computer/Icon/"+command);
 
-            script.Options.DebugPrint = (x) => console.CreateResponse(x);
+            script.Options.DebugPrint = (x) => Instance.Current_Console.CreateResponse(x); 
             ((ScriptLoaderBase)script.Options.ScriptLoader).IgnoreLuaPathGlobal = true;
             ((ScriptLoaderBase)script.Options.ScriptLoader).ModulePaths = ScriptLoaderBase.UnpackStringPaths(System.IO.Path.Combine(Application.persistentDataPath,"?") + "_module.lua");
 

@@ -106,7 +106,7 @@ MonoBehaviour:
   codeEditor: {fileID: 5396505783799508874}
   text: {fileID: 2845060210726900541}
   dragUI: {fileID: 1459172191591943168}
-  inputField: {fileID: 5397882907550445780}
+  TMP_inputField: {fileID: 0}
 --- !u!114 &1459172191591943168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 3564806209305598163}
   - component: {fileID: 8547231899352074249}
   - component: {fileID: 7001510490094207623}
-  - component: {fileID: 5759258525250405860}
+  - component: {fileID: 2733087543194536278}
   m_Layer: 5
   m_Name: Run
   m_TagString: debug
@@ -723,7 +723,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5759258525250405860
+--- !u!114 &2733087543194536278
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -732,10 +732,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6941183588791099928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45d5055208732bb4892c0f44e71813ed, type: 3}
+  m_Script: {fileID: 11500000, guid: feb81750386f2594f97d21330a929a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compiler: {fileID: 2684313342474959439}
+  filename: {fileID: 2845060210726900541}
 --- !u!1 &7785731645501233473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,16 +1624,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de94cfaa22da0174182d12da3ce15cbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5397882907550445780 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114979364068399606, guid: 79a74f96889fc1c429f043e7fa8caf72, type: 3}
-  m_PrefabInstance: {fileID: 5436228449402251554}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -18,6 +18,7 @@ public class SaveAndExit : MonoBehaviour,IPointerClickHandler
         SeralizedJSON<TextIcon>.LoadScriptableObject(filename.text,out ti);
         ti.FileData = text.Text;
         SeralizedJSON<TextIcon>.SaveScriptableObject(ti,filename.text);
+        SeralizedJSON<TextIcon>.SaveScriptableObject(ti,filename.text.Split(".")[0], filename.text.Split(".")[1]);
         Destroy(window);
     }
 }

@@ -18,6 +18,9 @@ namespace CodeSystem
             SeralizedJSON<TextIcon>.LoadScriptableObject(filename.text,out ti);
             ti.FileData = text.Text;
             SeralizedJSON<TextIcon>.SaveScriptableObject(ti,filename.text);
+            //FIXME: Using split all over the place will blow up in my face 
+            SeralizedJSON<TextIcon>.SaveScriptableObject(ti,filename.text.Split(".")[0], filename.text.Split(".")[1]);
+
         }
     }
 }
