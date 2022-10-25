@@ -46,10 +46,13 @@ namespace Console
             _CurrentInput = inputField;
             _CurrentInput.onSubmit.AddListener(OnSubmit);
         }
-
         public virtual void OnSubmit(string eventData)
         {
-            if(_CurrentInput.isFocused)
+            OnSubmit(eventData, false);
+        }
+        public virtual void OnSubmit(string eventData, bool OVERRIDE = false)
+        {
+            if(_CurrentInput.isFocused || OVERRIDE)
             {
                 // delete the input
                 Destroy(_CurrentInputModule);

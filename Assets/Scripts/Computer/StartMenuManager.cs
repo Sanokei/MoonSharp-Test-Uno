@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using Console;
 
-public class StartMenuManager : MonoBehaviour
+public class StartMenuManager : MonoBehaviour, IPointerExitHandler
 {
     [SerializeField] GameObject _computer;
     [SerializeField] GameObject _phone;
@@ -47,7 +49,7 @@ public class StartMenuManager : MonoBehaviour
     void CreateConsole()
     {
         OpenCloseStartMenu();
-        Console.ConsoleManager.CreateConsole();
+        ConsoleManager.CreateConsole();
     }
 
     void PickUpComputer()
@@ -67,5 +69,10 @@ public class StartMenuManager : MonoBehaviour
     {
         gameObject.SetActive(false);
         yield return new WaitForSeconds(2);
+    }
+
+    void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
+    {
+        _computer.SetActive(false);
     }
 }

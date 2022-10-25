@@ -98,6 +98,11 @@ namespace Lancet
             return _IconExistsFlag;
         }
 
+        public static void RunCodeInConsole(string code, ConsoleManager console)
+        {
+            // Assume run command
+            RunCodeInConsole(SanatizeInput.Input("run " + code), console);
+        }
         public static string GetKey(Dictionary<string,string[]> code)
         {
             string key = "";
