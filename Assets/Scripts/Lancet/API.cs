@@ -7,6 +7,8 @@ using MoonSharp.Interpreter.Loaders;
 
 using Console;
 
+using SeralizedJSONSystem;
+
 // In-game compiler
 namespace Lancet
 {
@@ -35,7 +37,10 @@ namespace Lancet
             {
                 command += key;
             }
-            TextIcon icon = Resources.Load<TextIcon>("Computer/Icon/"+command);
+            // Holy fuck im a fucking idiot
+            // TextIcon icon = Resources.Load<TextIcon>("Computer/Icon/"+command);
+            TextIcon icon;
+            SeralizedJSON<TextIcon>.LoadScriptableObject(command,out icon);
 
             script.Options.DebugPrint = (x) => Instance.Current_Console.CreateResponse(x); 
             ((ScriptLoaderBase)script.Options.ScriptLoader).IgnoreLuaPathGlobal = true;
@@ -48,6 +53,9 @@ namespace Lancet
             
             string[] param;
             param = code.GetValueOrDefault(icon.name); 
+            Debug.Log(icon.name);
+            foreach(var k in code.Keys)
+                Debug.Log(k);
             Table arrayValues = new Table(script);
             foreach(var x in param)
                 arrayValues.Append(DynValue.NewString(x));
@@ -100,8 +108,7 @@ namespace Lancet
 
         public static void RunCodeInConsole(string code, ConsoleManager console)
         {
-            // Assume run command
-            RunCodeInConsole(SanatizeInput.Input("run " + code), console);
+            RunCodeInConsole(SanatizeInput.Input(code), console);
         }
         public static string GetKey(Dictionary<string,string[]> code)
         {

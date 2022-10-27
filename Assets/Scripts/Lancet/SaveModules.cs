@@ -7,12 +7,8 @@ public class SaveModules : MonoBehaviour
 {
     void SaveSO()
     {
-        string path;
         foreach(TextIcon file in Resources.LoadAll<TextIcon>("Computer/Icon"))
-        {
-            path = System.IO.Path.Combine(Application.persistentDataPath,UnityEngine.SceneManagement.SceneManager.GetActiveScene().name,$"{file.name}.{file.textType}");
-            System.IO.File.WriteAllText(path, file.FileData);
-        }
+            SeralizedJSON<TextIcon>.SaveScriptableObject(file,file.name);
     }
     void Start()
     {

@@ -24,12 +24,14 @@ namespace SeralizedJSONSystem{
         }
 
         // public
-        public static void LoadScriptableObject(string path, out T _instance)
+        public static void LoadScriptableObject(string filename, out T _instance)
         {
-            string jsonPath = System.IO.Path.Combine(Application.persistentDataPath,UnityEngine.SceneManagement.SceneManager.GetActiveScene().name,$"{path}.json");
-            if(path.Contains("."))
-                path = path.Split(".")[0];
-            string resourcesPath = "Computer/Icon/" + path;
+            string jsonPath = System.IO.Path.Combine(Application.persistentDataPath,UnityEngine.SceneManagement.SceneManager.GetActiveScene().name,$"{filename}.json");
+            
+            //FIXME: Using split("something") all over the place will blow up in my face
+            if(filename.Contains("."))
+                filename = filename.Split(".")[0];
+            string resourcesPath = "Computer/Icon/" + filename;
 
             T instance = ScriptableObject.CreateInstance<T>();
             if (System.IO.File.Exists(jsonPath))

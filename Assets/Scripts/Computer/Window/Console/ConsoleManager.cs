@@ -48,26 +48,17 @@ namespace Console
         }
         public virtual void OnSubmit(string eventData)
         {
-            OnSubmit(eventData, false);
-        }
-        public virtual void OnSubmit(string eventData, bool OVERRIDE = false)
-        {
-            if(OVERRIDE)
-                Start();
-            if(_CurrentInput.isFocused || OVERRIDE)
+            if(_CurrentInput.isFocused)
             {
                 // delete the input
                 Destroy(_CurrentInputModule);
 
                 // make a command
-                if(!OVERRIDE)
-                {
-                    var newC = Instantiate(_Command, new Vector3(0,0,0), Quaternion.identity);
-                    newC.transform.SetParent(_vertLayoutGroup.transform,false);
-                    //FixME: GetComponent slow
-                    _commandText = newC.GetComponentInChildren<TextMeshProUGUI>();
-                    _commandText.text = eventData;
-                }
+                var newC = Instantiate(_Command, new Vector3(0,0,0), Quaternion.identity);
+                newC.transform.SetParent(_vertLayoutGroup.transform,false);
+                //FixME: GetComponent slow
+                _commandText = newC.GetComponentInChildren<TextMeshProUGUI>();
+                _commandText.text = eventData;
 
                 // make a response
                 Lancet.API.RunCodeInConsole(SanatizeInput.Input(eventData), this, _ConsoleCommands);

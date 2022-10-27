@@ -15,10 +15,9 @@ public class SaveAndExit : MonoBehaviour,IPointerClickHandler
     {
         // filename.text already has the fileTag attached
         TextIcon ti;
-        SeralizedJSON<TextIcon>.LoadScriptableObject(filename.text,out ti);
+        SeralizedJSON<TextIcon>.LoadScriptableObject(filename.text.Split(".")[0],out ti);
         ti.FileData = text.Text;
-        SeralizedJSON<TextIcon>.SaveScriptableObject(ti,filename.text);
-        SeralizedJSON<TextIcon>.SaveScriptableObject(ti,filename.text.Split(".")[0], filename.text.Split(".")[1]);
+        SeralizedJSON<TextIcon>.SaveScriptableObject(ti,filename.text.Split(".")[0]);
         Destroy(window);
     }
 }
