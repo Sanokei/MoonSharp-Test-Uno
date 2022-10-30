@@ -7,6 +7,8 @@ using MoonSharp.Interpreter.Loaders;
 
 using Console;
 
+using SeralizedJSONSystem;
+
 // In-game compiler
 namespace Lancet
 {
@@ -29,32 +31,66 @@ namespace Lancet
 
         public static void RunCodeInConsole(Dictionary<string,string[]> code, ConsoleManager console)
         {
+            // https://www.moonsharp.org/objects.html
+            // Automatically register all MoonSharpUserData types
+            UserData.RegisterAssembly();
+            /*
+                // You could also register a class explicitely.
+	            UserData.RegisterType<MyClass>();
+                // or
+	            DynValue obj = UserData.Create(new MyClass());
+            
+                // meaning you can control which internal commands you want this part of the code to be able to run?
+            */
             Script script = new Script();
+            script.Options.DebugPrint = (x) => Instance.Current_Console.CreateResponse(x); 
+            ((ScriptLoaderBase)script.Options.ScriptLoader).IgnoreLuaPathGlobal = true;
+            ((ScriptLoaderBase)script.Options.ScriptLoader).ModulePaths = ScriptLoaderBase.UnpackStringPaths(System.IO.Path.Combine(Application.persistentDataPath,"?") + ".lua");
+
             string command = "";
+
+            // FIXME: Get rid of this and instead support multiple dictionary 
+            // objects instead
+            // (for: batch scripts / powershell)
             foreach(var key in code.Keys)
             {
                 command += key;
             }
-            TextIcon icon = Resources.Load<TextIcon>("Computer/Icon/"+command);
 
-            script.Options.DebugPrint = (x) => Instance.Current_Console.CreateResponse(x); 
-            ((ScriptLoaderBase)script.Options.ScriptLoader).IgnoreLuaPathGlobal = true;
-            ((ScriptLoaderBase)script.Options.ScriptLoader).ModulePaths = ScriptLoaderBase.UnpackStringPaths(System.IO.Path.Combine(Application.persistentDataPath,"?") + "_module.lua");
-
+            // Holy fuck im a fucking retarded
+            // I was getting the icon from the resources
+            // folder which means that the changes made by the user
+            // didnt get reflected onto the icon I was getting
+            // :skull:
+                // TextIcon icon = Resources.Load<TextIcon>("Computer/Icon/"+command);
+            TextIcon icon;
+            
+            // this will output icon as null if file not found
+            SeralizedJSON<TextIcon>.LoadScriptableObject(command,out icon);
+            // meaning i can check for null without making the nullable
+            // TextIcon? icon; // nullable
+            // https://stackoverflow.com/questions/58260367/c-sharp-nullable-arguments-assign-to-null-er-use-question-mark
+            if(!icon)
+            {
+                DynValue fn = script.LoadString($"print(\"{command}does not exist\")");
+                fn.Function.Call();
+                return;
+            }
+            
+            // Assume Icon is got and use 'command' instead of icon.name
             Instance.Current_Console = console;
-
-            UserData.RegisterAssembly();
+        
+            // adds a lot of the internal commands
             script.Globals["internal"] = new Internal();
             
             string[] param;
-            param = code.GetValueOrDefault(icon.name); 
+            param = code.GetValueOrDefault(command);
             Table arrayValues = new Table(script);
             foreach(var x in param)
                 arrayValues.Append(DynValue.NewString(x));
             script.Globals["parameters"] = arrayValues;
             try
             {
-                Debug.Log(icon.FileData);
                 DynValue fn = script.LoadString(icon.FileData);
                 fn.Function.Call();
             }
@@ -100,8 +136,7 @@ namespace Lancet
 
         public static void RunCodeInConsole(string code, ConsoleManager console)
         {
-            // Assume run command
-            RunCodeInConsole(SanatizeInput.Input("run " + code), console);
+            RunCodeInConsole(SanatizeInput.Input(code), console);
         }
         public static string GetKey(Dictionary<string,string[]> code)
         {

@@ -19,10 +19,7 @@ namespace CodeSystem
         {
             if(!console)
                 console = ConsoleManager.CreateConsole();
-            // Moved all Moonsharp functionality to Assets/Scripts/Lancet
-            Debug.Log(console);
-            Debug.Log(filename.text);
-            console?.OnSubmit("run " + filename.text.Split(".")[0], true);
+            API.RunCodeInConsole("run " + filename.text.Split(".")[0], console);
         }
     }
 }
