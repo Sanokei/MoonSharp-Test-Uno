@@ -56,8 +56,8 @@ public class StartMenuManager : MonoBehaviour, IPointerExitHandler
     {
         _comp.ChangeComputerMode(Override: true, OverrideBool: false);
         _animation.Play("Toaster Hide");
-        StartCoroutine(Co_RemoveStartMenu());
         StartCoroutine(Co_PickUpComputer());
+        StartCoroutine(Co_RemoveStartMenu());
     }
     public IEnumerator Co_PickUpComputer()
     {   
@@ -73,6 +73,6 @@ public class StartMenuManager : MonoBehaviour, IPointerExitHandler
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
     {
-        _computer.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

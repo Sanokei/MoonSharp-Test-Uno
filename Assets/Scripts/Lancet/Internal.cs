@@ -4,10 +4,11 @@ using UnityEngine;
 
 using MoonSharp.Interpreter;
 using MoonSharp.Interpreter.Loaders;
+using MoonSharp;
 
 namespace Lancet
 {
-    [MoonSharpUserData]
+    [MoonSharpUserData, MoonSharpHideMember("internal")]
     public class Internal
     {
         public static void run(DynValue code)
